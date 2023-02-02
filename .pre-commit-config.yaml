@@ -1,27 +1,32 @@
+default_stages: [commit]
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
       - id: check-added-large-files
+        stages: [commit]
       - id: check-yaml
+        stages: [commit]
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: local
     hooks:
       - id: black
-        name: black
+        name: run black
         entry: poetry run black
         language: system
         types: [python]
         require_serial: true
+        stages: [commit, manual]
       - id: isort
-        name: isort
+        name: run isort
         entry: poetry run isort
         language: system
         types: [python]
         require_serial: true
+        stages: [commit, manual]
       - id: mypy
-        name: mypy
+        name: run mypy
         entry: poetry run mypy ghome_foyer_api
         language: system
         types: [python]
