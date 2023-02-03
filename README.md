@@ -9,4 +9,4 @@ With this package, multiple libraries can use Foyer API without having to deal w
 ## Credits
 
 The proto file is taken from [here](https://github.com/rithvikvibhu/GHLocalApi/issues/39).
-Thanks @rithvikvibhu for extracting it.
+Thanks [@rithvikvibhu](https://github.com/rithvikvibhu) for extracting it.
