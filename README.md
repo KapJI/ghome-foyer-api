@@ -1,3 +1,6 @@
+[![CI](https://github.com/KapJI/ghome-foyer-api/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/KapJI/ghome-foyer-api/actions/workflows/ci.yml)
+[![PyPI version](https://img.shields.io/pypi/v/ghome-foyer-api)](https://pypi.org/project/ghome-foyer-api/)
+
 # Google Home Foyer API
 
 With this package, multiple libraries can use Foyer API without having to deal with Protobuf version conflicts.
