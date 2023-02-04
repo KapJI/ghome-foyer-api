@@ -9,6 +9,8 @@ With this package, multiple libraries can use Foyer API without having to deal w
 - The package defines dependencies on Protobuf and GRPC, ensuring compatibility of generated files.
 - Type hints are generated and exported as well.
 
+Files can be regenerated using `scripts/generate.sh`.
+
 ## Credits
 
 The proto file is taken from [here](https://github.com/rithvikvibhu/GHLocalApi/issues/39).

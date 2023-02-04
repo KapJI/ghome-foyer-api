@@ -12,21 +12,21 @@ repos:
   - repo: local
     hooks:
       - id: black
-        name: run black
+        name: black
         entry: poetry run black
         language: system
         types: [python]
         require_serial: true
         stages: [commit, manual]
       - id: isort
-        name: run isort
+        name: isort
         entry: poetry run isort
         language: system
         types: [python]
         require_serial: true
         stages: [commit, manual]
       - id: mypy
-        name: run mypy
+        name: mypy
         entry: poetry run mypy ghome_foyer_api
         language: system
         types: [python]
@@ -47,4 +47,5 @@ repos:
           - --py39-plus
           - --force
           - --keep-updates
+          - --disable-committed-check
         files: ^.+\.pyi?$
