@@ -3,6 +3,7 @@
 # source: ghome_foyer_api/api.proto
 # Protobuf Python Version: 5.27.2
 """Generated protocol buffer code."""
+
 from __future__ import annotations
 
 from google.protobuf import (
@@ -41,9 +42,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals[
         "_GETASSISTANTROUTINESRESPONSE_PART1_WORKFLOW_WF_SUB1"
     ]._serialized_start = 569
-    _globals["_GETASSISTANTROUTINESRESPONSE_PART1_WORKFLOW_WF_SUB1"]._serialized_end = (
-        933
-    )
+    _globals[
+        "_GETASSISTANTROUTINESRESPONSE_PART1_WORKFLOW_WF_SUB1"
+    ]._serialized_end = 933
     _globals[
         "_GETASSISTANTROUTINESRESPONSE_PART1_WORKFLOW_WF_SUB1_WF_SUB1_SUB1"
     ]._serialized_start = 713
@@ -97,9 +98,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE20_MESSAGE1"
     ]._serialized_start = 4548
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE20_MESSAGE1"]._serialized_end = (
-        5464
-    )
+    _globals[
+        "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE20_MESSAGE1"
+    ]._serialized_end = 5464
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE20_MESSAGE1_VALUE"
     ]._serialized_start = 4679
@@ -147,9 +148,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_MESSAGE2"
     ]._serialized_start = 5714
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_MESSAGE2"]._serialized_end = (
-        5879
-    )
+    _globals[
+        "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_MESSAGE2"
+    ]._serialized_end = 5879
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_MESSAGE2_MESSAGE2"
     ]._serialized_start = 5439
@@ -190,9 +191,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["_GETHOMEGRAPHRESPONSE_GROUP"]._serialized_end = 7775
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_start = 7379
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_end = 7547
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO_AGENTINFO"]._serialized_start = (
-        4130
-    )
+    _globals[
+        "_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO_AGENTINFO"
+    ]._serialized_start = 4130
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO_AGENTINFO"]._serialized_end = 4184
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_start = 7549
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_end = 7622
@@ -232,9 +233,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["_GETASSISTANTDEVICESETTINGSRESPONSE_MESSAGE1"]._serialized_end = 8716
     _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_start = 8719
     _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_end = 9394
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_start = (
-        8979
-    )
+    _globals[
+        "_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"
+    ]._serialized_start = 8979
     _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_end = 9176
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO_AGENTINFO"
@@ -242,9 +243,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO_AGENTINFO"
     ]._serialized_end = 4184
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"]._serialized_start = (
-        9179
-    )
+    _globals[
+        "_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"
+    ]._serialized_start = 9179
     _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"]._serialized_end = 9394
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA_MESSAGE1"
