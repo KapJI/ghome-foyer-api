@@ -6,6 +6,28 @@ import grpc
 
 from ghome_foyer_api import api_pb2 as ghome__foyer__api_dot_api__pb2
 
+GRPC_GENERATED_VERSION = "1.67.1"
+GRPC_VERSION = grpc.__version__
+_version_not_supported = False
+
+try:
+    from grpc._utilities import first_version_is_lower
+
+    _version_not_supported = first_version_is_lower(
+        GRPC_VERSION, GRPC_GENERATED_VERSION
+    )
+except ImportError:
+    _version_not_supported = True
+
+if _version_not_supported:
+    raise RuntimeError(
+        f"The grpc package installed is at version {GRPC_VERSION},"
+        + f" but the generated code in ghome_foyer_api/api_pb2_grpc.py depends on"
+        + f" grpcio>={GRPC_GENERATED_VERSION}."
+        + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
+        + f" or downgrade your generated code using grpcio-tools<={GRPC_VERSION}."
+    )
+
 
 class HomeControlServiceStub:
     """Home Control Service"""
@@ -20,6 +42,7 @@ class HomeControlServiceStub:
             "/google.internal.home.foyer.v1.HomeControlService/GetAssistantRoutines",
             request_serializer=ghome__foyer__api_dot_api__pb2.GetAssistantRoutinesRequest.SerializeToString,
             response_deserializer=ghome__foyer__api_dot_api__pb2.GetAssistantRoutinesResponse.FromString,
+            _registered_method=True,
         )
 
 
@@ -45,6 +68,9 @@ def add_HomeControlServiceServicer_to_server(servicer, server):
         "google.internal.home.foyer.v1.HomeControlService", rpc_method_handlers
     )
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers(
+        "google.internal.home.foyer.v1.HomeControlService", rpc_method_handlers
+    )
 
 
 # This class is part of an EXPERIMENTAL API.
@@ -78,6 +104,7 @@ class HomeControlService:
             wait_for_ready,
             timeout,
             metadata,
+            _registered_method=True,
         )
 
 
@@ -94,6 +121,7 @@ class StructuresServiceStub:
             "/google.internal.home.foyer.v1.StructuresService/GetHomeGraph",
             request_serializer=ghome__foyer__api_dot_api__pb2.GetHomeGraphRequest.SerializeToString,
             response_deserializer=ghome__foyer__api_dot_api__pb2.GetHomeGraphResponse.FromString,
+            _registered_method=True,
         )
 
 
@@ -119,6 +147,9 @@ def add_StructuresServiceServicer_to_server(servicer, server):
         "google.internal.home.foyer.v1.StructuresService", rpc_method_handlers
     )
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers(
+        "google.internal.home.foyer.v1.StructuresService", rpc_method_handlers
+    )
 
 
 # This class is part of an EXPERIMENTAL API.
@@ -152,6 +183,7 @@ class StructuresService:
             wait_for_ready,
             timeout,
             metadata,
+            _registered_method=True,
         )
 
 
@@ -168,11 +200,13 @@ class HomeDevicesServiceStub:
             "/google.internal.home.foyer.v1.HomeDevicesService/GetAssistantDeviceSettings",
             request_serializer=ghome__foyer__api_dot_api__pb2.GetAssistantDeviceSettingsRequest.SerializeToString,
             response_deserializer=ghome__foyer__api_dot_api__pb2.GetAssistantDeviceSettingsResponse.FromString,
+            _registered_method=True,
         )
         self.UpdateAssistantDeviceSettings = channel.unary_stream(
             "/google.internal.home.foyer.v1.HomeDevicesService/UpdateAssistantDeviceSettings",
             request_serializer=ghome__foyer__api_dot_api__pb2.UpdateAssistantDeviceSettingsRequest.SerializeToString,
             response_deserializer=ghome__foyer__api_dot_api__pb2.UpdateAssistantDeviceSettingsResponse.FromString,
+            _registered_method=True,
         )
 
 
@@ -209,6 +243,9 @@ def add_HomeDevicesServiceServicer_to_server(servicer, server):
         "google.internal.home.foyer.v1.HomeDevicesService", rpc_method_handlers
     )
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers(
+        "google.internal.home.foyer.v1.HomeDevicesService", rpc_method_handlers
+    )
 
 
 # This class is part of an EXPERIMENTAL API.
@@ -242,6 +279,7 @@ class HomeDevicesService:
             wait_for_ready,
             timeout,
             metadata,
+            _registered_method=True,
         )
 
     @staticmethod
@@ -271,4 +309,5 @@ class HomeDevicesService:
             wait_for_ready,
             timeout,
             metadata,
+            _registered_method=True,
         )

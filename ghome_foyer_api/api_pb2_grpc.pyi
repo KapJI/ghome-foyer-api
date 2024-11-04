@@ -12,11 +12,14 @@ StructuresService
 HomeDevicesService
   - GetAssistantDeviceSettings
 """
+
 from abc import (
     ABCMeta,
     abstractmethod,
 )
 from collections.abc import (
+    AsyncIterator,
+    Awaitable,
     Iterator,
 )
 from ghome_foyer_api.api_pb2 import (
@@ -29,18 +32,45 @@ from ghome_foyer_api.api_pb2 import (
     UpdateAssistantDeviceSettingsRequest,
     UpdateAssistantDeviceSettingsResponse,
 )
-from grpc import (
+# Manually commented to fix mypy errors.
+# from grpc import (
+#     Channel,
+#     Server,
+#     ServicerContext,
+#     UnaryStreamMultiCallable,
+#     UnaryUnaryMultiCallable,
+# )
+from grpc.aio import (
     Channel,
     Server,
     ServicerContext,
     UnaryStreamMultiCallable,
     UnaryUnaryMultiCallable,
 )
+from typing import (
+    TypeVar,
+    Union,
+)
+
+_T = TypeVar("_T")
+
+class _MaybeAsyncIterator(AsyncIterator[_T], Iterator[_T], metaclass=ABCMeta): ...
+
+class _ServicerContext(ServicerContext, ServicerContext):  # type: ignore[misc, type-arg]
+    ...
 
 class HomeControlServiceStub:
     """Home Control Service"""
 
-    def __init__(self, channel: Channel) -> None: ...
+    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
+    GetAssistantRoutines: UnaryStreamMultiCallable[
+        GetAssistantRoutinesRequest,
+        GetAssistantRoutinesResponse,
+    ]
+
+class HomeControlServiceAsyncStub:
+    """Home Control Service"""
+
     GetAssistantRoutines: UnaryStreamMultiCallable[
         GetAssistantRoutinesRequest,
         GetAssistantRoutinesResponse,
@@ -53,15 +83,23 @@ class HomeControlServiceServicer(metaclass=ABCMeta):
     def GetAssistantRoutines(
         self,
         request: GetAssistantRoutinesRequest,
-        context: ServicerContext,
-    ) -> Iterator[GetAssistantRoutinesResponse]: ...
+        context: _ServicerContext,
+    ) -> Union[Iterator[GetAssistantRoutinesResponse], AsyncIterator[GetAssistantRoutinesResponse]]: ...
 
-def add_HomeControlServiceServicer_to_server(servicer: HomeControlServiceServicer, server: Server) -> None: ...
+def add_HomeControlServiceServicer_to_server(servicer: HomeControlServiceServicer, server: Union[Server, Server]) -> None: ...
 
 class StructuresServiceStub:
     """Structure Service"""
 
-    def __init__(self, channel: Channel) -> None: ...
+    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
+    GetHomeGraph: UnaryUnaryMultiCallable[
+        GetHomeGraphRequest,
+        GetHomeGraphResponse,
+    ]
+
+class StructuresServiceAsyncStub:
+    """Structure Service"""
+
     GetHomeGraph: UnaryUnaryMultiCallable[
         GetHomeGraphRequest,
         GetHomeGraphResponse,
@@ -74,19 +112,33 @@ class StructuresServiceServicer(metaclass=ABCMeta):
     def GetHomeGraph(
         self,
         request: GetHomeGraphRequest,
-        context: ServicerContext,
-    ) -> GetHomeGraphResponse: ...
+        context: _ServicerContext,
+    ) -> Union[GetHomeGraphResponse, Awaitable[GetHomeGraphResponse]]: ...
 
-def add_StructuresServiceServicer_to_server(servicer: StructuresServiceServicer, server: Server) -> None: ...
+def add_StructuresServiceServicer_to_server(servicer: StructuresServiceServicer, server: Union[Server, Server]) -> None: ...
 
 class HomeDevicesServiceStub:
     """Home Devices Service"""
 
-    def __init__(self, channel: Channel) -> None: ...
+    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
     GetAssistantDeviceSettings: UnaryStreamMultiCallable[
         GetAssistantDeviceSettingsRequest,
         GetAssistantDeviceSettingsResponse,
     ]
+
+    UpdateAssistantDeviceSettings: UnaryStreamMultiCallable[
+        UpdateAssistantDeviceSettingsRequest,
+        UpdateAssistantDeviceSettingsResponse,
+    ]
+
+class HomeDevicesServiceAsyncStub:
+    """Home Devices Service"""
+
+    GetAssistantDeviceSettings: UnaryStreamMultiCallable[
+        GetAssistantDeviceSettingsRequest,
+        GetAssistantDeviceSettingsResponse,
+    ]
+
     UpdateAssistantDeviceSettings: UnaryStreamMultiCallable[
         UpdateAssistantDeviceSettingsRequest,
         UpdateAssistantDeviceSettingsResponse,
@@ -99,13 +151,14 @@ class HomeDevicesServiceServicer(metaclass=ABCMeta):
     def GetAssistantDeviceSettings(
         self,
         request: GetAssistantDeviceSettingsRequest,
-        context: ServicerContext,
-    ) -> Iterator[GetAssistantDeviceSettingsResponse]: ...
+        context: _ServicerContext,
+    ) -> Union[Iterator[GetAssistantDeviceSettingsResponse], AsyncIterator[GetAssistantDeviceSettingsResponse]]: ...
+
     @abstractmethod
     def UpdateAssistantDeviceSettings(
         self,
         request: UpdateAssistantDeviceSettingsRequest,
-        context: ServicerContext,
-    ) -> Iterator[UpdateAssistantDeviceSettingsResponse]: ...
+        context: _ServicerContext,
+    ) -> Union[Iterator[UpdateAssistantDeviceSettingsResponse], AsyncIterator[UpdateAssistantDeviceSettingsResponse]]: ...
 
-def add_HomeDevicesServiceServicer_to_server(servicer: HomeDevicesServiceServicer, server: Server) -> None: ...
+def add_HomeDevicesServiceServicer_to_server(servicer: HomeDevicesServiceServicer, server: Union[Server, Server]) -> None: ...

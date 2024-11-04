@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "ghome-foyer-api"
 version = "0.0.0"
@@ -25,21 +29,18 @@ include = ["ghome_foyer_api/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-grpcio = "^1.51.1"
-protobuf = "^4.21.12"
+grpcio = "^1.66.2"
+protobuf = "^5.28.3"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.1.0"
-grpc-stubs = "^1.24.12"
-grpcio-tools = "^1.51.1"
-isort = "^5.12.0"
-mypy = "^0.991"
-mypy-protobuf = "^3.4.0"
-pre-commit = "^3.0.2"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+black = "^24.10.0"
+grpc-stubs = "^1.53.0.5"
+grpcio-tools = "^1.66.2"
+isort = "^5.13.2"
+mypy = "^1.13.0"
+mypy-protobuf = "^3.6.0"
+pre-commit = "^4.0.1"
+types-protobuf = "^5.28"
 
 [tool.isort]
 profile = "black"
