@@ -12,12 +12,7 @@ StructuresService
 HomeDevicesService
   - GetAssistantDeviceSettings
 """
-import sys
 
-if sys.version_info >= (3, 8):
-    import typing as typing_extensions
-else:
-    import typing_extensions
 from builtins import (
     bool,
     bytes,
@@ -39,10 +34,14 @@ from google.protobuf.internal.containers import (
 from google.protobuf.message import (
     Message,
 )
+from typing import (
+    Literal,
+    final,
+)
 
 DESCRIPTOR: FileDescriptor
 
-@typing_extensions.final
+@final
 class GetAssistantRoutinesRequest(Message):
     DESCRIPTOR: Descriptor
 
@@ -50,27 +49,27 @@ class GetAssistantRoutinesRequest(Message):
         self,
     ) -> None: ...
 
-@typing_extensions.final
+@final
 class GetAssistantRoutinesResponse(Message):
     DESCRIPTOR: Descriptor
 
-    @typing_extensions.final
+    @final
     class Part1(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class WorkFlow(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class WF_Sub1(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class WF_Sub1_Sub1(Message):
                     DESCRIPTOR: Descriptor
 
-                    @typing_extensions.final
+                    @final
                     class Routine(Message):
                         DESCRIPTOR: Descriptor
 
@@ -87,7 +86,7 @@ class GetAssistantRoutinesResponse(Message):
                             num2: int = ...,
                             routine_name: str = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: typing_extensions.Literal["num2", b"num2", "routine_id", b"routine_id", "routine_name", b"routine_name"]) -> None: ...
+                        def ClearField(self, field_name: Literal["num2", b"num2", "routine_id", b"routine_id", "routine_name", b"routine_name"]) -> None: ...
 
                     STRING1_FIELD_NUMBER: int
                     ROUTINE_FIELD_NUMBER: int
@@ -100,8 +99,8 @@ class GetAssistantRoutinesResponse(Message):
                         string1: str = ...,
                         routine: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1.Routine | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: typing_extensions.Literal["routine", b"routine"]) -> bool: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["routine", b"routine", "string1", b"string1"]) -> None: ...
+                    def HasField(self, field_name: Literal["routine", b"routine"]) -> bool: ...
+                    def ClearField(self, field_name: Literal["routine", b"routine", "string1", b"string1"]) -> None: ...
 
                 STRING1_FIELD_NUMBER: int
                 WF_S1_S1_FIELD_NUMBER: int
@@ -114,8 +113,8 @@ class GetAssistantRoutinesResponse(Message):
                     string1: str = ...,
                     wf_s1_s1: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing_extensions.Literal["wf_s1_s1", b"wf_s1_s1"]) -> bool: ...
-                def ClearField(self, field_name: typing_extensions.Literal["string1", b"string1", "wf_s1_s1", b"wf_s1_s1"]) -> None: ...
+                def HasField(self, field_name: Literal["wf_s1_s1", b"wf_s1_s1"]) -> bool: ...
+                def ClearField(self, field_name: Literal["string1", b"string1", "wf_s1_s1", b"wf_s1_s1"]) -> None: ...
 
             TYPE_FIELD_NUMBER: int
             WF_S1_FIELD_NUMBER: int
@@ -128,18 +127,18 @@ class GetAssistantRoutinesResponse(Message):
                 type: str = ...,
                 wf_s1: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1 | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["wf_s1", b"wf_s1"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["type", b"type", "wf_s1", b"wf_s1"]) -> None: ...
+            def HasField(self, field_name: Literal["wf_s1", b"wf_s1"]) -> bool: ...
+            def ClearField(self, field_name: Literal["type", b"type", "wf_s1", b"wf_s1"]) -> None: ...
 
         ROUTINE_NAME_FIELD_NUMBER: int
         WORKFLOW_FIELD_NUMBER: int
         STRING4_FIELD_NUMBER: int
         STRING5_FIELD_NUMBER: int
         routine_name: str
-        @property
-        def workflow(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow: ...
         string4: str
         string5: str
+        @property
+        def workflow(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow: ...
         def __init__(
             self,
             *,
@@ -148,10 +147,10 @@ class GetAssistantRoutinesResponse(Message):
             string4: str = ...,
             string5: str = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["workflow", b"workflow"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["routine_name", b"routine_name", "string4", b"string4", "string5", b"string5", "workflow", b"workflow"]) -> None: ...
+        def HasField(self, field_name: Literal["workflow", b"workflow"]) -> bool: ...
+        def ClearField(self, field_name: Literal["routine_name", b"routine_name", "string4", b"string4", "string5", b"string5", "workflow", b"workflow"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class Part2(Message):
         DESCRIPTOR: Descriptor
 
@@ -165,7 +164,7 @@ class GetAssistantRoutinesResponse(Message):
             string1: str = ...,
             string3: str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["string1", b"string1", "string3", b"string3"]) -> None: ...
+        def ClearField(self, field_name: Literal["string1", b"string1", "string3", b"string3"]) -> None: ...
 
     P1_FIELD_NUMBER: int
     P2_FIELD_NUMBER: int
@@ -179,10 +178,10 @@ class GetAssistantRoutinesResponse(Message):
         p1: Iterable[GetAssistantRoutinesResponse.Part1] | None = ...,
         p2: GetAssistantRoutinesResponse.Part2 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["p2", b"p2"]) -> bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["p1", b"p1", "p2", b"p2"]) -> None: ...
+    def HasField(self, field_name: Literal["p2", b"p2"]) -> bool: ...
+    def ClearField(self, field_name: Literal["p1", b"p1", "p2", b"p2"]) -> None: ...
 
-@typing_extensions.final
+@final
 class GetHomeGraphRequest(Message):
     DESCRIPTOR: Descriptor
 
@@ -196,21 +195,21 @@ class GetHomeGraphRequest(Message):
         string1: str = ...,
         num2: str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["num2", b"num2", "string1", b"string1"]) -> None: ...
+    def ClearField(self, field_name: Literal["num2", b"num2", "string1", b"string1"]) -> None: ...
 
-@typing_extensions.final
+@final
 class GetHomeGraphResponse(Message):
     DESCRIPTOR: Descriptor
 
-    @typing_extensions.final
+    @final
     class Home(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class Location(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class Coordinates(Message):
                 DESCRIPTOR: Descriptor
 
@@ -224,17 +223,17 @@ class GetHomeGraphResponse(Message):
                     latitude: float = ...,
                     longitude: float = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["latitude", b"latitude", "longitude", b"longitude"]) -> None: ...
+                def ClearField(self, field_name: Literal["latitude", b"latitude", "longitude", b"longitude"]) -> None: ...
 
             ADDRESS_FIELD_NUMBER: int
             COORDINATES_FIELD_NUMBER: int
             TIMESTAMP5_FIELD_NUMBER: int
             TIMEZONE_FIELD_NUMBER: int
             address: str
-            @property
-            def coordinates(self) -> GetHomeGraphResponse.Home.Location.Coordinates: ...
             timestamp5: int
             timezone: str
+            @property
+            def coordinates(self) -> GetHomeGraphResponse.Home.Location.Coordinates: ...
             def __init__(
                 self,
                 *,
@@ -243,10 +242,10 @@ class GetHomeGraphResponse(Message):
                 timestamp5: int = ...,
                 timezone: str = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["coordinates", b"coordinates"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["address", b"address", "coordinates", b"coordinates", "timestamp5", b"timestamp5", "timezone", b"timezone"]) -> None: ...
+            def HasField(self, field_name: Literal["coordinates", b"coordinates"]) -> bool: ...
+            def ClearField(self, field_name: Literal["address", b"address", "coordinates", b"coordinates", "timestamp5", b"timestamp5", "timezone", b"timezone"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class LinkedUser(Message):
             DESCRIPTOR: Descriptor
 
@@ -257,13 +256,13 @@ class GetHomeGraphResponse(Message):
                 *,
                 email_address: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["email_address", b"email_address"]) -> None: ...
+            def ClearField(self, field_name: Literal["email_address", b"email_address"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Room(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class Category(Message):
                 DESCRIPTOR: Descriptor
 
@@ -274,7 +273,7 @@ class GetHomeGraphResponse(Message):
                     *,
                     name: str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["name", b"name"]) -> None: ...
+                def ClearField(self, field_name: Literal["name", b"name"]) -> None: ...
 
             ROOM_ID_FIELD_NUMBER: int
             ROOM_NAME_FIELD_NUMBER: int
@@ -290,18 +289,18 @@ class GetHomeGraphResponse(Message):
                 room_name: str = ...,
                 category: GetHomeGraphResponse.Home.Room.Category | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["category", b"category"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["category", b"category", "room_id", b"room_id", "room_name", b"room_name"]) -> None: ...
+            def HasField(self, field_name: Literal["category", b"category"]) -> bool: ...
+            def ClearField(self, field_name: Literal["category", b"category", "room_id", b"room_id", "room_name", b"room_name"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Device(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class DeviceInfo(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class AgentInfo(Message):
                     DESCRIPTOR: Descriptor
 
@@ -315,7 +314,7 @@ class GetHomeGraphResponse(Message):
                         api_project_id: str = ...,
                         unique_id: str = ...,
                     ) -> None: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                    def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
 
                 DEVICE_ID_FIELD_NUMBER: int
                 AGENT_INFO_FIELD_NUMBER: int
@@ -328,10 +327,10 @@ class GetHomeGraphResponse(Message):
                     device_id: str = ...,
                     agent_info: GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> bool: ...
-                def ClearField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+                def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
+                def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message12(Message):
                 DESCRIPTOR: Descriptor
 
@@ -360,9 +359,9 @@ class GetHomeGraphResponse(Message):
                     num45: int = ...,
                     num46: int = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["num2", b"num2", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num5", b"num5"]) -> None: ...
+                def ClearField(self, field_name: Literal["num2", b"num2", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num5", b"num5"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message15(Message):
                 DESCRIPTOR: Descriptor
 
@@ -382,9 +381,9 @@ class GetHomeGraphResponse(Message):
                     num6: int = ...,
                     num7: int = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["num1", b"num1", "num5", b"num5", "num6", b"num6", "num7", b"num7"]) -> None: ...
+                def ClearField(self, field_name: Literal["num1", b"num1", "num5", b"num5", "num6", b"num6", "num7", b"num7"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Hardware(Message):
                 DESCRIPTOR: Descriptor
 
@@ -395,9 +394,9 @@ class GetHomeGraphResponse(Message):
                     *,
                     model: str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["model", b"model"]) -> None: ...
+                def ClearField(self, field_name: Literal["model", b"model"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message18(Message):
                 DESCRIPTOR: Descriptor
 
@@ -408,37 +407,37 @@ class GetHomeGraphResponse(Message):
                     *,
                     device_name: str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["device_name", b"device_name"]) -> None: ...
+                def ClearField(self, field_name: Literal["device_name", b"device_name"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message20(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class Message1(Message):
                     DESCRIPTOR: Descriptor
 
-                    @typing_extensions.final
+                    @final
                     class Value(Message):
                         DESCRIPTOR: Descriptor
 
-                        @typing_extensions.final
+                        @final
                         class Message6(Message):
                             DESCRIPTOR: Descriptor
 
-                            @typing_extensions.final
+                            @final
                             class Message1(Message):
                                 DESCRIPTOR: Descriptor
 
-                                @typing_extensions.final
+                                @final
                                 class Message5(Message):
                                     DESCRIPTOR: Descriptor
 
-                                    @typing_extensions.final
+                                    @final
                                     class Message1(Message):
                                         DESCRIPTOR: Descriptor
 
-                                        @typing_extensions.final
+                                        @final
                                         class Message2(Message):
                                             DESCRIPTOR: Descriptor
 
@@ -449,7 +448,7 @@ class GetHomeGraphResponse(Message):
                                                 *,
                                                 bool4: bool = ...,
                                             ) -> None: ...
-                                            def ClearField(self, field_name: typing_extensions.Literal["bool4", b"bool4"]) -> None: ...
+                                            def ClearField(self, field_name: Literal["bool4", b"bool4"]) -> None: ...
 
                                         CAPABILITY_FIELD_NUMBER: int
                                         MESSAGE2_FIELD_NUMBER: int
@@ -462,8 +461,8 @@ class GetHomeGraphResponse(Message):
                                             capability: str = ...,
                                             message2: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1.Message2 | None = ...,
                                         ) -> None: ...
-                                        def HasField(self, field_name: typing_extensions.Literal["message2", b"message2"]) -> bool: ...
-                                        def ClearField(self, field_name: typing_extensions.Literal["capability", b"capability", "message2", b"message2"]) -> None: ...
+                                        def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
+                                        def ClearField(self, field_name: Literal["capability", b"capability", "message2", b"message2"]) -> None: ...
 
                                     MESSAGE1_FIELD_NUMBER: int
                                     @property
@@ -473,7 +472,7 @@ class GetHomeGraphResponse(Message):
                                         *,
                                         message1: Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1] | None = ...,
                                     ) -> None: ...
-                                    def ClearField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> None: ...
+                                    def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
 
                                 MESSAGE5_FIELD_NUMBER: int
                                 @property
@@ -483,8 +482,8 @@ class GetHomeGraphResponse(Message):
                                     *,
                                     message5: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5 | None = ...,
                                 ) -> None: ...
-                                def HasField(self, field_name: typing_extensions.Literal["message5", b"message5"]) -> bool: ...
-                                def ClearField(self, field_name: typing_extensions.Literal["message5", b"message5"]) -> None: ...
+                                def HasField(self, field_name: Literal["message5", b"message5"]) -> bool: ...
+                                def ClearField(self, field_name: Literal["message5", b"message5"]) -> None: ...
 
                             MESSAGE1_FIELD_NUMBER: int
                             @property
@@ -494,8 +493,8 @@ class GetHomeGraphResponse(Message):
                                 *,
                                 message1: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1 | None = ...,
                             ) -> None: ...
-                            def HasField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> bool: ...
-                            def ClearField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> None: ...
+                            def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
+                            def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
 
                         MESSAGE6_FIELD_NUMBER: int
                         @property
@@ -505,8 +504,8 @@ class GetHomeGraphResponse(Message):
                             *,
                             message6: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6 | None = ...,
                         ) -> None: ...
-                        def HasField(self, field_name: typing_extensions.Literal["message6", b"message6"]) -> bool: ...
-                        def ClearField(self, field_name: typing_extensions.Literal["message6", b"message6"]) -> None: ...
+                        def HasField(self, field_name: Literal["message6", b"message6"]) -> bool: ...
+                        def ClearField(self, field_name: Literal["message6", b"message6"]) -> None: ...
 
                     KEY_FIELD_NUMBER: int
                     VALUE_FIELD_NUMBER: int
@@ -519,8 +518,8 @@ class GetHomeGraphResponse(Message):
                         key: str = ...,
                         value: GetHomeGraphResponse.Home.Device.Message20.Message1.Value | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> bool: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+                    def HasField(self, field_name: Literal["value", b"value"]) -> bool: ...
+                    def ClearField(self, field_name: Literal["key", b"key", "value", b"value"]) -> None: ...
 
                 MESSAGE1_FIELD_NUMBER: int
                 @property
@@ -530,9 +529,9 @@ class GetHomeGraphResponse(Message):
                     *,
                     message1: Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1] | None = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> None: ...
+                def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message25(Message):
                 DESCRIPTOR: Descriptor
 
@@ -546,9 +545,9 @@ class GetHomeGraphResponse(Message):
                     bool1: bool = ...,
                     bool2: bool = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["bool1", b"bool1", "bool2", b"bool2"]) -> None: ...
+                def ClearField(self, field_name: Literal["bool1", b"bool1", "bool2", b"bool2"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class LinkedUser(Message):
                 DESCRIPTOR: Descriptor
 
@@ -559,9 +558,9 @@ class GetHomeGraphResponse(Message):
                     *,
                     email_address: str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["email_address", b"email_address"]) -> None: ...
+                def ClearField(self, field_name: Literal["email_address", b"email_address"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class State(Message):
                 DESCRIPTOR: Descriptor
 
@@ -575,17 +574,17 @@ class GetHomeGraphResponse(Message):
                     name: str = ...,
                     value: bytes = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["name", b"name", "value", b"value"]) -> None: ...
+                def ClearField(self, field_name: Literal["name", b"name", "value", b"value"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message30(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class Message2(Message):
                     DESCRIPTOR: Descriptor
 
-                    @typing_extensions.final
+                    @final
                     class Message2(Message):
                         DESCRIPTOR: Descriptor
 
@@ -596,7 +595,7 @@ class GetHomeGraphResponse(Message):
                             *,
                             bool4: bool = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: typing_extensions.Literal["bool4", b"bool4"]) -> None: ...
+                        def ClearField(self, field_name: Literal["bool4", b"bool4"]) -> None: ...
 
                     STRING1_FIELD_NUMBER: int
                     MESSAGE2_FIELD_NUMBER: int
@@ -609,8 +608,8 @@ class GetHomeGraphResponse(Message):
                         string1: str = ...,
                         message2: GetHomeGraphResponse.Home.Device.Message30.Message2.Message2 | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: typing_extensions.Literal["message2", b"message2"]) -> bool: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
+                    def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
+                    def ClearField(self, field_name: Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
 
                 KEY_FIELD_NUMBER: int
                 MESSAGE2_FIELD_NUMBER: int
@@ -623,10 +622,10 @@ class GetHomeGraphResponse(Message):
                     key: str = ...,
                     message2: GetHomeGraphResponse.Home.Device.Message30.Message2 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing_extensions.Literal["message2", b"message2"]) -> bool: ...
-                def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "message2", b"message2"]) -> None: ...
+                def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
+                def ClearField(self, field_name: Literal["key", b"key", "message2", b"message2"]) -> None: ...
 
-            @typing_extensions.final
+            @final
             class Message34(Message):
                 DESCRIPTOR: Descriptor
 
@@ -637,7 +636,7 @@ class GetHomeGraphResponse(Message):
                     *,
                     bool1: bool = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["bool1", b"bool1"]) -> None: ...
+                def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
 
             DEVICE_INFO_FIELD_NUMBER: int
             DEVICE_NAME_FIELD_NUMBER: int
@@ -659,13 +658,18 @@ class GetHomeGraphResponse(Message):
             NUM37_FIELD_NUMBER: int
             STRING41_FIELD_NUMBER: int
             STRING42_FIELD_NUMBER: int
-            @property
-            def device_info(self) -> GetHomeGraphResponse.Home.Device.DeviceInfo: ...
             device_name: str
             device_type: str
+            suffix: str
+            timestamp19: int
+            local_auth_token: str
+            num37: int
+            string41: str
+            string42: str
+            @property
+            def device_info(self) -> GetHomeGraphResponse.Home.Device.DeviceInfo: ...
             @property
             def traits(self) -> RepeatedScalarFieldContainer[str]: ...
-            suffix: str
             @property
             def message12(self) -> GetHomeGraphResponse.Home.Device.Message12: ...
             @property
@@ -674,23 +678,18 @@ class GetHomeGraphResponse(Message):
             def hardware(self) -> GetHomeGraphResponse.Home.Device.Hardware: ...
             @property
             def message18(self) -> GetHomeGraphResponse.Home.Device.Message18: ...
-            timestamp19: int
             @property
             def message20(self) -> GetHomeGraphResponse.Home.Device.Message20: ...
             @property
             def message25(self) -> GetHomeGraphResponse.Home.Device.Message25: ...
             @property
             def linked_users(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.LinkedUser]: ...
-            local_auth_token: str
             @property
             def states(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.State]: ...
             @property
             def message30(self) -> GetHomeGraphResponse.Home.Device.Message30: ...
             @property
             def message34(self) -> GetHomeGraphResponse.Home.Device.Message34: ...
-            num37: int
-            string41: str
-            string42: str
             def __init__(
                 self,
                 *,
@@ -715,10 +714,10 @@ class GetHomeGraphResponse(Message):
                 string41: str = ...,
                 string42: str = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "hardware", b"hardware", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "device_name", b"device_name", "device_type", b"device_type", "hardware", b"hardware", "linked_users", b"linked_users", "local_auth_token", b"local_auth_token", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34", "num37", b"num37", "states", b"states", "string41", b"string41", "string42", b"string42", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
+            def HasField(self, field_name: Literal["device_info", b"device_info", "hardware", b"hardware", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34"]) -> bool: ...
+            def ClearField(self, field_name: Literal["device_info", b"device_info", "device_name", b"device_name", "device_type", b"device_type", "hardware", b"hardware", "linked_users", b"linked_users", "local_auth_token", b"local_auth_token", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34", "num37", b"num37", "states", b"states", "string41", b"string41", "string42", b"string42", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message11(Message):
             DESCRIPTOR: Descriptor
 
@@ -729,21 +728,21 @@ class GetHomeGraphResponse(Message):
                 *,
                 bool1: bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["bool1", b"bool1"]) -> None: ...
+            def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message13(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class Message1(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class DeviceInfo(Message):
                     DESCRIPTOR: Descriptor
 
-                    @typing_extensions.final
+                    @final
                     class AgentInfo(Message):
                         DESCRIPTOR: Descriptor
 
@@ -757,7 +756,7 @@ class GetHomeGraphResponse(Message):
                             api_project_id: str = ...,
                             unique_id: str = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: typing_extensions.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                        def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
 
                     DEVICE_ID_FIELD_NUMBER: int
                     AGENT_INFO_FIELD_NUMBER: int
@@ -770,8 +769,8 @@ class GetHomeGraphResponse(Message):
                         device_id: str = ...,
                         agent_info: GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo.AgentInfo | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> bool: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+                    def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
+                    def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
 
                 DEVICE_INFO_FIELD_NUMBER: int
                 @property
@@ -781,16 +780,16 @@ class GetHomeGraphResponse(Message):
                     *,
                     device_info: GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing_extensions.Literal["device_info", b"device_info"]) -> bool: ...
-                def ClearField(self, field_name: typing_extensions.Literal["device_info", b"device_info"]) -> None: ...
+                def HasField(self, field_name: Literal["device_info", b"device_info"]) -> bool: ...
+                def ClearField(self, field_name: Literal["device_info", b"device_info"]) -> None: ...
 
             MESSAGE1_FIELD_NUMBER: int
             DUO_CALL_URL_FIELD_NUMBER: int
             DUO_PHONE_NUMBER_FIELD_NUMBER: int
-            @property
-            def message1(self) -> GetHomeGraphResponse.Home.Message13.Message1: ...
             duo_call_url: str
             duo_phone_number: str
+            @property
+            def message1(self) -> GetHomeGraphResponse.Home.Message13.Message1: ...
             def __init__(
                 self,
                 *,
@@ -798,18 +797,18 @@ class GetHomeGraphResponse(Message):
                 duo_call_url: str = ...,
                 duo_phone_number: str = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["duo_call_url", b"duo_call_url", "duo_phone_number", b"duo_phone_number", "message1", b"message1"]) -> None: ...
+            def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
+            def ClearField(self, field_name: Literal["duo_call_url", b"duo_call_url", "duo_phone_number", b"duo_phone_number", "message1", b"message1"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message15(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class Message3(Message):
                 DESCRIPTOR: Descriptor
 
-                @typing_extensions.final
+                @final
                 class Message2(Message):
                     DESCRIPTOR: Descriptor
 
@@ -820,7 +819,7 @@ class GetHomeGraphResponse(Message):
                         *,
                         string1: str = ...,
                     ) -> None: ...
-                    def ClearField(self, field_name: typing_extensions.Literal["string1", b"string1"]) -> None: ...
+                    def ClearField(self, field_name: Literal["string1", b"string1"]) -> None: ...
 
                 STRING1_FIELD_NUMBER: int
                 MESSAGE2_FIELD_NUMBER: int
@@ -833,8 +832,8 @@ class GetHomeGraphResponse(Message):
                     string1: str = ...,
                     message2: GetHomeGraphResponse.Home.Message15.Message3.Message2 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing_extensions.Literal["message2", b"message2"]) -> bool: ...
-                def ClearField(self, field_name: typing_extensions.Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
+                def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
+                def ClearField(self, field_name: Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
 
             BOOL1_FIELD_NUMBER: int
             STRING2_FIELD_NUMBER: int
@@ -842,9 +841,9 @@ class GetHomeGraphResponse(Message):
             BOOL4_FIELD_NUMBER: int
             bool1: bool
             string2: str
+            bool4: bool
             @property
             def message3(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Message15.Message3]: ...
-            bool4: bool
             def __init__(
                 self,
                 *,
@@ -853,7 +852,7 @@ class GetHomeGraphResponse(Message):
                 message3: Iterable[GetHomeGraphResponse.Home.Message15.Message3] | None = ...,
                 bool4: bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["bool1", b"bool1", "bool4", b"bool4", "message3", b"message3", "string2", b"string2"]) -> None: ...
+            def ClearField(self, field_name: Literal["bool1", b"bool1", "bool4", b"bool4", "message3", b"message3", "string2", b"string2"]) -> None: ...
 
         HOME_ID_FIELD_NUMBER: int
         HOME_NAME_FIELD_NUMBER: int
@@ -868,6 +867,8 @@ class GetHomeGraphResponse(Message):
         MESSAGE15_FIELD_NUMBER: int
         home_id: str
         home_name: str
+        string12: str
+        message14: str
         @property
         def location(self) -> GetHomeGraphResponse.Home.Location: ...
         @property
@@ -878,10 +879,8 @@ class GetHomeGraphResponse(Message):
         def devices(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device]: ...
         @property
         def message11(self) -> GetHomeGraphResponse.Home.Message11: ...
-        string12: str
         @property
         def message13(self) -> GetHomeGraphResponse.Home.Message13: ...
-        message14: str
         @property
         def message15(self) -> GetHomeGraphResponse.Home.Message15: ...
         def __init__(
@@ -899,18 +898,18 @@ class GetHomeGraphResponse(Message):
             message14: str = ...,
             message15: GetHomeGraphResponse.Home.Message15 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["location", b"location", "message11", b"message11", "message13", b"message13", "message15", b"message15"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["devices", b"devices", "home_id", b"home_id", "home_name", b"home_name", "linked_users", b"linked_users", "location", b"location", "message11", b"message11", "message13", b"message13", "message14", b"message14", "message15", b"message15", "rooms", b"rooms", "string12", b"string12"]) -> None: ...
+        def HasField(self, field_name: Literal["location", b"location", "message11", b"message11", "message13", b"message13", "message15", b"message15"]) -> bool: ...
+        def ClearField(self, field_name: Literal["devices", b"devices", "home_id", b"home_id", "home_name", b"home_name", "linked_users", b"linked_users", "location", b"location", "message11", b"message11", "message13", b"message13", "message14", b"message14", "message15", b"message15", "rooms", b"rooms", "string12", b"string12"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class Group(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class DeviceInfo(Message):
             DESCRIPTOR: Descriptor
 
-            @typing_extensions.final
+            @final
             class AgentInfo(Message):
                 DESCRIPTOR: Descriptor
 
@@ -924,7 +923,7 @@ class GetHomeGraphResponse(Message):
                     api_project_id: str = ...,
                     unique_id: str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: typing_extensions.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
 
             AGENT_INFO_FIELD_NUMBER: int
             @property
@@ -934,10 +933,10 @@ class GetHomeGraphResponse(Message):
                 *,
                 agent_info: GetHomeGraphResponse.Group.DeviceInfo.AgentInfo | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> bool: ...
-            def ClearField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> None: ...
+            def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
+            def ClearField(self, field_name: Literal["agent_info", b"agent_info"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message12(Message):
             DESCRIPTOR: Descriptor
 
@@ -957,9 +956,9 @@ class GetHomeGraphResponse(Message):
                 bool37: bool = ...,
                 bool38: bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["bool3", b"bool3", "bool37", b"bool37", "bool38", b"bool38", "bool4", b"bool4"]) -> None: ...
+            def ClearField(self, field_name: Literal["bool3", b"bool3", "bool37", b"bool37", "bool38", b"bool38", "bool4", b"bool4"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message15(Message):
             DESCRIPTOR: Descriptor
 
@@ -976,9 +975,9 @@ class GetHomeGraphResponse(Message):
                 num5: int = ...,
                 num6: int = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["num5", b"num5", "num6", b"num6", "string1", b"string1"]) -> None: ...
+            def ClearField(self, field_name: Literal["num5", b"num5", "num6", b"num6", "string1", b"string1"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message17(Message):
             DESCRIPTOR: Descriptor
 
@@ -989,9 +988,9 @@ class GetHomeGraphResponse(Message):
                 *,
                 group_model: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["group_model", b"group_model"]) -> None: ...
+            def ClearField(self, field_name: Literal["group_model", b"group_model"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message18(Message):
             DESCRIPTOR: Descriptor
 
@@ -1002,9 +1001,9 @@ class GetHomeGraphResponse(Message):
                 *,
                 group_name: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["group_name", b"group_name"]) -> None: ...
+            def ClearField(self, field_name: Literal["group_name", b"group_name"]) -> None: ...
 
-        @typing_extensions.final
+        @final
         class Message34(Message):
             DESCRIPTOR: Descriptor
 
@@ -1015,7 +1014,7 @@ class GetHomeGraphResponse(Message):
                 *,
                 bool1: bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["bool1", b"bool1"]) -> None: ...
+            def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
 
         DEVICE_INFO_FIELD_NUMBER: int
         GROUP_NMAE_FIELD_NUMBER: int
@@ -1028,12 +1027,13 @@ class GetHomeGraphResponse(Message):
         MESSAGE18_FIELD_NUMBER: int
         TIMESTAMP19_FIELD_NUMBER: int
         MESSAGE34_FIELD_NUMBER: int
-        @property
-        def device_info(self) -> GetHomeGraphResponse.Group.DeviceInfo: ...
         group_nmae: str
         device_type: str
         traits: str
         suffix: str
+        timestamp19: int
+        @property
+        def device_info(self) -> GetHomeGraphResponse.Group.DeviceInfo: ...
         @property
         def message12(self) -> GetHomeGraphResponse.Group.Message12: ...
         @property
@@ -1042,7 +1042,6 @@ class GetHomeGraphResponse(Message):
         def message17(self) -> GetHomeGraphResponse.Group.Message17: ...
         @property
         def message18(self) -> GetHomeGraphResponse.Group.Message18: ...
-        timestamp19: int
         @property
         def message34(self) -> GetHomeGraphResponse.Group.Message34: ...
         def __init__(
@@ -1060,10 +1059,10 @@ class GetHomeGraphResponse(Message):
             timestamp19: int = ...,
             message34: GetHomeGraphResponse.Group.Message34 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "device_type", b"device_type", "group_nmae", b"group_nmae", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
+        def HasField(self, field_name: Literal["device_info", b"device_info", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34"]) -> bool: ...
+        def ClearField(self, field_name: Literal["device_info", b"device_info", "device_type", b"device_type", "group_nmae", b"group_nmae", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class RoomType(Message):
         DESCRIPTOR: Descriptor
 
@@ -1077,9 +1076,9 @@ class GetHomeGraphResponse(Message):
             code: str = ...,
             name: str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "name", b"name"]) -> None: ...
+        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class DeviceType(Message):
         DESCRIPTOR: Descriptor
 
@@ -1093,9 +1092,9 @@ class GetHomeGraphResponse(Message):
             code: str = ...,
             name: str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "name", b"name"]) -> None: ...
+        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class ProjectType(Message):
         DESCRIPTOR: Descriptor
 
@@ -1109,13 +1108,13 @@ class GetHomeGraphResponse(Message):
             code: str = ...,
             name: str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["code", b"code", "name", b"name"]) -> None: ...
+        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class Message11(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class Message2(Message):
             DESCRIPTOR: Descriptor
 
@@ -1126,7 +1125,7 @@ class GetHomeGraphResponse(Message):
                 *,
                 num2: int = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["num2", b"num2"]) -> None: ...
+            def ClearField(self, field_name: Literal["num2", b"num2"]) -> None: ...
 
         NAME_FIELD_NUMBER: int
         MESSAGE2_FIELD_NUMBER: int
@@ -1139,10 +1138,10 @@ class GetHomeGraphResponse(Message):
             name: str = ...,
             message2: GetHomeGraphResponse.Message11.Message2 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["message2", b"message2"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["message2", b"message2", "name", b"name"]) -> None: ...
+        def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
+        def ClearField(self, field_name: Literal["message2", b"message2", "name", b"name"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class LinkedApp(Message):
         DESCRIPTOR: Descriptor
 
@@ -1165,7 +1164,7 @@ class GetHomeGraphResponse(Message):
             num4: int = ...,
             num5: int = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["num3", b"num3", "num4", b"num4", "num5", b"num5", "string1", b"string1", "string2", b"string2"]) -> None: ...
+        def ClearField(self, field_name: Literal["num3", b"num3", "num4", b"num4", "num5", b"num5", "string1", b"string1", "string2", b"string2"]) -> None: ...
 
     TIMESTAMP1_FIELD_NUMBER: int
     HOME_FIELD_NUMBER: int
@@ -1178,14 +1177,14 @@ class GetHomeGraphResponse(Message):
     MESSAGE11_FIELD_NUMBER: int
     LINKED_APPS_FIELD_NUMBER: int
     timestamp1: int
+    string5: str
+    bool6: bool
     @property
     def home(self) -> GetHomeGraphResponse.Home: ...
     @property
     def groups(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Group]: ...
     @property
     def room_types(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.RoomType]: ...
-    string5: str
-    bool6: bool
     @property
     def device_types(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.DeviceType]: ...
     @property
@@ -1208,18 +1207,18 @@ class GetHomeGraphResponse(Message):
         message11: Iterable[GetHomeGraphResponse.Message11] | None = ...,
         linked_apps: Iterable[GetHomeGraphResponse.LinkedApp] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["home", b"home"]) -> bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["bool6", b"bool6", "device_types", b"device_types", "groups", b"groups", "home", b"home", "linked_apps", b"linked_apps", "message11", b"message11", "project_types", b"project_types", "room_types", b"room_types", "string5", b"string5", "timestamp1", b"timestamp1"]) -> None: ...
+    def HasField(self, field_name: Literal["home", b"home"]) -> bool: ...
+    def ClearField(self, field_name: Literal["bool6", b"bool6", "device_types", b"device_types", "groups", b"groups", "home", b"home", "linked_apps", b"linked_apps", "message11", b"message11", "project_types", b"project_types", "room_types", b"room_types", "string5", b"string5", "timestamp1", b"timestamp1"]) -> None: ...
 
-@typing_extensions.final
+@final
 class GetAssistantDeviceSettingsRequest(Message):
     DESCRIPTOR: Descriptor
 
-    @typing_extensions.final
+    @final
     class DeviceInfo(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class AgentInfo(Message):
             DESCRIPTOR: Descriptor
 
@@ -1233,7 +1232,7 @@ class GetAssistantDeviceSettingsRequest(Message):
                 api_project_id: str = ...,
                 unique_id: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+            def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
 
         DEVICE_ID_FIELD_NUMBER: int
         AGENT_INFO_FIELD_NUMBER: int
@@ -1246,28 +1245,28 @@ class GetAssistantDeviceSettingsRequest(Message):
             device_id: str = ...,
             agent_info: GetAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+        def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
+        def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
 
     DEVICE_INFO_FIELD_NUMBER: int
     STRING2_FIELD_NUMBER: int
+    string2: str
     @property
     def device_info(self) -> GetAssistantDeviceSettingsRequest.DeviceInfo: ...
-    string2: str
     def __init__(
         self,
         *,
         device_info: GetAssistantDeviceSettingsRequest.DeviceInfo | None = ...,
         string2: str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["device_info", b"device_info"]) -> bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "string2", b"string2"]) -> None: ...
+    def HasField(self, field_name: Literal["device_info", b"device_info"]) -> bool: ...
+    def ClearField(self, field_name: Literal["device_info", b"device_info", "string2", b"string2"]) -> None: ...
 
-@typing_extensions.final
+@final
 class GetAssistantDeviceSettingsResponse(Message):
     DESCRIPTOR: Descriptor
 
-    @typing_extensions.final
+    @final
     class Message1(Message):
         DESCRIPTOR: Descriptor
 
@@ -1293,7 +1292,7 @@ class GetAssistantDeviceSettingsResponse(Message):
             num6: int = ...,
             string10: str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal["num1", b"num1", "num2", b"num2", "num4", b"num4", "num5", b"num5", "num6", b"num6", "string10", b"string10"]) -> None: ...
+        def ClearField(self, field_name: Literal["num1", b"num1", "num2", b"num2", "num4", b"num4", "num5", b"num5", "num6", b"num6", "string10", b"string10"]) -> None: ...
 
     MESSAGE1_FIELD_NUMBER: int
     @property
@@ -1303,18 +1302,18 @@ class GetAssistantDeviceSettingsResponse(Message):
         *,
         message1: GetAssistantDeviceSettingsResponse.Message1 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> None: ...
+    def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
+    def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
 
-@typing_extensions.final
+@final
 class UpdateAssistantDeviceSettingsRequest(Message):
     DESCRIPTOR: Descriptor
 
-    @typing_extensions.final
+    @final
     class DeviceInfo(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class AgentInfo(Message):
             DESCRIPTOR: Descriptor
 
@@ -1328,7 +1327,7 @@ class UpdateAssistantDeviceSettingsRequest(Message):
                 api_project_id: str = ...,
                 unique_id: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+            def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
 
         DEVICE_ID_FIELD_NUMBER: int
         AGENT_INFO_FIELD_NUMBER: int
@@ -1341,14 +1340,14 @@ class UpdateAssistantDeviceSettingsRequest(Message):
             device_id: str = ...,
             agent_info: UpdateAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+        def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
+        def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
 
-    @typing_extensions.final
+    @final
     class UpdateData(Message):
         DESCRIPTOR: Descriptor
 
-        @typing_extensions.final
+        @final
         class Message1(Message):
             DESCRIPTOR: Descriptor
 
@@ -1368,7 +1367,7 @@ class UpdateAssistantDeviceSettingsRequest(Message):
                 youtube_tv_content_filter: int = ...,
                 locale: str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing_extensions.Literal["locale", b"locale", "youtube_restricted_mode", b"youtube_restricted_mode", "youtube_tv_content_filter", b"youtube_tv_content_filter"]) -> None: ...
+            def ClearField(self, field_name: Literal["locale", b"locale", "youtube_restricted_mode", b"youtube_restricted_mode", "youtube_tv_content_filter", b"youtube_tv_content_filter"]) -> None: ...
 
         MESSAGE1_FIELD_NUMBER: int
         @property
@@ -1378,8 +1377,8 @@ class UpdateAssistantDeviceSettingsRequest(Message):
             *,
             message1: UpdateAssistantDeviceSettingsRequest.UpdateData.Message1 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal["message1", b"message1"]) -> None: ...
+        def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
+        def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
 
     STRING1_FIELD_NUMBER: int
     DEVICE_INFO_FIELD_NUMBER: int
@@ -1396,10 +1395,10 @@ class UpdateAssistantDeviceSettingsRequest(Message):
         device_info: UpdateAssistantDeviceSettingsRequest.DeviceInfo | None = ...,
         update_data: UpdateAssistantDeviceSettingsRequest.UpdateData | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "update_data", b"update_data"]) -> bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["device_info", b"device_info", "string1", b"string1", "update_data", b"update_data"]) -> None: ...
+    def HasField(self, field_name: Literal["device_info", b"device_info", "update_data", b"update_data"]) -> bool: ...
+    def ClearField(self, field_name: Literal["device_info", b"device_info", "string1", b"string1", "update_data", b"update_data"]) -> None: ...
 
-@typing_extensions.final
+@final
 class UpdateAssistantDeviceSettingsResponse(Message):
     DESCRIPTOR: Descriptor
 
@@ -1410,4 +1409,4 @@ class UpdateAssistantDeviceSettingsResponse(Message):
         *,
         string1: str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["string1", b"string1"]) -> None: ...
+    def ClearField(self, field_name: Literal["string1", b"string1"]) -> None: ...
