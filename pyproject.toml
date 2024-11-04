@@ -1,45 +1,50 @@
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "ghome-foyer-api"
-version = "0.0.0"
 description = "Generated protobuf stubs for Google Home Foyer API"
-authors = ["Ruslan Sayfutdinov <ruslan@sayfutdinov.com>"]
-license = "MIT"
+authors = [{name = "Ruslan Sayfutdinov", email = "ruslan@sayfutdinov.com"}]
 readme = "README.md"
-packages = [{include = "ghome_foyer_api"}]
+license = {text = "MIT"}
 classifiers = [
     "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
-    "Intended Audience :: Developers",
     "Topic :: Software Development",
+    "Typing :: Typed",
 ]
 keywords = ["Google Home", "Foyer API"]
-homepage = "https://github.com/KapJI/ghome-foyer-api"
-repository = "https://github.com/KapJI/ghome-foyer-api"
-include = ["ghome_foyer_api/py.typed"]
+requires-python = ">=3.9,<3.14"
+dynamic = ["version"]
+dependencies = [
+    "grpcio>=1.66.2,<2",
+    "protobuf>=5.28.3,<6",
+]
 
-[tool.poetry.urls]
+[dependency-groups]
+dev = [
+    "grpc-stubs>=1.53.0.5",
+    "grpcio-tools==1.66.2",
+    "mypy-protobuf>=3.6.0",
+    "mypy>=1.13.0",
+    "ruff>=0.7.2",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/KapJI/ghome-foyer-api"
 "Bug Tracker" = "https://github.com/KapJI/ghome-foyer-api/issues"
 "Release Notes" = "https://github.com/KapJI/ghome-foyer-api/releases"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-grpcio = "^1.66.2"
-protobuf = "^5.28.3"
+[tool.hatch.build]
+packages = ["ghome_foyer_api"]
 
-[tool.poetry.group.dev.dependencies]
-grpc-stubs = "^1.53.0.5"
-grpcio-tools = "^1.66.2"
-mypy = "^1.13.0"
-mypy-protobuf = "^3.6.0"
-pre-commit = "^4.0.1"
-ruff = "^0.7.2"
-types-protobuf = "^5.28"
+[tool.hatch.version]
+source = "vcs"
 
 [tool.ruff]
 required-version = ">=0.7.0"
