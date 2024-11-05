@@ -13,152 +13,120 @@ HomeDevicesService
   - GetAssistantDeviceSettings
 """
 
-from abc import (
-    ABCMeta,
-    abstractmethod,
-)
-from collections.abc import (
-    AsyncIterator,
-    Awaitable,
-    Iterator,
-)
-from ghome_foyer_api.api_pb2 import (
-    GetAssistantDeviceSettingsRequest,
-    GetAssistantDeviceSettingsResponse,
-    GetAssistantRoutinesRequest,
-    GetAssistantRoutinesResponse,
-    GetHomeGraphRequest,
-    GetHomeGraphResponse,
-    UpdateAssistantDeviceSettingsRequest,
-    UpdateAssistantDeviceSettingsResponse,
-)
-# Manually commented to fix mypy errors.
-# from grpc import (
-#     Channel,
-#     Server,
-#     ServicerContext,
-#     UnaryStreamMultiCallable,
-#     UnaryUnaryMultiCallable,
-# )
-from grpc.aio import (
-    Channel,
-    Server,
-    ServicerContext,
-    UnaryStreamMultiCallable,
-    UnaryUnaryMultiCallable,
-)
-from typing import (
-    TypeVar,
-    Union,
-)
+import abc
+import collections.abc
+import ghome_foyer_api.api_pb2
+import grpc
+import grpc.aio
+import typing
 
-_T = TypeVar("_T")
+_T = typing.TypeVar("_T")
 
-class _MaybeAsyncIterator(AsyncIterator[_T], Iterator[_T], metaclass=ABCMeta): ...
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
-class _ServicerContext(ServicerContext, ServicerContext):  # type: ignore[misc, type-arg]
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
 class HomeControlServiceStub:
     """Home Control Service"""
 
-    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
-    GetAssistantRoutines: UnaryStreamMultiCallable[
-        GetAssistantRoutinesRequest,
-        GetAssistantRoutinesResponse,
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetAssistantRoutines: grpc.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.GetAssistantRoutinesRequest,
+        ghome_foyer_api.api_pb2.GetAssistantRoutinesResponse,
     ]
 
 class HomeControlServiceAsyncStub:
     """Home Control Service"""
 
-    GetAssistantRoutines: UnaryStreamMultiCallable[
-        GetAssistantRoutinesRequest,
-        GetAssistantRoutinesResponse,
+    GetAssistantRoutines: grpc.aio.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.GetAssistantRoutinesRequest,
+        ghome_foyer_api.api_pb2.GetAssistantRoutinesResponse,
     ]
 
-class HomeControlServiceServicer(metaclass=ABCMeta):
+class HomeControlServiceServicer(metaclass=abc.ABCMeta):
     """Home Control Service"""
 
-    @abstractmethod
+    @abc.abstractmethod
     def GetAssistantRoutines(
         self,
-        request: GetAssistantRoutinesRequest,
+        request: ghome_foyer_api.api_pb2.GetAssistantRoutinesRequest,
         context: _ServicerContext,
-    ) -> Union[Iterator[GetAssistantRoutinesResponse], AsyncIterator[GetAssistantRoutinesResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[ghome_foyer_api.api_pb2.GetAssistantRoutinesResponse], collections.abc.AsyncIterator[ghome_foyer_api.api_pb2.GetAssistantRoutinesResponse]]: ...
 
-def add_HomeControlServiceServicer_to_server(servicer: HomeControlServiceServicer, server: Union[Server, Server]) -> None: ...
+def add_HomeControlServiceServicer_to_server(servicer: HomeControlServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
 class StructuresServiceStub:
     """Structure Service"""
 
-    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
-    GetHomeGraph: UnaryUnaryMultiCallable[
-        GetHomeGraphRequest,
-        GetHomeGraphResponse,
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetHomeGraph: grpc.UnaryUnaryMultiCallable[
+        ghome_foyer_api.api_pb2.GetHomeGraphRequest,
+        ghome_foyer_api.api_pb2.GetHomeGraphResponse,
     ]
 
 class StructuresServiceAsyncStub:
     """Structure Service"""
 
-    GetHomeGraph: UnaryUnaryMultiCallable[
-        GetHomeGraphRequest,
-        GetHomeGraphResponse,
+    GetHomeGraph: grpc.aio.UnaryUnaryMultiCallable[
+        ghome_foyer_api.api_pb2.GetHomeGraphRequest,
+        ghome_foyer_api.api_pb2.GetHomeGraphResponse,
     ]
 
-class StructuresServiceServicer(metaclass=ABCMeta):
+class StructuresServiceServicer(metaclass=abc.ABCMeta):
     """Structure Service"""
 
-    @abstractmethod
+    @abc.abstractmethod
     def GetHomeGraph(
         self,
-        request: GetHomeGraphRequest,
+        request: ghome_foyer_api.api_pb2.GetHomeGraphRequest,
         context: _ServicerContext,
-    ) -> Union[GetHomeGraphResponse, Awaitable[GetHomeGraphResponse]]: ...
+    ) -> typing.Union[ghome_foyer_api.api_pb2.GetHomeGraphResponse, collections.abc.Awaitable[ghome_foyer_api.api_pb2.GetHomeGraphResponse]]: ...
 
-def add_StructuresServiceServicer_to_server(servicer: StructuresServiceServicer, server: Union[Server, Server]) -> None: ...
+def add_StructuresServiceServicer_to_server(servicer: StructuresServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
 class HomeDevicesServiceStub:
     """Home Devices Service"""
 
-    def __init__(self, channel: Union[Channel, Channel]) -> None: ...
-    GetAssistantDeviceSettings: UnaryStreamMultiCallable[
-        GetAssistantDeviceSettingsRequest,
-        GetAssistantDeviceSettingsResponse,
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetAssistantDeviceSettings: grpc.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsRequest,
+        ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsResponse,
     ]
 
-    UpdateAssistantDeviceSettings: UnaryStreamMultiCallable[
-        UpdateAssistantDeviceSettingsRequest,
-        UpdateAssistantDeviceSettingsResponse,
+    UpdateAssistantDeviceSettings: grpc.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsRequest,
+        ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsResponse,
     ]
 
 class HomeDevicesServiceAsyncStub:
     """Home Devices Service"""
 
-    GetAssistantDeviceSettings: UnaryStreamMultiCallable[
-        GetAssistantDeviceSettingsRequest,
-        GetAssistantDeviceSettingsResponse,
+    GetAssistantDeviceSettings: grpc.aio.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsRequest,
+        ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsResponse,
     ]
 
-    UpdateAssistantDeviceSettings: UnaryStreamMultiCallable[
-        UpdateAssistantDeviceSettingsRequest,
-        UpdateAssistantDeviceSettingsResponse,
+    UpdateAssistantDeviceSettings: grpc.aio.UnaryStreamMultiCallable[
+        ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsRequest,
+        ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsResponse,
     ]
 
-class HomeDevicesServiceServicer(metaclass=ABCMeta):
+class HomeDevicesServiceServicer(metaclass=abc.ABCMeta):
     """Home Devices Service"""
 
-    @abstractmethod
+    @abc.abstractmethod
     def GetAssistantDeviceSettings(
         self,
-        request: GetAssistantDeviceSettingsRequest,
+        request: ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsRequest,
         context: _ServicerContext,
-    ) -> Union[Iterator[GetAssistantDeviceSettingsResponse], AsyncIterator[GetAssistantDeviceSettingsResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsResponse], collections.abc.AsyncIterator[ghome_foyer_api.api_pb2.GetAssistantDeviceSettingsResponse]]: ...
 
-    @abstractmethod
+    @abc.abstractmethod
     def UpdateAssistantDeviceSettings(
         self,
-        request: UpdateAssistantDeviceSettingsRequest,
+        request: ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsRequest,
         context: _ServicerContext,
-    ) -> Union[Iterator[UpdateAssistantDeviceSettingsResponse], AsyncIterator[UpdateAssistantDeviceSettingsResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsResponse], collections.abc.AsyncIterator[ghome_foyer_api.api_pb2.UpdateAssistantDeviceSettingsResponse]]: ...
 
-def add_HomeDevicesServiceServicer_to_server(servicer: HomeDevicesServiceServicer, server: Union[Server, Server]) -> None: ...
+def add_HomeDevicesServiceServicer_to_server(servicer: HomeDevicesServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
