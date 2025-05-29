@@ -23,7 +23,7 @@ requires-python = ">=3.9"
 dynamic = ["version"]
 dependencies = [
     "grpcio>=1.71.0,<2",
-    "protobuf>=5.28.3",
+    "protobuf>=5.29.5",
 ]
 
 [dependency-groups]
