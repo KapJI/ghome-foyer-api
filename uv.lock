@@ -22,7 +22,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "grpcio", specifier = ">=1.71.0,<2" },
-    { name = "protobuf", specifier = ">=5.29.5" },
+    { name = "protobuf", specifier = ">=5.29.2" },
 ]
 
 [package.metadata.requires-dev]
