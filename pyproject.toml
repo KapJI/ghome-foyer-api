@@ -7,13 +7,13 @@ name = "ghome-foyer-api"
 description = "Generated protobuf stubs for Google Home Foyer API"
 authors = [{ name = "Ruslan Sayfutdinov", email = "ruslan@sayfutdinov.com" }]
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Software Development",
     "Typing :: Typed",
@@ -29,13 +29,13 @@ dependencies = [
 [dependency-groups]
 dev = [
     "dprint-py>=0.63.0.0",
-    "grpc-stubs>=1.53.0.6",
     # Generated code requires grpcio and protobuf at least as new as grpcio-tools and its protoc.
     # Keep it at Home Assistant's pinned grpcio so the stubs load there.
     "grpcio-tools==1.83.1",
     "mypy-protobuf>=5.1.0",
     "mypy>=2.4.0",
     "ruff>=0.17.1",
+    "types-grpcio>=1.84.0.20260928",
 ]
 
 [project.urls]
