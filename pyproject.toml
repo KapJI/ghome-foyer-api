@@ -5,9 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "ghome-foyer-api"
 description = "Generated protobuf stubs for Google Home Foyer API"
-authors = [{name = "Ruslan Sayfutdinov", email = "ruslan@sayfutdinov.com"}]
+authors = [{ name = "Ruslan Sayfutdinov", email = "ruslan@sayfutdinov.com" }]
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -28,6 +28,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "dprint-py>=0.63.0.0",
     "grpc-stubs>=1.53.0.6",
     # Generated code requires grpcio and protobuf at least as new as grpcio-tools and its protoc.
     # Keep it at Home Assistant's pinned grpcio so the stubs load there.

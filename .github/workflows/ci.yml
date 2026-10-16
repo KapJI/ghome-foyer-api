@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   pre-commit:
     name: Pre-commit
@@ -13,26 +16,41 @@ jobs:
       matrix:
         python-version: ["3.12", "3.14"]
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Prepare and install deps
         uses: ./.github/actions/install-deps
         with:
           python-version: ${{ matrix.python-version }}
 
-      - uses: actions/cache@v6
-        name: Cache pre-commit hooks
+      # Hook environments (prek) and formatter plugins (dprint) are
+      # downloaded on first use; both only change with their config files.
+      - name: Cache prek hooks and dprint plugins
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: ~/.cache/pre-commit/
+          path: |
+            ~/.cache/prek/
+            ~/.cache/dprint/
           key: >
-            ${{ format('pre-commit-{0}-py{1}-{2}',
-            runner.os,
-            env.PYTHON_VERSION,
-            hashFiles('.pre-commit-config.yaml')
+            ${{ format('prek-{0}-{1}',
+            matrix.python-version,
+            hashFiles('.pre-commit-config.yaml', 'dprint.json')
             ) }}
+          restore-keys: |
+            prek-${{ matrix.python-version }}-
 
-      - name: Run pre-commit on all files
+      - name: Run prek on all files
         run: |
-          uvx pre-commit run --all-files --show-diff-on-failure --color=always
+          uvx prek run --all-files --show-diff-on-failure --color=always
+
+      # Generated code refuses to load on grpcio or protobuf older than the
+      # versions that generated it, so check the declared floors as well.
+      - name: Import stubs with locked and lowest dependencies
+        run: |
+          uv run python -c "import ghome_foyer_api.api_pb2_grpc"
+          uv run --isolated --no-project --resolution lowest-direct --with . python -c "import ghome_foyer_api.api_pb2_grpc"

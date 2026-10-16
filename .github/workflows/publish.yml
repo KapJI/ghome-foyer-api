@@ -6,24 +6,32 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.14"
+
 jobs:
   publish:
     name: Publish
-    strategy:
-      matrix:
-        python-version: ["3.14"]
+    if: github.repository_owner == 'KapJI'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment: release
     permissions:
+      contents: read
       id-token: write
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Prepare and install deps
         uses: ./.github/actions/install-deps
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Build package
         run: uv build
