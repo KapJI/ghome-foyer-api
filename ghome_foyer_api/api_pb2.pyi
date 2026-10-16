@@ -13,1400 +13,1641 @@ HomeDevicesService
   - GetAssistantDeviceSettings
 """
 
-from builtins import (
-    bool,
-    bytes,
-    float,
-    int,
-    str,
-)
-from collections.abc import (
-    Iterable,
-)
-from google.protobuf.descriptor import (
-    Descriptor,
-    FileDescriptor,
-)
-from google.protobuf.internal.containers import (
-    RepeatedCompositeFieldContainer,
-    RepeatedScalarFieldContainer,
-)
-from google.protobuf.message import (
-    Message,
-)
-from typing import (
-    Literal,
-    final,
-)
+from collections import abc as abc
+from google.protobuf import descriptor as descriptor
+from google.protobuf import message as message
+from google.protobuf.internal import containers as containers
+import builtins as builtins
+import sys
+import typing as typing
 
-DESCRIPTOR: FileDescriptor
+if sys.version_info >= (3, 11):
+    from typing import TypeAlias as _TypeAlias, Never as _Never
+else:
+    from typing_extensions import TypeAlias as _TypeAlias, Never as _Never
 
-@final
-class GetAssistantRoutinesRequest(Message):
-    DESCRIPTOR: Descriptor
+DESCRIPTOR: descriptor.FileDescriptor
+
+@typing.final
+class GetAssistantRoutinesRequest(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
     def __init__(
         self,
     ) -> None: ...
+    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = _Never  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class GetAssistantRoutinesResponse(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class GetAssistantRoutinesResponse(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    @final
-    class Part1(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Part1(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class WorkFlow(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class WorkFlow(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class WF_Sub1(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class WF_Sub1(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class WF_Sub1_Sub1(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class WF_Sub1_Sub1(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    @final
-                    class Routine(Message):
-                        DESCRIPTOR: Descriptor
+                    @typing.final
+                    class Routine(message.Message):
+                        DESCRIPTOR: descriptor.Descriptor
 
-                        ROUTINE_ID_FIELD_NUMBER: int
-                        NUM2_FIELD_NUMBER: int
-                        ROUTINE_NAME_FIELD_NUMBER: int
-                        routine_id: str
-                        num2: int
-                        routine_name: str
+                        ROUTINE_ID_FIELD_NUMBER: builtins.int
+                        NUM2_FIELD_NUMBER: builtins.int
+                        ROUTINE_NAME_FIELD_NUMBER: builtins.int
+                        routine_id: builtins.str
+                        num2: builtins.int
+                        routine_name: builtins.str
                         def __init__(
                             self,
                             *,
-                            routine_id: str = ...,
-                            num2: int = ...,
-                            routine_name: str = ...,
+                            routine_id: builtins.str = ...,
+                            num2: builtins.int = ...,
+                            routine_name: builtins.str = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: Literal["num2", b"num2", "routine_id", b"routine_id", "routine_name", b"routine_name"]) -> None: ...
+                        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                        _ClearFieldArgType: _TypeAlias = typing.Literal["num2", b"num2", "routine_id", b"routine_id", "routine_name", b"routine_name"]  # noqa: Y015
+                        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                    STRING1_FIELD_NUMBER: int
-                    ROUTINE_FIELD_NUMBER: int
-                    string1: str
-                    @property
+                    STRING1_FIELD_NUMBER: builtins.int
+                    ROUTINE_FIELD_NUMBER: builtins.int
+                    string1: builtins.str
+                    @builtins.property
                     def routine(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1.Routine: ...
                     def __init__(
                         self,
                         *,
-                        string1: str = ...,
+                        string1: builtins.str = ...,
                         routine: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1.Routine | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: Literal["routine", b"routine"]) -> bool: ...
-                    def ClearField(self, field_name: Literal["routine", b"routine", "string1", b"string1"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = typing.Literal["routine", b"routine"]  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["routine", b"routine", "string1", b"string1"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                STRING1_FIELD_NUMBER: int
-                WF_S1_S1_FIELD_NUMBER: int
-                string1: str
-                @property
+                STRING1_FIELD_NUMBER: builtins.int
+                WF_S1_S1_FIELD_NUMBER: builtins.int
+                string1: builtins.str
+                @builtins.property
                 def wf_s1_s1(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1: ...
                 def __init__(
                     self,
                     *,
-                    string1: str = ...,
+                    string1: builtins.str = ...,
                     wf_s1_s1: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: Literal["wf_s1_s1", b"wf_s1_s1"]) -> bool: ...
-                def ClearField(self, field_name: Literal["string1", b"string1", "wf_s1_s1", b"wf_s1_s1"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = typing.Literal["wf_s1_s1", b"wf_s1_s1"]  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["string1", b"string1", "wf_s1_s1", b"wf_s1_s1"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            TYPE_FIELD_NUMBER: int
-            WF_S1_FIELD_NUMBER: int
-            type: str
-            @property
+            TYPE_FIELD_NUMBER: builtins.int
+            WF_S1_FIELD_NUMBER: builtins.int
+            type: builtins.str
+            @builtins.property
             def wf_s1(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1: ...
             def __init__(
                 self,
                 *,
-                type: str = ...,
+                type: builtins.str = ...,
                 wf_s1: GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1 | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["wf_s1", b"wf_s1"]) -> bool: ...
-            def ClearField(self, field_name: Literal["type", b"type", "wf_s1", b"wf_s1"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["wf_s1", b"wf_s1"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["type", b"type", "wf_s1", b"wf_s1"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        ROUTINE_NAME_FIELD_NUMBER: int
-        WORKFLOW_FIELD_NUMBER: int
-        STRING4_FIELD_NUMBER: int
-        STRING5_FIELD_NUMBER: int
-        routine_name: str
-        string4: str
-        string5: str
-        @property
+        ROUTINE_NAME_FIELD_NUMBER: builtins.int
+        WORKFLOW_FIELD_NUMBER: builtins.int
+        STRING4_FIELD_NUMBER: builtins.int
+        STRING5_FIELD_NUMBER: builtins.int
+        routine_name: builtins.str
+        string4: builtins.str
+        string5: builtins.str
+        @builtins.property
         def workflow(self) -> GetAssistantRoutinesResponse.Part1.WorkFlow: ...
         def __init__(
             self,
             *,
-            routine_name: str = ...,
+            routine_name: builtins.str = ...,
             workflow: GetAssistantRoutinesResponse.Part1.WorkFlow | None = ...,
-            string4: str = ...,
-            string5: str = ...,
+            string4: builtins.str = ...,
+            string5: builtins.str = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["workflow", b"workflow"]) -> bool: ...
-        def ClearField(self, field_name: Literal["routine_name", b"routine_name", "string4", b"string4", "string5", b"string5", "workflow", b"workflow"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["workflow", b"workflow"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["routine_name", b"routine_name", "string4", b"string4", "string5", b"string5", "workflow", b"workflow"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class Part2(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Part2(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        STRING1_FIELD_NUMBER: int
-        STRING3_FIELD_NUMBER: int
-        string1: str
-        string3: str
+        STRING1_FIELD_NUMBER: builtins.int
+        STRING3_FIELD_NUMBER: builtins.int
+        string1: builtins.str
+        string3: builtins.str
         def __init__(
             self,
             *,
-            string1: str = ...,
-            string3: str = ...,
+            string1: builtins.str = ...,
+            string3: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["string1", b"string1", "string3", b"string3"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["string1", b"string1", "string3", b"string3"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    P1_FIELD_NUMBER: int
-    P2_FIELD_NUMBER: int
-    @property
-    def p1(self) -> RepeatedCompositeFieldContainer[GetAssistantRoutinesResponse.Part1]: ...
-    @property
+    P1_FIELD_NUMBER: builtins.int
+    P2_FIELD_NUMBER: builtins.int
+    @builtins.property
+    def p1(self) -> containers.RepeatedCompositeFieldContainer[GetAssistantRoutinesResponse.Part1]: ...
+    @builtins.property
     def p2(self) -> GetAssistantRoutinesResponse.Part2: ...
     def __init__(
         self,
         *,
-        p1: Iterable[GetAssistantRoutinesResponse.Part1] | None = ...,
+        p1: abc.Iterable[GetAssistantRoutinesResponse.Part1] | None = ...,
         p2: GetAssistantRoutinesResponse.Part2 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: Literal["p2", b"p2"]) -> bool: ...
-    def ClearField(self, field_name: Literal["p1", b"p1", "p2", b"p2"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = typing.Literal["p2", b"p2"]  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["p1", b"p1", "p2", b"p2"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class GetHomeGraphRequest(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class GetHomeGraphRequest(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    STRING1_FIELD_NUMBER: int
-    NUM2_FIELD_NUMBER: int
-    string1: str
-    num2: str
+    STRING1_FIELD_NUMBER: builtins.int
+    NUM2_FIELD_NUMBER: builtins.int
+    string1: builtins.str
+    num2: builtins.str
     def __init__(
         self,
         *,
-        string1: str = ...,
-        num2: str = ...,
+        string1: builtins.str = ...,
+        num2: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: Literal["num2", b"num2", "string1", b"string1"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["num2", b"num2", "string1", b"string1"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class GetHomeGraphResponse(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class GetHomeGraphResponse(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    @final
-    class Home(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Home(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class Location(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Location(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class Coordinates(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Coordinates(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                LATITUDE_FIELD_NUMBER: int
-                LONGITUDE_FIELD_NUMBER: int
-                latitude: float
-                longitude: float
+                LATITUDE_FIELD_NUMBER: builtins.int
+                LONGITUDE_FIELD_NUMBER: builtins.int
+                latitude: builtins.float
+                longitude: builtins.float
                 def __init__(
                     self,
                     *,
-                    latitude: float = ...,
-                    longitude: float = ...,
+                    latitude: builtins.float = ...,
+                    longitude: builtins.float = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["latitude", b"latitude", "longitude", b"longitude"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["latitude", b"latitude", "longitude", b"longitude"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            ADDRESS_FIELD_NUMBER: int
-            COORDINATES_FIELD_NUMBER: int
-            TIMESTAMP5_FIELD_NUMBER: int
-            TIMEZONE_FIELD_NUMBER: int
-            address: str
-            timestamp5: int
-            timezone: str
-            @property
+            ADDRESS_FIELD_NUMBER: builtins.int
+            COORDINATES_FIELD_NUMBER: builtins.int
+            TIMESTAMP5_FIELD_NUMBER: builtins.int
+            TIMEZONE_FIELD_NUMBER: builtins.int
+            address: builtins.str
+            timestamp5: builtins.int
+            timezone: builtins.str
+            @builtins.property
             def coordinates(self) -> GetHomeGraphResponse.Home.Location.Coordinates: ...
             def __init__(
                 self,
                 *,
-                address: str = ...,
+                address: builtins.str = ...,
                 coordinates: GetHomeGraphResponse.Home.Location.Coordinates | None = ...,
-                timestamp5: int = ...,
-                timezone: str = ...,
+                timestamp5: builtins.int = ...,
+                timezone: builtins.str = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["coordinates", b"coordinates"]) -> bool: ...
-            def ClearField(self, field_name: Literal["address", b"address", "coordinates", b"coordinates", "timestamp5", b"timestamp5", "timezone", b"timezone"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["coordinates", b"coordinates"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["address", b"address", "coordinates", b"coordinates", "timestamp5", b"timestamp5", "timezone", b"timezone"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class LinkedUser(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class LinkedUser(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            EMAIL_ADDRESS_FIELD_NUMBER: int
-            email_address: str
+            EMAIL_ADDRESS_FIELD_NUMBER: builtins.int
+            email_address: builtins.str
             def __init__(
                 self,
                 *,
-                email_address: str = ...,
+                email_address: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["email_address", b"email_address"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["email_address", b"email_address"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Room(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Room(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class Category(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Category(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                NAME_FIELD_NUMBER: int
-                name: str
+                NAME_FIELD_NUMBER: builtins.int
+                name: builtins.str
                 def __init__(
                     self,
                     *,
-                    name: str = ...,
+                    name: builtins.str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["name", b"name"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["name", b"name"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            ROOM_ID_FIELD_NUMBER: int
-            ROOM_NAME_FIELD_NUMBER: int
-            CATEGORY_FIELD_NUMBER: int
-            room_id: str
-            room_name: str
-            @property
+            ROOM_ID_FIELD_NUMBER: builtins.int
+            ROOM_NAME_FIELD_NUMBER: builtins.int
+            CATEGORY_FIELD_NUMBER: builtins.int
+            room_id: builtins.str
+            room_name: builtins.str
+            @builtins.property
             def category(self) -> GetHomeGraphResponse.Home.Room.Category: ...
             def __init__(
                 self,
                 *,
-                room_id: str = ...,
-                room_name: str = ...,
+                room_id: builtins.str = ...,
+                room_name: builtins.str = ...,
                 category: GetHomeGraphResponse.Home.Room.Category | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["category", b"category"]) -> bool: ...
-            def ClearField(self, field_name: Literal["category", b"category", "room_id", b"room_id", "room_name", b"room_name"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["category", b"category"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["category", b"category", "room_id", b"room_id", "room_name", b"room_name"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Device(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Device(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class DeviceInfo(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class DeviceInfo(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class AgentInfo(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class AgentInfo(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    API_PROJECT_ID_FIELD_NUMBER: int
-                    UNIQUE_ID_FIELD_NUMBER: int
-                    api_project_id: str
-                    unique_id: str
+                    API_PROJECT_ID_FIELD_NUMBER: builtins.int
+                    UNIQUE_ID_FIELD_NUMBER: builtins.int
+                    api_project_id: builtins.str
+                    unique_id: builtins.str
                     def __init__(
                         self,
                         *,
-                        api_project_id: str = ...,
-                        unique_id: str = ...,
+                        api_project_id: builtins.str = ...,
+                        unique_id: builtins.str = ...,
                     ) -> None: ...
-                    def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                DEVICE_ID_FIELD_NUMBER: int
-                AGENT_INFO_FIELD_NUMBER: int
-                device_id: str
-                @property
+                DEVICE_ID_FIELD_NUMBER: builtins.int
+                AGENT_INFO_FIELD_NUMBER: builtins.int
+                device_id: builtins.str
+                @builtins.property
                 def agent_info(self) -> GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo: ...
                 def __init__(
                     self,
                     *,
-                    device_id: str = ...,
+                    device_id: builtins.str = ...,
                     agent_info: GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
-                def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info", "device_id", b"device_id"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message12(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message12(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                NUM2_FIELD_NUMBER: int
-                NUM4_FIELD_NUMBER: int
-                NUM5_FIELD_NUMBER: int
-                NUM37_FIELD_NUMBER: int
-                NUM38_FIELD_NUMBER: int
-                NUM45_FIELD_NUMBER: int
-                NUM46_FIELD_NUMBER: int
-                num2: int
-                num4: int
-                num5: int
-                num37: int
-                num38: int
-                num45: int
-                num46: int
+                NUM2_FIELD_NUMBER: builtins.int
+                NUM4_FIELD_NUMBER: builtins.int
+                NUM5_FIELD_NUMBER: builtins.int
+                NUM37_FIELD_NUMBER: builtins.int
+                NUM38_FIELD_NUMBER: builtins.int
+                NUM45_FIELD_NUMBER: builtins.int
+                NUM46_FIELD_NUMBER: builtins.int
+                num2: builtins.int
+                num4: builtins.int
+                num5: builtins.int
+                num37: builtins.int
+                num38: builtins.int
+                num45: builtins.int
+                num46: builtins.int
                 def __init__(
                     self,
                     *,
-                    num2: int = ...,
-                    num4: int = ...,
-                    num5: int = ...,
-                    num37: int = ...,
-                    num38: int = ...,
-                    num45: int = ...,
-                    num46: int = ...,
+                    num2: builtins.int = ...,
+                    num4: builtins.int = ...,
+                    num5: builtins.int = ...,
+                    num37: builtins.int = ...,
+                    num38: builtins.int = ...,
+                    num45: builtins.int = ...,
+                    num46: builtins.int = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["num2", b"num2", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num5", b"num5"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["num2", b"num2", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num5", b"num5"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message15(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message15(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                NUM1_FIELD_NUMBER: int
-                NUM5_FIELD_NUMBER: int
-                NUM6_FIELD_NUMBER: int
-                NUM7_FIELD_NUMBER: int
-                num1: int
-                num5: int
-                num6: int
-                num7: int
+                NUM1_FIELD_NUMBER: builtins.int
+                NUM5_FIELD_NUMBER: builtins.int
+                NUM6_FIELD_NUMBER: builtins.int
+                NUM7_FIELD_NUMBER: builtins.int
+                num1: builtins.int
+                num5: builtins.int
+                num6: builtins.int
+                num7: builtins.int
                 def __init__(
                     self,
                     *,
-                    num1: int = ...,
-                    num5: int = ...,
-                    num6: int = ...,
-                    num7: int = ...,
+                    num1: builtins.int = ...,
+                    num5: builtins.int = ...,
+                    num6: builtins.int = ...,
+                    num7: builtins.int = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["num1", b"num1", "num5", b"num5", "num6", b"num6", "num7", b"num7"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["num1", b"num1", "num5", b"num5", "num6", b"num6", "num7", b"num7"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Hardware(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Hardware(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                MODEL_FIELD_NUMBER: int
-                model: str
+                MODEL_FIELD_NUMBER: builtins.int
+                model: builtins.str
                 def __init__(
                     self,
                     *,
-                    model: str = ...,
+                    model: builtins.str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["model", b"model"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["model", b"model"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message18(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message18(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                DEVICE_NAME_FIELD_NUMBER: int
-                device_name: str
+                DEVICE_NAME_FIELD_NUMBER: builtins.int
+                device_name: builtins.str
                 def __init__(
                     self,
                     *,
-                    device_name: str = ...,
+                    device_name: builtins.str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["device_name", b"device_name"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["device_name", b"device_name"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message20(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message20(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class Message1(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class Message1(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    @final
-                    class Value(Message):
-                        DESCRIPTOR: Descriptor
+                    @typing.final
+                    class Value(message.Message):
+                        DESCRIPTOR: descriptor.Descriptor
 
-                        @final
-                        class Message6(Message):
-                            DESCRIPTOR: Descriptor
+                        @typing.final
+                        class Message6(message.Message):
+                            DESCRIPTOR: descriptor.Descriptor
 
-                            @final
-                            class Message1(Message):
-                                DESCRIPTOR: Descriptor
+                            @typing.final
+                            class Message1(message.Message):
+                                DESCRIPTOR: descriptor.Descriptor
 
-                                @final
-                                class Message5(Message):
-                                    DESCRIPTOR: Descriptor
+                                @typing.final
+                                class Message5(message.Message):
+                                    DESCRIPTOR: descriptor.Descriptor
 
-                                    @final
-                                    class Message1(Message):
-                                        DESCRIPTOR: Descriptor
+                                    @typing.final
+                                    class Message1(message.Message):
+                                        DESCRIPTOR: descriptor.Descriptor
 
-                                        @final
-                                        class Message2(Message):
-                                            DESCRIPTOR: Descriptor
+                                        @typing.final
+                                        class Message2(message.Message):
+                                            DESCRIPTOR: descriptor.Descriptor
 
-                                            BOOL4_FIELD_NUMBER: int
-                                            bool4: bool
+                                            BOOL4_FIELD_NUMBER: builtins.int
+                                            bool4: builtins.bool
                                             def __init__(
                                                 self,
                                                 *,
-                                                bool4: bool = ...,
+                                                bool4: builtins.bool = ...,
                                             ) -> None: ...
-                                            def ClearField(self, field_name: Literal["bool4", b"bool4"]) -> None: ...
+                                            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                                            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                                            _ClearFieldArgType: _TypeAlias = typing.Literal["bool4", b"bool4"]  # noqa: Y015
+                                            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                                            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                                        CAPABILITY_FIELD_NUMBER: int
-                                        MESSAGE2_FIELD_NUMBER: int
-                                        capability: str
-                                        @property
+                                        CAPABILITY_FIELD_NUMBER: builtins.int
+                                        MESSAGE2_FIELD_NUMBER: builtins.int
+                                        capability: builtins.str
+                                        @builtins.property
                                         def message2(self) -> GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1.Message2: ...
                                         def __init__(
                                             self,
                                             *,
-                                            capability: str = ...,
+                                            capability: builtins.str = ...,
                                             message2: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1.Message2 | None = ...,
                                         ) -> None: ...
-                                        def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
-                                        def ClearField(self, field_name: Literal["capability", b"capability", "message2", b"message2"]) -> None: ...
+                                        _HasFieldArgType: _TypeAlias = typing.Literal["message2", b"message2"]  # noqa: Y015
+                                        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                                        _ClearFieldArgType: _TypeAlias = typing.Literal["capability", b"capability", "message2", b"message2"]  # noqa: Y015
+                                        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                                        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                                    MESSAGE1_FIELD_NUMBER: int
-                                    @property
-                                    def message1(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1]: ...
+                                    MESSAGE1_FIELD_NUMBER: builtins.int
+                                    @builtins.property
+                                    def message1(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1]: ...
                                     def __init__(
                                         self,
                                         *,
-                                        message1: Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1] | None = ...,
+                                        message1: abc.Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5.Message1] | None = ...,
                                     ) -> None: ...
-                                    def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
+                                    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                                    _ClearFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+                                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                                MESSAGE5_FIELD_NUMBER: int
-                                @property
+                                MESSAGE5_FIELD_NUMBER: builtins.int
+                                @builtins.property
                                 def message5(self) -> GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5: ...
                                 def __init__(
                                     self,
                                     *,
                                     message5: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1.Message5 | None = ...,
                                 ) -> None: ...
-                                def HasField(self, field_name: Literal["message5", b"message5"]) -> bool: ...
-                                def ClearField(self, field_name: Literal["message5", b"message5"]) -> None: ...
+                                _HasFieldArgType: _TypeAlias = typing.Literal["message5", b"message5"]  # noqa: Y015
+                                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                                _ClearFieldArgType: _TypeAlias = typing.Literal["message5", b"message5"]  # noqa: Y015
+                                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                            MESSAGE1_FIELD_NUMBER: int
-                            @property
+                            MESSAGE1_FIELD_NUMBER: builtins.int
+                            @builtins.property
                             def message1(self) -> GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1: ...
                             def __init__(
                                 self,
                                 *,
                                 message1: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6.Message1 | None = ...,
                             ) -> None: ...
-                            def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
-                            def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
+                            _HasFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+                            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                            _ClearFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+                            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                        MESSAGE6_FIELD_NUMBER: int
-                        @property
+                        MESSAGE6_FIELD_NUMBER: builtins.int
+                        @builtins.property
                         def message6(self) -> GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6: ...
                         def __init__(
                             self,
                             *,
                             message6: GetHomeGraphResponse.Home.Device.Message20.Message1.Value.Message6 | None = ...,
                         ) -> None: ...
-                        def HasField(self, field_name: Literal["message6", b"message6"]) -> bool: ...
-                        def ClearField(self, field_name: Literal["message6", b"message6"]) -> None: ...
+                        _HasFieldArgType: _TypeAlias = typing.Literal["message6", b"message6"]  # noqa: Y015
+                        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                        _ClearFieldArgType: _TypeAlias = typing.Literal["message6", b"message6"]  # noqa: Y015
+                        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                    KEY_FIELD_NUMBER: int
-                    VALUE_FIELD_NUMBER: int
-                    key: str
-                    @property
+                    KEY_FIELD_NUMBER: builtins.int
+                    VALUE_FIELD_NUMBER: builtins.int
+                    key: builtins.str
+                    @builtins.property
                     def value(self) -> GetHomeGraphResponse.Home.Device.Message20.Message1.Value: ...
                     def __init__(
                         self,
                         *,
-                        key: str = ...,
+                        key: builtins.str = ...,
                         value: GetHomeGraphResponse.Home.Device.Message20.Message1.Value | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: Literal["value", b"value"]) -> bool: ...
-                    def ClearField(self, field_name: Literal["key", b"key", "value", b"value"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = typing.Literal["value", b"value"]  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                MESSAGE1_FIELD_NUMBER: int
-                @property
-                def message1(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.Message20.Message1]: ...
+                MESSAGE1_FIELD_NUMBER: builtins.int
+                @builtins.property
+                def message1(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.Message20.Message1]: ...
                 def __init__(
                     self,
                     *,
-                    message1: Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1] | None = ...,
+                    message1: abc.Iterable[GetHomeGraphResponse.Home.Device.Message20.Message1] | None = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message25(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message25(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                BOOL1_FIELD_NUMBER: int
-                BOOL2_FIELD_NUMBER: int
-                bool1: bool
-                bool2: bool
+                BOOL1_FIELD_NUMBER: builtins.int
+                BOOL2_FIELD_NUMBER: builtins.int
+                bool1: builtins.bool
+                bool2: builtins.bool
                 def __init__(
                     self,
                     *,
-                    bool1: bool = ...,
-                    bool2: bool = ...,
+                    bool1: builtins.bool = ...,
+                    bool2: builtins.bool = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["bool1", b"bool1", "bool2", b"bool2"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["bool1", b"bool1", "bool2", b"bool2"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class LinkedUser(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class LinkedUser(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                EMAIL_ADDRESS_FIELD_NUMBER: int
-                email_address: str
+                EMAIL_ADDRESS_FIELD_NUMBER: builtins.int
+                email_address: builtins.str
                 def __init__(
                     self,
                     *,
-                    email_address: str = ...,
+                    email_address: builtins.str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["email_address", b"email_address"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["email_address", b"email_address"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class State(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class State(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                NAME_FIELD_NUMBER: int
-                VALUE_FIELD_NUMBER: int
-                name: str
-                value: bytes
+                NAME_FIELD_NUMBER: builtins.int
+                VALUE_FIELD_NUMBER: builtins.int
+                name: builtins.str
+                value: builtins.bytes
                 def __init__(
                     self,
                     *,
-                    name: str = ...,
-                    value: bytes = ...,
+                    name: builtins.str = ...,
+                    value: builtins.bytes = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["name", b"name", "value", b"value"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["name", b"name", "value", b"value"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message30(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message30(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class Message2(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class Message2(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    @final
-                    class Message2(Message):
-                        DESCRIPTOR: Descriptor
+                    @typing.final
+                    class Message2(message.Message):
+                        DESCRIPTOR: descriptor.Descriptor
 
-                        BOOL4_FIELD_NUMBER: int
-                        bool4: bool
+                        BOOL4_FIELD_NUMBER: builtins.int
+                        bool4: builtins.bool
                         def __init__(
                             self,
                             *,
-                            bool4: bool = ...,
+                            bool4: builtins.bool = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: Literal["bool4", b"bool4"]) -> None: ...
+                        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                        _ClearFieldArgType: _TypeAlias = typing.Literal["bool4", b"bool4"]  # noqa: Y015
+                        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                    STRING1_FIELD_NUMBER: int
-                    MESSAGE2_FIELD_NUMBER: int
-                    string1: str
-                    @property
+                    STRING1_FIELD_NUMBER: builtins.int
+                    MESSAGE2_FIELD_NUMBER: builtins.int
+                    string1: builtins.str
+                    @builtins.property
                     def message2(self) -> GetHomeGraphResponse.Home.Device.Message30.Message2.Message2: ...
                     def __init__(
                         self,
                         *,
-                        string1: str = ...,
+                        string1: builtins.str = ...,
                         message2: GetHomeGraphResponse.Home.Device.Message30.Message2.Message2 | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
-                    def ClearField(self, field_name: Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = typing.Literal["message2", b"message2"]  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["message2", b"message2", "string1", b"string1"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                KEY_FIELD_NUMBER: int
-                MESSAGE2_FIELD_NUMBER: int
-                key: str
-                @property
+                KEY_FIELD_NUMBER: builtins.int
+                MESSAGE2_FIELD_NUMBER: builtins.int
+                key: builtins.str
+                @builtins.property
                 def message2(self) -> GetHomeGraphResponse.Home.Device.Message30.Message2: ...
                 def __init__(
                     self,
                     *,
-                    key: str = ...,
+                    key: builtins.str = ...,
                     message2: GetHomeGraphResponse.Home.Device.Message30.Message2 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
-                def ClearField(self, field_name: Literal["key", b"key", "message2", b"message2"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = typing.Literal["message2", b"message2"]  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["key", b"key", "message2", b"message2"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            @final
-            class Message34(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message34(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                BOOL1_FIELD_NUMBER: int
-                bool1: bool
+                BOOL1_FIELD_NUMBER: builtins.int
+                bool1: builtins.bool
                 def __init__(
                     self,
                     *,
-                    bool1: bool = ...,
+                    bool1: builtins.bool = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["bool1", b"bool1"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            DEVICE_INFO_FIELD_NUMBER: int
-            DEVICE_NAME_FIELD_NUMBER: int
-            DEVICE_TYPE_FIELD_NUMBER: int
-            TRAITS_FIELD_NUMBER: int
-            SUFFIX_FIELD_NUMBER: int
-            MESSAGE12_FIELD_NUMBER: int
-            MESSAGE15_FIELD_NUMBER: int
-            HARDWARE_FIELD_NUMBER: int
-            MESSAGE18_FIELD_NUMBER: int
-            TIMESTAMP19_FIELD_NUMBER: int
-            MESSAGE20_FIELD_NUMBER: int
-            MESSAGE25_FIELD_NUMBER: int
-            LINKED_USERS_FIELD_NUMBER: int
-            LOCAL_AUTH_TOKEN_FIELD_NUMBER: int
-            STATES_FIELD_NUMBER: int
-            MESSAGE30_FIELD_NUMBER: int
-            MESSAGE34_FIELD_NUMBER: int
-            NUM37_FIELD_NUMBER: int
-            STRING41_FIELD_NUMBER: int
-            STRING42_FIELD_NUMBER: int
-            device_name: str
-            device_type: str
-            suffix: str
-            timestamp19: int
-            local_auth_token: str
-            num37: int
-            string41: str
-            string42: str
-            @property
+            DEVICE_INFO_FIELD_NUMBER: builtins.int
+            DEVICE_NAME_FIELD_NUMBER: builtins.int
+            DEVICE_TYPE_FIELD_NUMBER: builtins.int
+            TRAITS_FIELD_NUMBER: builtins.int
+            SUFFIX_FIELD_NUMBER: builtins.int
+            MESSAGE12_FIELD_NUMBER: builtins.int
+            MESSAGE15_FIELD_NUMBER: builtins.int
+            HARDWARE_FIELD_NUMBER: builtins.int
+            MESSAGE18_FIELD_NUMBER: builtins.int
+            TIMESTAMP19_FIELD_NUMBER: builtins.int
+            MESSAGE20_FIELD_NUMBER: builtins.int
+            MESSAGE25_FIELD_NUMBER: builtins.int
+            LINKED_USERS_FIELD_NUMBER: builtins.int
+            LOCAL_AUTH_TOKEN_FIELD_NUMBER: builtins.int
+            STATES_FIELD_NUMBER: builtins.int
+            MESSAGE30_FIELD_NUMBER: builtins.int
+            MESSAGE34_FIELD_NUMBER: builtins.int
+            NUM37_FIELD_NUMBER: builtins.int
+            STRING41_FIELD_NUMBER: builtins.int
+            STRING42_FIELD_NUMBER: builtins.int
+            device_name: builtins.str
+            device_type: builtins.str
+            suffix: builtins.str
+            timestamp19: builtins.int
+            local_auth_token: builtins.str
+            num37: builtins.int
+            string41: builtins.str
+            string42: builtins.str
+            @builtins.property
             def device_info(self) -> GetHomeGraphResponse.Home.Device.DeviceInfo: ...
-            @property
-            def traits(self) -> RepeatedScalarFieldContainer[str]: ...
-            @property
+            @builtins.property
+            def traits(self) -> containers.RepeatedScalarFieldContainer[builtins.str]: ...
+            @builtins.property
             def message12(self) -> GetHomeGraphResponse.Home.Device.Message12: ...
-            @property
+            @builtins.property
             def message15(self) -> GetHomeGraphResponse.Home.Device.Message15: ...
-            @property
+            @builtins.property
             def hardware(self) -> GetHomeGraphResponse.Home.Device.Hardware: ...
-            @property
+            @builtins.property
             def message18(self) -> GetHomeGraphResponse.Home.Device.Message18: ...
-            @property
+            @builtins.property
             def message20(self) -> GetHomeGraphResponse.Home.Device.Message20: ...
-            @property
+            @builtins.property
             def message25(self) -> GetHomeGraphResponse.Home.Device.Message25: ...
-            @property
-            def linked_users(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.LinkedUser]: ...
-            @property
-            def states(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.State]: ...
-            @property
+            @builtins.property
+            def linked_users(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.LinkedUser]: ...
+            @builtins.property
+            def states(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device.State]: ...
+            @builtins.property
             def message30(self) -> GetHomeGraphResponse.Home.Device.Message30: ...
-            @property
+            @builtins.property
             def message34(self) -> GetHomeGraphResponse.Home.Device.Message34: ...
             def __init__(
                 self,
                 *,
                 device_info: GetHomeGraphResponse.Home.Device.DeviceInfo | None = ...,
-                device_name: str = ...,
-                device_type: str = ...,
-                traits: Iterable[str] | None = ...,
-                suffix: str = ...,
+                device_name: builtins.str = ...,
+                device_type: builtins.str = ...,
+                traits: abc.Iterable[builtins.str] | None = ...,
+                suffix: builtins.str = ...,
                 message12: GetHomeGraphResponse.Home.Device.Message12 | None = ...,
                 message15: GetHomeGraphResponse.Home.Device.Message15 | None = ...,
                 hardware: GetHomeGraphResponse.Home.Device.Hardware | None = ...,
                 message18: GetHomeGraphResponse.Home.Device.Message18 | None = ...,
-                timestamp19: int = ...,
+                timestamp19: builtins.int = ...,
                 message20: GetHomeGraphResponse.Home.Device.Message20 | None = ...,
                 message25: GetHomeGraphResponse.Home.Device.Message25 | None = ...,
-                linked_users: Iterable[GetHomeGraphResponse.Home.Device.LinkedUser] | None = ...,
-                local_auth_token: str = ...,
-                states: Iterable[GetHomeGraphResponse.Home.Device.State] | None = ...,
+                linked_users: abc.Iterable[GetHomeGraphResponse.Home.Device.LinkedUser] | None = ...,
+                local_auth_token: builtins.str = ...,
+                states: abc.Iterable[GetHomeGraphResponse.Home.Device.State] | None = ...,
                 message30: GetHomeGraphResponse.Home.Device.Message30 | None = ...,
                 message34: GetHomeGraphResponse.Home.Device.Message34 | None = ...,
-                num37: int = ...,
-                string41: str = ...,
-                string42: str = ...,
+                num37: builtins.int = ...,
+                string41: builtins.str = ...,
+                string42: builtins.str = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["device_info", b"device_info", "hardware", b"hardware", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34"]) -> bool: ...
-            def ClearField(self, field_name: Literal["device_info", b"device_info", "device_name", b"device_name", "device_type", b"device_type", "hardware", b"hardware", "linked_users", b"linked_users", "local_auth_token", b"local_auth_token", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34", "num37", b"num37", "states", b"states", "string41", b"string41", "string42", b"string42", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "hardware", b"hardware", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "device_name", b"device_name", "device_type", b"device_type", "hardware", b"hardware", "linked_users", b"linked_users", "local_auth_token", b"local_auth_token", "message12", b"message12", "message15", b"message15", "message18", b"message18", "message20", b"message20", "message25", b"message25", "message30", b"message30", "message34", b"message34", "num37", b"num37", "states", b"states", "string41", b"string41", "string42", b"string42", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message11(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message11(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            BOOL1_FIELD_NUMBER: int
-            bool1: bool
+            BOOL1_FIELD_NUMBER: builtins.int
+            bool1: builtins.bool
             def __init__(
                 self,
                 *,
-                bool1: bool = ...,
+                bool1: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["bool1", b"bool1"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message13(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message13(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class Message1(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message1(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class DeviceInfo(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class DeviceInfo(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    @final
-                    class AgentInfo(Message):
-                        DESCRIPTOR: Descriptor
+                    @typing.final
+                    class AgentInfo(message.Message):
+                        DESCRIPTOR: descriptor.Descriptor
 
-                        API_PROJECT_ID_FIELD_NUMBER: int
-                        UNIQUE_ID_FIELD_NUMBER: int
-                        api_project_id: str
-                        unique_id: str
+                        API_PROJECT_ID_FIELD_NUMBER: builtins.int
+                        UNIQUE_ID_FIELD_NUMBER: builtins.int
+                        api_project_id: builtins.str
+                        unique_id: builtins.str
                         def __init__(
                             self,
                             *,
-                            api_project_id: str = ...,
-                            unique_id: str = ...,
+                            api_project_id: builtins.str = ...,
+                            unique_id: builtins.str = ...,
                         ) -> None: ...
-                        def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                        _ClearFieldArgType: _TypeAlias = typing.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]  # noqa: Y015
+                        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                    DEVICE_ID_FIELD_NUMBER: int
-                    AGENT_INFO_FIELD_NUMBER: int
-                    device_id: str
-                    @property
+                    DEVICE_ID_FIELD_NUMBER: builtins.int
+                    AGENT_INFO_FIELD_NUMBER: builtins.int
+                    device_id: builtins.str
+                    @builtins.property
                     def agent_info(self) -> GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo.AgentInfo: ...
                     def __init__(
                         self,
                         *,
-                        device_id: str = ...,
+                        device_id: builtins.str = ...,
                         agent_info: GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo.AgentInfo | None = ...,
                     ) -> None: ...
-                    def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
-                    def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info", "device_id", b"device_id"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                DEVICE_INFO_FIELD_NUMBER: int
-                @property
+                DEVICE_INFO_FIELD_NUMBER: builtins.int
+                @builtins.property
                 def device_info(self) -> GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo: ...
                 def __init__(
                     self,
                     *,
                     device_info: GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: Literal["device_info", b"device_info"]) -> bool: ...
-                def ClearField(self, field_name: Literal["device_info", b"device_info"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info"]  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            MESSAGE1_FIELD_NUMBER: int
-            DUO_CALL_URL_FIELD_NUMBER: int
-            DUO_PHONE_NUMBER_FIELD_NUMBER: int
-            duo_call_url: str
-            duo_phone_number: str
-            @property
+            MESSAGE1_FIELD_NUMBER: builtins.int
+            DUO_CALL_URL_FIELD_NUMBER: builtins.int
+            DUO_PHONE_NUMBER_FIELD_NUMBER: builtins.int
+            duo_call_url: builtins.str
+            duo_phone_number: builtins.str
+            @builtins.property
             def message1(self) -> GetHomeGraphResponse.Home.Message13.Message1: ...
             def __init__(
                 self,
                 *,
                 message1: GetHomeGraphResponse.Home.Message13.Message1 | None = ...,
-                duo_call_url: str = ...,
-                duo_phone_number: str = ...,
+                duo_call_url: builtins.str = ...,
+                duo_phone_number: builtins.str = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
-            def ClearField(self, field_name: Literal["duo_call_url", b"duo_call_url", "duo_phone_number", b"duo_phone_number", "message1", b"message1"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["duo_call_url", b"duo_call_url", "duo_phone_number", b"duo_phone_number", "message1", b"message1"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message15(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message15(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class Message3(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class Message3(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                @final
-                class Message2(Message):
-                    DESCRIPTOR: Descriptor
+                @typing.final
+                class Message2(message.Message):
+                    DESCRIPTOR: descriptor.Descriptor
 
-                    STRING1_FIELD_NUMBER: int
-                    string1: str
+                    STRING1_FIELD_NUMBER: builtins.int
+                    string1: builtins.str
                     def __init__(
                         self,
                         *,
-                        string1: str = ...,
+                        string1: builtins.str = ...,
                     ) -> None: ...
-                    def ClearField(self, field_name: Literal["string1", b"string1"]) -> None: ...
+                    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                    _ClearFieldArgType: _TypeAlias = typing.Literal["string1", b"string1"]  # noqa: Y015
+                    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-                STRING1_FIELD_NUMBER: int
-                MESSAGE2_FIELD_NUMBER: int
-                string1: str
-                @property
+                STRING1_FIELD_NUMBER: builtins.int
+                MESSAGE2_FIELD_NUMBER: builtins.int
+                string1: builtins.str
+                @builtins.property
                 def message2(self) -> GetHomeGraphResponse.Home.Message15.Message3.Message2: ...
                 def __init__(
                     self,
                     *,
-                    string1: str = ...,
+                    string1: builtins.str = ...,
                     message2: GetHomeGraphResponse.Home.Message15.Message3.Message2 | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
-                def ClearField(self, field_name: Literal["message2", b"message2", "string1", b"string1"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = typing.Literal["message2", b"message2"]  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["message2", b"message2", "string1", b"string1"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            BOOL1_FIELD_NUMBER: int
-            STRING2_FIELD_NUMBER: int
-            MESSAGE3_FIELD_NUMBER: int
-            BOOL4_FIELD_NUMBER: int
-            bool1: bool
-            string2: str
-            bool4: bool
-            @property
-            def message3(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Message15.Message3]: ...
+            BOOL1_FIELD_NUMBER: builtins.int
+            STRING2_FIELD_NUMBER: builtins.int
+            MESSAGE3_FIELD_NUMBER: builtins.int
+            BOOL4_FIELD_NUMBER: builtins.int
+            bool1: builtins.bool
+            string2: builtins.str
+            bool4: builtins.bool
+            @builtins.property
+            def message3(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Message15.Message3]: ...
             def __init__(
                 self,
                 *,
-                bool1: bool = ...,
-                string2: str = ...,
-                message3: Iterable[GetHomeGraphResponse.Home.Message15.Message3] | None = ...,
-                bool4: bool = ...,
+                bool1: builtins.bool = ...,
+                string2: builtins.str = ...,
+                message3: abc.Iterable[GetHomeGraphResponse.Home.Message15.Message3] | None = ...,
+                bool4: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["bool1", b"bool1", "bool4", b"bool4", "message3", b"message3", "string2", b"string2"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["bool1", b"bool1", "bool4", b"bool4", "message3", b"message3", "string2", b"string2"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        HOME_ID_FIELD_NUMBER: int
-        HOME_NAME_FIELD_NUMBER: int
-        LOCATION_FIELD_NUMBER: int
-        LINKED_USERS_FIELD_NUMBER: int
-        ROOMS_FIELD_NUMBER: int
-        DEVICES_FIELD_NUMBER: int
-        MESSAGE11_FIELD_NUMBER: int
-        STRING12_FIELD_NUMBER: int
-        MESSAGE13_FIELD_NUMBER: int
-        MESSAGE14_FIELD_NUMBER: int
-        MESSAGE15_FIELD_NUMBER: int
-        home_id: str
-        home_name: str
-        string12: str
-        message14: str
-        @property
+        HOME_ID_FIELD_NUMBER: builtins.int
+        HOME_NAME_FIELD_NUMBER: builtins.int
+        LOCATION_FIELD_NUMBER: builtins.int
+        LINKED_USERS_FIELD_NUMBER: builtins.int
+        ROOMS_FIELD_NUMBER: builtins.int
+        DEVICES_FIELD_NUMBER: builtins.int
+        MESSAGE11_FIELD_NUMBER: builtins.int
+        STRING12_FIELD_NUMBER: builtins.int
+        MESSAGE13_FIELD_NUMBER: builtins.int
+        MESSAGE14_FIELD_NUMBER: builtins.int
+        MESSAGE15_FIELD_NUMBER: builtins.int
+        home_id: builtins.str
+        home_name: builtins.str
+        string12: builtins.str
+        message14: builtins.str
+        @builtins.property
         def location(self) -> GetHomeGraphResponse.Home.Location: ...
-        @property
-        def linked_users(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.LinkedUser]: ...
-        @property
-        def rooms(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Room]: ...
-        @property
-        def devices(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device]: ...
-        @property
+        @builtins.property
+        def linked_users(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.LinkedUser]: ...
+        @builtins.property
+        def rooms(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Room]: ...
+        @builtins.property
+        def devices(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device]: ...
+        @builtins.property
         def message11(self) -> GetHomeGraphResponse.Home.Message11: ...
-        @property
+        @builtins.property
         def message13(self) -> GetHomeGraphResponse.Home.Message13: ...
-        @property
+        @builtins.property
         def message15(self) -> GetHomeGraphResponse.Home.Message15: ...
         def __init__(
             self,
             *,
-            home_id: str = ...,
-            home_name: str = ...,
+            home_id: builtins.str = ...,
+            home_name: builtins.str = ...,
             location: GetHomeGraphResponse.Home.Location | None = ...,
-            linked_users: Iterable[GetHomeGraphResponse.Home.LinkedUser] | None = ...,
-            rooms: Iterable[GetHomeGraphResponse.Home.Room] | None = ...,
-            devices: Iterable[GetHomeGraphResponse.Home.Device] | None = ...,
+            linked_users: abc.Iterable[GetHomeGraphResponse.Home.LinkedUser] | None = ...,
+            rooms: abc.Iterable[GetHomeGraphResponse.Home.Room] | None = ...,
+            devices: abc.Iterable[GetHomeGraphResponse.Home.Device] | None = ...,
             message11: GetHomeGraphResponse.Home.Message11 | None = ...,
-            string12: str = ...,
+            string12: builtins.str = ...,
             message13: GetHomeGraphResponse.Home.Message13 | None = ...,
-            message14: str = ...,
+            message14: builtins.str = ...,
             message15: GetHomeGraphResponse.Home.Message15 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["location", b"location", "message11", b"message11", "message13", b"message13", "message15", b"message15"]) -> bool: ...
-        def ClearField(self, field_name: Literal["devices", b"devices", "home_id", b"home_id", "home_name", b"home_name", "linked_users", b"linked_users", "location", b"location", "message11", b"message11", "message13", b"message13", "message14", b"message14", "message15", b"message15", "rooms", b"rooms", "string12", b"string12"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["location", b"location", "message11", b"message11", "message13", b"message13", "message15", b"message15"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["devices", b"devices", "home_id", b"home_id", "home_name", b"home_name", "linked_users", b"linked_users", "location", b"location", "message11", b"message11", "message13", b"message13", "message14", b"message14", "message15", b"message15", "rooms", b"rooms", "string12", b"string12"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class Group(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Group(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class DeviceInfo(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class DeviceInfo(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            @final
-            class AgentInfo(Message):
-                DESCRIPTOR: Descriptor
+            @typing.final
+            class AgentInfo(message.Message):
+                DESCRIPTOR: descriptor.Descriptor
 
-                API_PROJECT_ID_FIELD_NUMBER: int
-                UNIQUE_ID_FIELD_NUMBER: int
-                api_project_id: str
-                unique_id: str
+                API_PROJECT_ID_FIELD_NUMBER: builtins.int
+                UNIQUE_ID_FIELD_NUMBER: builtins.int
+                api_project_id: builtins.str
+                unique_id: builtins.str
                 def __init__(
                     self,
                     *,
-                    api_project_id: str = ...,
-                    unique_id: str = ...,
+                    api_project_id: builtins.str = ...,
+                    unique_id: builtins.str = ...,
                 ) -> None: ...
-                def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+                _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+                def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+                _ClearFieldArgType: _TypeAlias = typing.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]  # noqa: Y015
+                def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+                def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-            AGENT_INFO_FIELD_NUMBER: int
-            @property
+            AGENT_INFO_FIELD_NUMBER: builtins.int
+            @builtins.property
             def agent_info(self) -> GetHomeGraphResponse.Group.DeviceInfo.AgentInfo: ...
             def __init__(
                 self,
                 *,
                 agent_info: GetHomeGraphResponse.Group.DeviceInfo.AgentInfo | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
-            def ClearField(self, field_name: Literal["agent_info", b"agent_info"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message12(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message12(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            BOOL3_FIELD_NUMBER: int
-            BOOL4_FIELD_NUMBER: int
-            BOOL37_FIELD_NUMBER: int
-            BOOL38_FIELD_NUMBER: int
-            bool3: bool
-            bool4: bool
-            bool37: bool
-            bool38: bool
+            BOOL3_FIELD_NUMBER: builtins.int
+            BOOL4_FIELD_NUMBER: builtins.int
+            BOOL37_FIELD_NUMBER: builtins.int
+            BOOL38_FIELD_NUMBER: builtins.int
+            bool3: builtins.bool
+            bool4: builtins.bool
+            bool37: builtins.bool
+            bool38: builtins.bool
             def __init__(
                 self,
                 *,
-                bool3: bool = ...,
-                bool4: bool = ...,
-                bool37: bool = ...,
-                bool38: bool = ...,
+                bool3: builtins.bool = ...,
+                bool4: builtins.bool = ...,
+                bool37: builtins.bool = ...,
+                bool38: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["bool3", b"bool3", "bool37", b"bool37", "bool38", b"bool38", "bool4", b"bool4"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["bool3", b"bool3", "bool37", b"bool37", "bool38", b"bool38", "bool4", b"bool4"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message15(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message15(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            STRING1_FIELD_NUMBER: int
-            NUM5_FIELD_NUMBER: int
-            NUM6_FIELD_NUMBER: int
-            string1: str
-            num5: int
-            num6: int
+            STRING1_FIELD_NUMBER: builtins.int
+            NUM5_FIELD_NUMBER: builtins.int
+            NUM6_FIELD_NUMBER: builtins.int
+            string1: builtins.str
+            num5: builtins.int
+            num6: builtins.int
             def __init__(
                 self,
                 *,
-                string1: str = ...,
-                num5: int = ...,
-                num6: int = ...,
+                string1: builtins.str = ...,
+                num5: builtins.int = ...,
+                num6: builtins.int = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["num5", b"num5", "num6", b"num6", "string1", b"string1"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["num5", b"num5", "num6", b"num6", "string1", b"string1"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message17(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message17(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            GROUP_MODEL_FIELD_NUMBER: int
-            group_model: str
+            GROUP_MODEL_FIELD_NUMBER: builtins.int
+            group_model: builtins.str
             def __init__(
                 self,
                 *,
-                group_model: str = ...,
+                group_model: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["group_model", b"group_model"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["group_model", b"group_model"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message18(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message18(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            GROUP_NAME_FIELD_NUMBER: int
-            group_name: str
+            GROUP_NAME_FIELD_NUMBER: builtins.int
+            group_name: builtins.str
             def __init__(
                 self,
                 *,
-                group_name: str = ...,
+                group_name: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["group_name", b"group_name"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["group_name", b"group_name"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        @final
-        class Message34(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message34(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            BOOL1_FIELD_NUMBER: int
-            bool1: bool
+            BOOL1_FIELD_NUMBER: builtins.int
+            bool1: builtins.bool
             def __init__(
                 self,
                 *,
-                bool1: bool = ...,
+                bool1: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["bool1", b"bool1"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["bool1", b"bool1"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        DEVICE_INFO_FIELD_NUMBER: int
-        GROUP_NMAE_FIELD_NUMBER: int
-        DEVICE_TYPE_FIELD_NUMBER: int
-        TRAITS_FIELD_NUMBER: int
-        SUFFIX_FIELD_NUMBER: int
-        MESSAGE12_FIELD_NUMBER: int
-        MESSAGE15_FIELD_NUMBER: int
-        MESSAGE17_FIELD_NUMBER: int
-        MESSAGE18_FIELD_NUMBER: int
-        TIMESTAMP19_FIELD_NUMBER: int
-        MESSAGE34_FIELD_NUMBER: int
-        group_nmae: str
-        device_type: str
-        traits: str
-        suffix: str
-        timestamp19: int
-        @property
+        DEVICE_INFO_FIELD_NUMBER: builtins.int
+        GROUP_NMAE_FIELD_NUMBER: builtins.int
+        DEVICE_TYPE_FIELD_NUMBER: builtins.int
+        TRAITS_FIELD_NUMBER: builtins.int
+        SUFFIX_FIELD_NUMBER: builtins.int
+        MESSAGE12_FIELD_NUMBER: builtins.int
+        MESSAGE15_FIELD_NUMBER: builtins.int
+        MESSAGE17_FIELD_NUMBER: builtins.int
+        MESSAGE18_FIELD_NUMBER: builtins.int
+        TIMESTAMP19_FIELD_NUMBER: builtins.int
+        MESSAGE34_FIELD_NUMBER: builtins.int
+        group_nmae: builtins.str
+        device_type: builtins.str
+        traits: builtins.str
+        suffix: builtins.str
+        timestamp19: builtins.int
+        @builtins.property
         def device_info(self) -> GetHomeGraphResponse.Group.DeviceInfo: ...
-        @property
+        @builtins.property
         def message12(self) -> GetHomeGraphResponse.Group.Message12: ...
-        @property
+        @builtins.property
         def message15(self) -> GetHomeGraphResponse.Group.Message15: ...
-        @property
+        @builtins.property
         def message17(self) -> GetHomeGraphResponse.Group.Message17: ...
-        @property
+        @builtins.property
         def message18(self) -> GetHomeGraphResponse.Group.Message18: ...
-        @property
+        @builtins.property
         def message34(self) -> GetHomeGraphResponse.Group.Message34: ...
         def __init__(
             self,
             *,
             device_info: GetHomeGraphResponse.Group.DeviceInfo | None = ...,
-            group_nmae: str = ...,
-            device_type: str = ...,
-            traits: str = ...,
-            suffix: str = ...,
+            group_nmae: builtins.str = ...,
+            device_type: builtins.str = ...,
+            traits: builtins.str = ...,
+            suffix: builtins.str = ...,
             message12: GetHomeGraphResponse.Group.Message12 | None = ...,
             message15: GetHomeGraphResponse.Group.Message15 | None = ...,
             message17: GetHomeGraphResponse.Group.Message17 | None = ...,
             message18: GetHomeGraphResponse.Group.Message18 | None = ...,
-            timestamp19: int = ...,
+            timestamp19: builtins.int = ...,
             message34: GetHomeGraphResponse.Group.Message34 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["device_info", b"device_info", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34"]) -> bool: ...
-        def ClearField(self, field_name: Literal["device_info", b"device_info", "device_type", b"device_type", "group_nmae", b"group_nmae", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "device_type", b"device_type", "group_nmae", b"group_nmae", "message12", b"message12", "message15", b"message15", "message17", b"message17", "message18", b"message18", "message34", b"message34", "suffix", b"suffix", "timestamp19", b"timestamp19", "traits", b"traits"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class RoomType(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class RoomType(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        CODE_FIELD_NUMBER: int
-        NAME_FIELD_NUMBER: int
-        code: str
-        name: str
+        CODE_FIELD_NUMBER: builtins.int
+        NAME_FIELD_NUMBER: builtins.int
+        code: builtins.str
+        name: builtins.str
         def __init__(
             self,
             *,
-            code: str = ...,
-            name: str = ...,
+            code: builtins.str = ...,
+            name: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["code", b"code", "name", b"name"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class DeviceType(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class DeviceType(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        CODE_FIELD_NUMBER: int
-        NAME_FIELD_NUMBER: int
-        code: str
-        name: str
+        CODE_FIELD_NUMBER: builtins.int
+        NAME_FIELD_NUMBER: builtins.int
+        code: builtins.str
+        name: builtins.str
         def __init__(
             self,
             *,
-            code: str = ...,
-            name: str = ...,
+            code: builtins.str = ...,
+            name: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["code", b"code", "name", b"name"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class ProjectType(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class ProjectType(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        CODE_FIELD_NUMBER: int
-        NAME_FIELD_NUMBER: int
-        code: str
-        name: str
+        CODE_FIELD_NUMBER: builtins.int
+        NAME_FIELD_NUMBER: builtins.int
+        code: builtins.str
+        name: builtins.str
         def __init__(
             self,
             *,
-            code: str = ...,
-            name: str = ...,
+            code: builtins.str = ...,
+            name: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["code", b"code", "name", b"name"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["code", b"code", "name", b"name"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class Message11(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Message11(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class Message2(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message2(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            NUM2_FIELD_NUMBER: int
-            num2: int
+            NUM2_FIELD_NUMBER: builtins.int
+            num2: builtins.int
             def __init__(
                 self,
                 *,
-                num2: int = ...,
+                num2: builtins.int = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["num2", b"num2"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["num2", b"num2"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        NAME_FIELD_NUMBER: int
-        MESSAGE2_FIELD_NUMBER: int
-        name: str
-        @property
+        NAME_FIELD_NUMBER: builtins.int
+        MESSAGE2_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        @builtins.property
         def message2(self) -> GetHomeGraphResponse.Message11.Message2: ...
         def __init__(
             self,
             *,
-            name: str = ...,
+            name: builtins.str = ...,
             message2: GetHomeGraphResponse.Message11.Message2 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["message2", b"message2"]) -> bool: ...
-        def ClearField(self, field_name: Literal["message2", b"message2", "name", b"name"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["message2", b"message2"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["message2", b"message2", "name", b"name"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class LinkedApp(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class LinkedApp(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        STRING1_FIELD_NUMBER: int
-        STRING2_FIELD_NUMBER: int
-        NUM3_FIELD_NUMBER: int
-        NUM4_FIELD_NUMBER: int
-        NUM5_FIELD_NUMBER: int
-        string1: str
-        string2: str
-        num3: int
-        num4: int
-        num5: int
+        STRING1_FIELD_NUMBER: builtins.int
+        STRING2_FIELD_NUMBER: builtins.int
+        NUM3_FIELD_NUMBER: builtins.int
+        NUM4_FIELD_NUMBER: builtins.int
+        NUM5_FIELD_NUMBER: builtins.int
+        string1: builtins.str
+        string2: builtins.str
+        num3: builtins.int
+        num4: builtins.int
+        num5: builtins.int
         def __init__(
             self,
             *,
-            string1: str = ...,
-            string2: str = ...,
-            num3: int = ...,
-            num4: int = ...,
-            num5: int = ...,
+            string1: builtins.str = ...,
+            string2: builtins.str = ...,
+            num3: builtins.int = ...,
+            num4: builtins.int = ...,
+            num5: builtins.int = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["num3", b"num3", "num4", b"num4", "num5", b"num5", "string1", b"string1", "string2", b"string2"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["num3", b"num3", "num4", b"num4", "num5", b"num5", "string1", b"string1", "string2", b"string2"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    TIMESTAMP1_FIELD_NUMBER: int
-    HOME_FIELD_NUMBER: int
-    GROUPS_FIELD_NUMBER: int
-    ROOM_TYPES_FIELD_NUMBER: int
-    STRING5_FIELD_NUMBER: int
-    BOOL6_FIELD_NUMBER: int
-    DEVICE_TYPES_FIELD_NUMBER: int
-    PROJECT_TYPES_FIELD_NUMBER: int
-    MESSAGE11_FIELD_NUMBER: int
-    LINKED_APPS_FIELD_NUMBER: int
-    timestamp1: int
-    string5: str
-    bool6: bool
-    @property
+    TIMESTAMP1_FIELD_NUMBER: builtins.int
+    HOME_FIELD_NUMBER: builtins.int
+    GROUPS_FIELD_NUMBER: builtins.int
+    ROOM_TYPES_FIELD_NUMBER: builtins.int
+    STRING5_FIELD_NUMBER: builtins.int
+    BOOL6_FIELD_NUMBER: builtins.int
+    DEVICE_TYPES_FIELD_NUMBER: builtins.int
+    PROJECT_TYPES_FIELD_NUMBER: builtins.int
+    MESSAGE11_FIELD_NUMBER: builtins.int
+    LINKED_APPS_FIELD_NUMBER: builtins.int
+    timestamp1: builtins.int
+    string5: builtins.str
+    bool6: builtins.bool
+    @builtins.property
     def home(self) -> GetHomeGraphResponse.Home: ...
-    @property
-    def groups(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Group]: ...
-    @property
-    def room_types(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.RoomType]: ...
-    @property
-    def device_types(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.DeviceType]: ...
-    @property
-    def project_types(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.ProjectType]: ...
-    @property
-    def message11(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.Message11]: ...
-    @property
-    def linked_apps(self) -> RepeatedCompositeFieldContainer[GetHomeGraphResponse.LinkedApp]: ...
+    @builtins.property
+    def groups(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Group]: ...
+    @builtins.property
+    def room_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.RoomType]: ...
+    @builtins.property
+    def device_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.DeviceType]: ...
+    @builtins.property
+    def project_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.ProjectType]: ...
+    @builtins.property
+    def message11(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Message11]: ...
+    @builtins.property
+    def linked_apps(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.LinkedApp]: ...
     def __init__(
         self,
         *,
-        timestamp1: int = ...,
+        timestamp1: builtins.int = ...,
         home: GetHomeGraphResponse.Home | None = ...,
-        groups: Iterable[GetHomeGraphResponse.Group] | None = ...,
-        room_types: Iterable[GetHomeGraphResponse.RoomType] | None = ...,
-        string5: str = ...,
-        bool6: bool = ...,
-        device_types: Iterable[GetHomeGraphResponse.DeviceType] | None = ...,
-        project_types: Iterable[GetHomeGraphResponse.ProjectType] | None = ...,
-        message11: Iterable[GetHomeGraphResponse.Message11] | None = ...,
-        linked_apps: Iterable[GetHomeGraphResponse.LinkedApp] | None = ...,
+        groups: abc.Iterable[GetHomeGraphResponse.Group] | None = ...,
+        room_types: abc.Iterable[GetHomeGraphResponse.RoomType] | None = ...,
+        string5: builtins.str = ...,
+        bool6: builtins.bool = ...,
+        device_types: abc.Iterable[GetHomeGraphResponse.DeviceType] | None = ...,
+        project_types: abc.Iterable[GetHomeGraphResponse.ProjectType] | None = ...,
+        message11: abc.Iterable[GetHomeGraphResponse.Message11] | None = ...,
+        linked_apps: abc.Iterable[GetHomeGraphResponse.LinkedApp] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: Literal["home", b"home"]) -> bool: ...
-    def ClearField(self, field_name: Literal["bool6", b"bool6", "device_types", b"device_types", "groups", b"groups", "home", b"home", "linked_apps", b"linked_apps", "message11", b"message11", "project_types", b"project_types", "room_types", b"room_types", "string5", b"string5", "timestamp1", b"timestamp1"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = typing.Literal["home", b"home"]  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["bool6", b"bool6", "device_types", b"device_types", "groups", b"groups", "home", b"home", "linked_apps", b"linked_apps", "message11", b"message11", "project_types", b"project_types", "room_types", b"room_types", "string5", b"string5", "timestamp1", b"timestamp1"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class GetAssistantDeviceSettingsRequest(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class GetAssistantDeviceSettingsRequest(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    @final
-    class DeviceInfo(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class DeviceInfo(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class AgentInfo(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class AgentInfo(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            API_PROJECT_ID_FIELD_NUMBER: int
-            UNIQUE_ID_FIELD_NUMBER: int
-            api_project_id: str
-            unique_id: str
+            API_PROJECT_ID_FIELD_NUMBER: builtins.int
+            UNIQUE_ID_FIELD_NUMBER: builtins.int
+            api_project_id: builtins.str
+            unique_id: builtins.str
             def __init__(
                 self,
                 *,
-                api_project_id: str = ...,
-                unique_id: str = ...,
+                api_project_id: builtins.str = ...,
+                unique_id: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        DEVICE_ID_FIELD_NUMBER: int
-        AGENT_INFO_FIELD_NUMBER: int
-        device_id: str
-        @property
+        DEVICE_ID_FIELD_NUMBER: builtins.int
+        AGENT_INFO_FIELD_NUMBER: builtins.int
+        device_id: builtins.str
+        @builtins.property
         def agent_info(self) -> GetAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo: ...
         def __init__(
             self,
             *,
-            device_id: str = ...,
+            device_id: builtins.str = ...,
             agent_info: GetAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
-        def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info", "device_id", b"device_id"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    DEVICE_INFO_FIELD_NUMBER: int
-    STRING2_FIELD_NUMBER: int
-    string2: str
-    @property
+    DEVICE_INFO_FIELD_NUMBER: builtins.int
+    STRING2_FIELD_NUMBER: builtins.int
+    string2: builtins.str
+    @builtins.property
     def device_info(self) -> GetAssistantDeviceSettingsRequest.DeviceInfo: ...
     def __init__(
         self,
         *,
         device_info: GetAssistantDeviceSettingsRequest.DeviceInfo | None = ...,
-        string2: str = ...,
+        string2: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: Literal["device_info", b"device_info"]) -> bool: ...
-    def ClearField(self, field_name: Literal["device_info", b"device_info", "string2", b"string2"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info"]  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "string2", b"string2"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class GetAssistantDeviceSettingsResponse(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class GetAssistantDeviceSettingsResponse(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    @final
-    class Message1(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class Message1(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        NUM1_FIELD_NUMBER: int
-        NUM2_FIELD_NUMBER: int
-        NUM4_FIELD_NUMBER: int
-        NUM5_FIELD_NUMBER: int
-        NUM6_FIELD_NUMBER: int
-        STRING10_FIELD_NUMBER: int
-        num1: int
-        num2: int
-        num4: int
-        num5: int
-        num6: int
-        string10: str
+        NUM1_FIELD_NUMBER: builtins.int
+        NUM2_FIELD_NUMBER: builtins.int
+        NUM4_FIELD_NUMBER: builtins.int
+        NUM5_FIELD_NUMBER: builtins.int
+        NUM6_FIELD_NUMBER: builtins.int
+        STRING10_FIELD_NUMBER: builtins.int
+        num1: builtins.int
+        num2: builtins.int
+        num4: builtins.int
+        num5: builtins.int
+        num6: builtins.int
+        string10: builtins.str
         def __init__(
             self,
             *,
-            num1: int = ...,
-            num2: int = ...,
-            num4: int = ...,
-            num5: int = ...,
-            num6: int = ...,
-            string10: str = ...,
+            num1: builtins.int = ...,
+            num2: builtins.int = ...,
+            num4: builtins.int = ...,
+            num5: builtins.int = ...,
+            num6: builtins.int = ...,
+            string10: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: Literal["num1", b"num1", "num2", b"num2", "num4", b"num4", "num5", b"num5", "num6", b"num6", "string10", b"string10"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["num1", b"num1", "num2", b"num2", "num4", b"num4", "num5", b"num5", "num6", b"num6", "string10", b"string10"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    MESSAGE1_FIELD_NUMBER: int
-    @property
+    MESSAGE1_FIELD_NUMBER: builtins.int
+    @builtins.property
     def message1(self) -> GetAssistantDeviceSettingsResponse.Message1: ...
     def __init__(
         self,
         *,
         message1: GetAssistantDeviceSettingsResponse.Message1 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
-    def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class UpdateAssistantDeviceSettingsRequest(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class UpdateAssistantDeviceSettingsRequest(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    @final
-    class DeviceInfo(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class DeviceInfo(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class AgentInfo(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class AgentInfo(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            API_PROJECT_ID_FIELD_NUMBER: int
-            UNIQUE_ID_FIELD_NUMBER: int
-            api_project_id: str
-            unique_id: str
+            API_PROJECT_ID_FIELD_NUMBER: builtins.int
+            UNIQUE_ID_FIELD_NUMBER: builtins.int
+            api_project_id: builtins.str
+            unique_id: builtins.str
             def __init__(
                 self,
                 *,
-                api_project_id: str = ...,
-                unique_id: str = ...,
+                api_project_id: builtins.str = ...,
+                unique_id: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["api_project_id", b"api_project_id", "unique_id", b"unique_id"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        DEVICE_ID_FIELD_NUMBER: int
-        AGENT_INFO_FIELD_NUMBER: int
-        device_id: str
-        @property
+        DEVICE_ID_FIELD_NUMBER: builtins.int
+        AGENT_INFO_FIELD_NUMBER: builtins.int
+        device_id: builtins.str
+        @builtins.property
         def agent_info(self) -> UpdateAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo: ...
         def __init__(
             self,
             *,
-            device_id: str = ...,
+            device_id: builtins.str = ...,
             agent_info: UpdateAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["agent_info", b"agent_info"]) -> bool: ...
-        def ClearField(self, field_name: Literal["agent_info", b"agent_info", "device_id", b"device_id"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["agent_info", b"agent_info", "device_id", b"device_id"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    @final
-    class UpdateData(Message):
-        DESCRIPTOR: Descriptor
+    @typing.final
+    class UpdateData(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
 
-        @final
-        class Message1(Message):
-            DESCRIPTOR: Descriptor
+        @typing.final
+        class Message1(message.Message):
+            DESCRIPTOR: descriptor.Descriptor
 
-            YOUTUBE_RESTRICTED_MODE_FIELD_NUMBER: int
-            YOUTUBE_TV_CONTENT_FILTER_FIELD_NUMBER: int
-            LOCALE_FIELD_NUMBER: int
-            youtube_restricted_mode: int
+            YOUTUBE_RESTRICTED_MODE_FIELD_NUMBER: builtins.int
+            YOUTUBE_TV_CONTENT_FILTER_FIELD_NUMBER: builtins.int
+            LOCALE_FIELD_NUMBER: builtins.int
+            youtube_restricted_mode: builtins.int
             """1=off, 2=on"""
-            youtube_tv_content_filter: int
+            youtube_tv_content_filter: builtins.int
             """1=off, 2=on"""
-            locale: str
+            locale: builtins.str
             """local like "en-US" """
             def __init__(
                 self,
                 *,
-                youtube_restricted_mode: int = ...,
-                youtube_tv_content_filter: int = ...,
-                locale: str = ...,
+                youtube_restricted_mode: builtins.int = ...,
+                youtube_tv_content_filter: builtins.int = ...,
+                locale: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: Literal["locale", b"locale", "youtube_restricted_mode", b"youtube_restricted_mode", "youtube_tv_content_filter", b"youtube_tv_content_filter"]) -> None: ...
+            _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+            def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+            _ClearFieldArgType: _TypeAlias = typing.Literal["locale", b"locale", "youtube_restricted_mode", b"youtube_restricted_mode", "youtube_tv_content_filter", b"youtube_tv_content_filter"]  # noqa: Y015
+            def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+            def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-        MESSAGE1_FIELD_NUMBER: int
-        @property
+        MESSAGE1_FIELD_NUMBER: builtins.int
+        @builtins.property
         def message1(self) -> UpdateAssistantDeviceSettingsRequest.UpdateData.Message1: ...
         def __init__(
             self,
             *,
             message1: UpdateAssistantDeviceSettingsRequest.UpdateData.Message1 | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: Literal["message1", b"message1"]) -> bool: ...
-        def ClearField(self, field_name: Literal["message1", b"message1"]) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["message1", b"message1"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-    STRING1_FIELD_NUMBER: int
-    DEVICE_INFO_FIELD_NUMBER: int
-    UPDATE_DATA_FIELD_NUMBER: int
-    string1: str
-    @property
+    STRING1_FIELD_NUMBER: builtins.int
+    DEVICE_INFO_FIELD_NUMBER: builtins.int
+    UPDATE_DATA_FIELD_NUMBER: builtins.int
+    string1: builtins.str
+    @builtins.property
     def device_info(self) -> UpdateAssistantDeviceSettingsRequest.DeviceInfo: ...
-    @property
+    @builtins.property
     def update_data(self) -> UpdateAssistantDeviceSettingsRequest.UpdateData: ...
     def __init__(
         self,
         *,
-        string1: str = ...,
+        string1: builtins.str = ...,
         device_info: UpdateAssistantDeviceSettingsRequest.DeviceInfo | None = ...,
         update_data: UpdateAssistantDeviceSettingsRequest.UpdateData | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: Literal["device_info", b"device_info", "update_data", b"update_data"]) -> bool: ...
-    def ClearField(self, field_name: Literal["device_info", b"device_info", "string1", b"string1", "update_data", b"update_data"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "update_data", b"update_data"]  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["device_info", b"device_info", "string1", b"string1", "update_data", b"update_data"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
 
-@final
-class UpdateAssistantDeviceSettingsResponse(Message):
-    DESCRIPTOR: Descriptor
+@typing.final
+class UpdateAssistantDeviceSettingsResponse(message.Message):
+    DESCRIPTOR: descriptor.Descriptor
 
-    STRING1_FIELD_NUMBER: int
-    string1: str
+    STRING1_FIELD_NUMBER: builtins.int
+    string1: builtins.str
     def __init__(
         self,
         *,
-        string1: str = ...,
+        string1: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: Literal["string1", b"string1"]) -> None: ...
+    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["string1", b"string1"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
