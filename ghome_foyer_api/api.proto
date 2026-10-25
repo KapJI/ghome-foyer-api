@@ -11,6 +11,8 @@
 syntax = "proto3";
 package google.internal.home.foyer.v1;
 
+import "google/protobuf/struct.proto";
+
 // Home Control Service
 service HomeControlService {
   rpc GetAssistantRoutines (GetAssistantRoutinesRequest) returns (stream GetAssistantRoutinesResponse);
@@ -89,11 +91,37 @@ message GetHomeGraphResponse {
       Coordinates coordinates = 2;
       uint64 timestamp5 = 5;
       string timezone = 6;
+
+      // Parts of the address
+      message Message7 {
+        string string1 = 1;
+        string string2 = 2;
+        string string5 = 5;
+        string string12 = 12;
+        string string26 = 26;
+      }
+      Message7 message7 = 7;
+
+      message Message9 {
+        message Message1 {
+          string string1 = 1;
+          string string2 = 2;
+        }
+        Message1 message1 = 1;
+
+        message Message2 {
+          string string2 = 2;
+          string string3 = 3;
+        }
+        Message2 message2 = 2;
+      }
+      Message9 message9 = 9;
     }
     Location location = 3;
 
     message LinkedUser {
       string email_address = 1;
+      uint32 num4 = 4;
     }
     repeated LinkedUser linked_users = 4;
 
@@ -105,6 +133,12 @@ message GetHomeGraphResponse {
         string name = 1;
       }
       Category category = 4;
+
+      message RoomDevice {
+        Device.DeviceInfo device_info = 1;
+      }
+      // Devices in this room
+      repeated RoomDevice devices = 5;
     }
     repeated Room rooms = 6;
 
@@ -125,63 +159,55 @@ message GetHomeGraphResponse {
       string suffix = 10;
 
       message Message12 {
+        uint32 num1 = 1;
         uint32 num2 = 2;
         uint32 num4 = 4;
         uint32 num5 = 5;
+        uint32 num29 = 29;
+        uint32 num34 = 34;
         uint32 num37 = 37;
         uint32 num38 = 38;
         uint32 num45 = 45;
         uint32 num46 = 46;
+        uint32 num49 = 49;
+        uint32 num51 = 51;
+        // Such as "webrtc"
+        string string52 = 52;
       }
       Message12 message12 = 12;
 
       message Message15 {
-        uint64 num1 = 1;
+        // A number too long for uint64
+        string string1 = 1;
         uint64 num5 = 5;
         uint64 num6 = 6;
         uint64 num7 = 7;
       }
       Message15 message15 = 15;
+      // Same as message18.string3
+      repeated string string16 = 16;
 
       message Hardware {
+        // Such as "IKEA" or "Signify Netherlands B.V."
+        string manufacturer = 1;
         string model = 2;
+        string sw_version = 4;
       }
       Hardware hardware = 17;
 
       message Message18 {
+        // Set on Google speakers and displays
+        string string1 = 1;
         string device_name = 2;
+        // Such as "Nest Cam"
+        repeated string string3 = 3;
+        repeated string string4 = 4;
       }
       Message18 message18 = 18;
       uint64 timestamp19 = 19;
 
-      message Message20 {
-        message Message1 {
-          string key = 1;
-
-          message Value {
-            message Message6 {
-              message Message1 {
-                message Message5 {
-                  message Message1 {
-                    string capability = 1;
-                    message Message2 {
-                      bool bool4 = 4;
-                    }
-                    Message2 message2 = 2;
-                  }
-                  repeated Message1 message1 = 1;
-                }
-                Message5 message5 = 5;
-              }
-              Message1 message1 = 1;
-            }
-            Message6 message6 = 6;
-          }
-          Value value = 2;
-        }
-        repeated Message1 message1 = 1;
-      }
-      Message20 message20 = 20;
+      // Smart Home attributes, such as colorTemperatureRange or availableModes
+      google.protobuf.Struct attributes = 20;
 
       message Message25 {
         bool bool1 = 1;
@@ -201,34 +227,73 @@ message GetHomeGraphResponse {
       }
       repeated State states = 29;
 
+      // One per group of traits, such as deviceStatus or transportControl
       message Message30 {
         string key = 1;
-        message Message2 {
-          string string1 = 1;
-          message Message2 {
-            bool bool4 = 4;
-          }
-          Message2 message2 = 2;
-        }
-        Message2 message2 = 2;
+        // Such as online: true
+        map<string, google.protobuf.Value> state = 2;
+        // Such as availableApplications
+        google.protobuf.Struct attributes = 3;
       }
-      Message30 message30 = 30;
+      repeated Message30 message30 = 30;
+
+      message Message31 {
+        uint32 num1 = 1;
+        uint32 num3 = 3;
+      }
+      Message31 message31 = 31;
+      // Such as a Nest device's ID in another project
+      DeviceInfo.AgentInfo message32 = 32;
+      uint32 num33 = 33;
 
       message Message34 {
         bool bool1 = 1;
+        bool bool2 = 2;
       }
       Message34 message34 = 34;
+      uint32 num36 = 36;
       uint32 num37 = 37;
-      string string41 = 41;
+
+      message Message39 {
+        message Message1 {
+          // Such as "CAMERA"
+          string string1 = 1;
+          string string2 = 2;
+        }
+        repeated Message1 message1 = 1;
+      }
+      Message39 message39 = 39;
+
+      message Message41 {
+        uint32 num1 = 1;
+      }
+      Message41 message41 = 41;
       string string42 = 42;
+      uint32 num44 = 44;
+      uint32 num47 = 47;
+      uint32 num55 = 55;
+      uint32 num59 = 59;
+      string string60 = 60;
     }
     repeated Device devices = 7;
 
     message Message11 {
       bool bool1 = 1;
+      // A project ID, such as "nest-home-assistant-prod"
+      string string2 = 2;
     }
     Message11 message11 = 11;
-    string string12 = 12;
+
+    // A subscription, such as Nest Aware
+    message Message12 {
+      uint32 num2 = 2;
+      uint32 num4 = 4;
+      string email_address = 5;
+      uint32 num7 = 7;
+      // Such as "Nest Aware"
+      string string8 = 8;
+    }
+    Message12 message12 = 12;
 
     message Message13 {
       message Message1 {
@@ -249,11 +314,17 @@ message GetHomeGraphResponse {
     }
     Message13 message13 = 13;
 
-    string message14 = 14;
+    message Message14 {
+      uint32 num1 = 1;
+    }
+    Message14 message14 = 14;
 
     message Message15 {
       bool bool1 = 1;
-      string string2 = 2;
+
+      // Fields 4 to 9 are set, but empty
+      message Message2 {}
+      Message2 message2 = 2;
 
       message Message3 {
         string string1 = 1;
@@ -265,8 +336,35 @@ message GetHomeGraphResponse {
       }
       repeated Message3 message3 = 3;
       bool bool4 = 4;
+
+      message Message8 {
+        message Message1 {
+          // Such as "structure.update.supervision_settings"
+          string string1 = 1;
+          uint32 num2 = 2;
+        }
+        Message1 message1 = 1;
+      }
+      Message8 message8 = 8;
     }
     Message15 message15 = 15;
+
+    message Message18 {
+      message Message1 {
+        uint32 num1 = 1;
+        // Such as "generic"
+        string string2 = 2;
+      }
+      Message1 message1 = 1;
+    }
+    Message18 message18 = 18;
+
+    message Trait {
+      // Such as "home.platform.traits.camera.CameraStoriesTrait"
+      string name = 1;
+      map<string, google.protobuf.Value> fields = 2;
+    }
+    repeated Trait traits = 21;
   }
   Home home = 2;
 
@@ -281,7 +379,7 @@ message GetHomeGraphResponse {
     }
     DeviceInfo device_info = 1;
 
-    string group_nmae = 4;
+    string group_name = 4;
     string device_type = 6;
     string traits = 7;
     string suffix = 10;
@@ -291,6 +389,8 @@ message GetHomeGraphResponse {
       bool bool4 = 4;
       bool bool37 = 37;
       bool bool38 = 38;
+      bool bool45 = 45;
+      bool bool51 = 51;
     }
     Message12 message12 = 12;
 
@@ -316,6 +416,8 @@ message GetHomeGraphResponse {
       bool bool1 = 1;
     }
     Message34 message34 = 34;
+    uint32 num44 = 44;
+    string string60 = 60;
   }
   repeated Group groups = 3;
 
@@ -337,6 +439,10 @@ message GetHomeGraphResponse {
   message ProjectType {
     string code = 1;
     string name = 2;
+    // A URL on www.gstatic.com
+    string string3 = 3;
+    string app_store_url = 4;
+    string play_store_url = 5;
   }
   repeated ProjectType project_types = 9;
 
@@ -345,6 +451,12 @@ message GetHomeGraphResponse {
 
     message Message2 {
       uint32 num2 = 2;
+
+      message Message3 {
+        // Such as "action.devices.types.LIGHT"
+        repeated string device_types = 1;
+      }
+      Message3 message3 = 3;
     }
     Message2 message2 = 2;
   }
@@ -356,6 +468,9 @@ message GetHomeGraphResponse {
     uint32 num3 = 3;
     uint32 num4 = 4;
     uint32 num5 = 5;
+    uint32 num6 = 6;
+    // A URL, such as one on www.gstatic.com
+    string string7 = 7;
   }
   repeated LinkedApp linked_apps = 12;
 }
