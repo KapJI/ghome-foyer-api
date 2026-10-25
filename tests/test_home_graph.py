@@ -45,7 +45,7 @@ class HomeGraphTest(unittest.TestCase):
     def test_get_home_graph_keeps_homes_apart(self) -> None:
         """Each home keeps its own name and devices, unlike GetHomeGraphResponse."""
         home_graph = get_home_graph(self.channel, timeout=5)
-        homes = [(home.home_name, len(home.devices)) for home in home_graph.homes]
+        homes = [(home.display_name, len(home.devices)) for home in home_graph.homes]
         self.assertEqual(homes, [("Home", 1), ("Test home", 0)])
 
     def test_get_home_graph_bytes_sends_request(self) -> None:

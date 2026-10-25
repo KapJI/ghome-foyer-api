@@ -23,7 +23,7 @@ from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x19ghome_foyer_api/api.proto\x12\x1dgoogle.internal.home.foyer.v1\x1a\x1cgoogle/protobuf/struct.proto"\x1d\n\x1bGetAssistantRoutinesRequest"\xf4\x06\n\x1cGetAssistantRoutinesResponse\x12M\n\x02p1\x18\x01 \x03(\x0b\x32\x41.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1\x12M\n\x02p2\x18\x02 \x01(\x0b\x32\x41.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part2\x1a\x8a\x05\n\x05Part1\x12\x14\n\x0croutine_name\x18\x01 \x01(\t\x12\\\n\x08workflow\x18\x03 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow\x12\x0f\n\x07string4\x18\x04 \x01(\t\x12\x0f\n\x07string5\x18\x05 \x01(\t\x1a\xea\x03\n\x08WorkFlow\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x61\n\x05wf_s1\x18\x02 \x01(\x0b\x32R.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1\x1a\xec\x02\n\x07WF_Sub1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12q\n\x08wf_s1_s1\x18\x02 \x01(\x0b\x32_.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1\x1a\xdc\x01\n\x0cWF_Sub1_Sub1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12x\n\x07routine\x18\x02 \x01(\x0b\x32g.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1.Routine\x1a\x41\n\x07Routine\x12\x12\n\nroutine_id\x18\x01 \x01(\t\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x14\n\x0croutine_name\x18\x03 \x01(\t\x1a)\n\x05Part2\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t"4\n\x13GetHomeGraphRequest\x12\x0f\n\x07string1\x18\x03 \x01(\t\x12\x0c\n\x04num2\x18\x04 \x01(\t"\xb4G\n\x14GetHomeGraphResponse\x12\x12\n\ntimestamp1\x18\x01 \x01(\x04\x12\x46\n\x04home\x18\x02 \x01(\x0b\x32\x38.google.internal.home.foyer.v1.GetHomeGraphResponse.Home\x12I\n\x06groups\x18\x03 \x03(\x0b\x32\x39.google.internal.home.foyer.v1.GetHomeGraphResponse.Group\x12P\n\nroom_types\x18\x04 \x03(\x0b\x32<.google.internal.home.foyer.v1.GetHomeGraphResponse.RoomType\x12\x0f\n\x07string5\x18\x05 \x01(\t\x12\r\n\x05\x62ool6\x18\x06 \x01(\x08\x12T\n\x0c\x64\x65vice_types\x18\x07 \x03(\x0b\x32>.google.internal.home.foyer.v1.GetHomeGraphResponse.DeviceType\x12V\n\rproject_types\x18\t \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.ProjectType\x12P\n\tmessage11\x18\x0b \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11\x12R\n\x0blinked_apps\x18\x0c \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.LinkedApp\x1a\x98\x35\n\x04Home\x12\x0f\n\x07home_id\x18\x01 \x01(\t\x12\x11\n\thome_name\x18\x02 \x01(\t\x12S\n\x08location\x18\x03 \x01(\x0b\x32\x41.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location\x12Y\n\x0clinked_users\x18\x04 \x03(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.LinkedUser\x12L\n\x05rooms\x18\x06 \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room\x12P\n\x07\x64\x65vices\x18\x07 \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device\x12U\n\tmessage11\x18\x0b \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message11\x12U\n\tmessage12\x18\x0c \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message12\x12U\n\tmessage13\x18\r \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13\x12U\n\tmessage14\x18\x0e \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message14\x12U\n\tmessage15\x18\x0f \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15\x12U\n\tmessage18\x18\x12 \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message18\x12N\n\x06traits\x18\x15 \x03(\x0b\x32>.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Trait\x1a\xaf\x06\n\x08Location\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x62\n\x0b\x63oordinates\x18\x02 \x01(\x0b\x32M.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Coordinates\x12\x12\n\ntimestamp5\x18\x05 \x01(\x04\x12\x10\n\x08timezone\x18\x06 \x01(\t\x12\\\n\x08message7\x18\x07 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message7\x12\\\n\x08message9\x18\t \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9\x1a\x32\n\x0b\x43oordinates\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x1a\x61\n\x08Message7\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string5\x18\x05 \x01(\t\x12\x10\n\x08string12\x18\x0c \x01(\t\x12\x10\n\x08string26\x18\x1a \x01(\t\x1a\xb4\x02\n\x08Message9\x12\x65\n\x08message1\x18\x01 \x01(\x0b\x32S.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9.Message1\x12\x65\n\x08message2\x18\x02 \x01(\x0b\x32S.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9.Message2\x1a,\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a,\n\x08Message2\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x1a\x31\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x12\x0c\n\x04num4\x18\x04 \x01(\r\x1a\xe8\x02\n\x04Room\x12\x0f\n\x07room_id\x18\x01 \x01(\t\x12\x11\n\troom_name\x18\x03 \x01(\t\x12X\n\x08\x63\x61tegory\x18\x04 \x01(\x0b\x32\x46.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room.Category\x12Y\n\x07\x64\x65vices\x18\x05 \x03(\x0b\x32H.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room.RoomDevice\x1a\x18\n\x08\x43\x61tegory\x12\x0c\n\x04name\x18\x01 \x01(\t\x1am\n\nRoomDevice\x12_\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo\x1a\xf8\x16\n\x06\x44\x65vice\x12_\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo\x12\x13\n\x0b\x64\x65vice_name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x0e\n\x06traits\x18\x07 \x03(\t\x12\x0e\n\x06suffix\x18\n \x01(\t\x12\\\n\tmessage12\x18\x0c \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message12\x12\\\n\tmessage15\x18\x0f \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message15\x12\x10\n\x08string16\x18\x10 \x03(\t\x12Z\n\x08hardware\x18\x11 \x01(\x0b\x32H.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Hardware\x12\\\n\tmessage18\x18\x12 \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message18\x12\x13\n\x0btimestamp19\x18\x13 \x01(\x04\x12+\n\nattributes\x18\x14 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\\\n\tmessage25\x18\x19 \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message25\x12`\n\x0clinked_users\x18\x1a \x03(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.LinkedUser\x12\x18\n\x10local_auth_token\x18\x1c \x01(\t\x12U\n\x06states\x18\x1d \x03(\x0b\x32\x45.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.State\x12\\\n\tmessage30\x18\x1e \x03(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message30\x12\\\n\tmessage31\x18\x1f \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message31\x12g\n\tmessage32\x18  \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo\x12\r\n\x05num33\x18! \x01(\r\x12\\\n\tmessage34\x18" \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message34\x12\r\n\x05num36\x18$ \x01(\r\x12\r\n\x05num37\x18% \x01(\r\x12\\\n\tmessage39\x18\' \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message39\x12\\\n\tmessage41\x18) \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message41\x12\x10\n\x08string42\x18* \x01(\t\x12\r\n\x05num44\x18, \x01(\r\x12\r\n\x05num47\x18/ \x01(\r\x12\r\n\x05num55\x18\x37 \x01(\r\x12\r\n\x05num59\x18; \x01(\r\x12\x10\n\x08string60\x18< \x01(\t\x1a\xc1\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12h\n\nagent_info\x18\x02 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\xdb\x01\n\tMessage12\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num3\x18\x03 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\r\n\x05num29\x18\x1d \x01(\r\x12\r\n\x05num34\x18" \x01(\r\x12\r\n\x05num37\x18% \x01(\r\x12\r\n\x05num38\x18& \x01(\r\x12\r\n\x05num45\x18- \x01(\r\x12\r\n\x05num46\x18. \x01(\r\x12\r\n\x05num49\x18\x31 \x01(\r\x12\r\n\x05num51\x18\x33 \x01(\r\x12\x10\n\x08string52\x18\x34 \x01(\t\x1a\x46\n\tMessage15\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num5\x18\x05 \x01(\x04\x12\x0c\n\x04num6\x18\x06 \x01(\x04\x12\x0c\n\x04num7\x18\x07 \x01(\x04\x1a\x43\n\x08Hardware\x12\x14\n\x0cmanufacturer\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\x12\n\nsw_version\x18\x04 \x01(\t\x1aS\n\tMessage18\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x03(\t\x12\x0f\n\x07string4\x18\x04 \x03(\t\x1a)\n\tMessage25\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a#\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x1a$\n\x05State\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x1a\xf0\x01\n\tMessage30\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x63\n\x05state\x18\x02 \x03(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message30.StateEntry\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x44\n\nStateEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\'\n\tMessage31\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num3\x18\x03 \x01(\r\x1a)\n\tMessage34\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a\x9f\x01\n\tMessage39\x12\x64\n\x08message1\x18\x01 \x03(\x0b\x32R.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message39.Message1\x1a,\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\x19\n\tMessage41\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a+\n\tMessage11\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a]\n\tMessage12\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x15\n\remail_address\x18\x05 \x01(\t\x12\x0c\n\x04num7\x18\x07 \x01(\r\x12\x0f\n\x07string8\x18\x08 \x01(\t\x1a\xe4\x03\n\tMessage13\x12]\n\x08message1\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1\x12\x14\n\x0c\x64uo_call_url\x18\x02 \x01(\t\x12\x18\n\x10\x64uo_phone_number\x18\x03 \x01(\t\x1a\xc7\x02\n\x08Message1\x12k\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32V.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo\x1a\xcd\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12t\n\nagent_info\x18\x02 \x01(\x0b\x32`.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\x19\n\tMessage14\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a\x95\x05\n\tMessage15\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12]\n\x08message2\x18\x02 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message2\x12]\n\x08message3\x18\x03 \x03(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message3\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12]\n\x08message8\x18\x08 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message8\x1a\n\n\x08Message2\x1a\xa0\x01\n\x08Message3\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x66\n\x08message2\x18\x02 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message3.Message2\x1a\x1b\n\x08Message2\x12\x0f\n\x07string1\x18\x01 \x01(\t\x1a\x9d\x01\n\x08Message8\x12\x66\n\x08message1\x18\x01 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message8.Message1\x1a)\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num2\x18\x02 \x01(\r\x1a\x95\x01\n\tMessage18\x12]\n\x08message1\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message18.Message1\x1a)\n\x08Message1\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xb8\x01\n\x05Trait\x12\x0c\n\x04name\x18\x01 \x01(\t\x12Z\n\x06\x66ields\x18\x02 \x03(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Trait.FieldsEntry\x1a\x45\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\xc8\x08\n\x05Group\x12Y\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32\x44.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.DeviceInfo\x12\x12\n\ngroup_name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x0e\n\x06traits\x18\x07 \x01(\t\x12\x0e\n\x06suffix\x18\n \x01(\t\x12V\n\tmessage12\x18\x0c \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message12\x12V\n\tmessage15\x18\x0f \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message15\x12V\n\tmessage17\x18\x11 \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message17\x12V\n\tmessage18\x18\x12 \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message18\x12\x13\n\x0btimestamp19\x18\x13 \x01(\x04\x12V\n\tmessage34\x18" \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message34\x12\r\n\x05num44\x18, \x01(\r\x12\x10\n\x08string60\x18< \x01(\t\x1a\xa8\x01\n\nDeviceInfo\x12\x62\n\nagent_info\x18\x02 \x01(\x0b\x32N.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1ai\n\tMessage12\x12\r\n\x05\x62ool3\x18\x03 \x01(\x08\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12\x0e\n\x06\x62ool37\x18% \x01(\x08\x12\x0e\n\x06\x62ool38\x18& \x01(\x08\x12\x0e\n\x06\x62ool45\x18- \x01(\x08\x12\x0e\n\x06\x62ool51\x18\x33 \x01(\x08\x1a\x38\n\tMessage15\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num5\x18\x05 \x01(\x04\x12\x0c\n\x04num6\x18\x06 \x01(\r\x1a \n\tMessage17\x12\x13\n\x0bgroup_model\x18\x02 \x01(\t\x1a\x1f\n\tMessage18\x12\x12\n\ngroup_name\x18\x02 \x01(\t\x1a\x1a\n\tMessage34\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x1a&\n\x08RoomType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1a(\n\nDeviceType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1ai\n\x0bProjectType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x12\x15\n\rapp_store_url\x18\x04 \x01(\t\x12\x16\n\x0eplay_store_url\x18\x05 \x01(\t\x1a\x93\x02\n\tMessage11\x12\x0c\n\x04name\x18\x01 \x01(\t\x12X\n\x08message2\x18\x02 \x01(\x0b\x32\x46.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11.Message2\x1a\x9d\x01\n\x08Message2\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x61\n\x08message3\x18\x03 \x01(\x0b\x32O.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11.Message2.Message3\x1a \n\x08Message3\x12\x14\n\x0c\x64\x65vice_types\x18\x01 \x03(\t\x1av\n\tLinkedApp\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0c\n\x04num3\x18\x03 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\x0c\n\x04num6\x18\x06 \x01(\r\x12\x0f\n\x07string7\x18\x07 \x01(\t"\xa7\x06\n\tHomeGraph\x12\x14\n\x0clast_updated\x18\x01 \x01(\x03\x12G\n\x05homes\x18\x02 \x03(\x0b\x32\x38.google.internal.home.foyer.v1.GetHomeGraphResponse.Home\x12[\n\x12unassigned_devices\x18\x03 \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device\x12P\n\nroom_types\x18\x04 \x03(\x0b\x32<.google.internal.home.foyer.v1.GetHomeGraphResponse.RoomType\x12\x13\n\x0bstable_hash\x18\x05 \x01(\t\x12\x1e\n\x16home_graph_has_changed\x18\x06 \x01(\x08\x12T\n\x0c\x64\x65vice_types\x18\x07 \x03(\x0b\x32>.google.internal.home.foyer.v1.GetHomeGraphResponse.DeviceType\x12V\n\rproject_types\x18\t \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.ProjectType\x12V\n\x10home_graph_state\x18\x0b \x03(\x0b\x32<.google.internal.home.foyer.v1.HomeGraph.HomeGraphStateEntry\x12R\n\x0blinked_apps\x18\x0c \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.LinkedApp\x1a}\n\x13HomeGraphStateEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12U\n\x05value\x18\x02 \x01(\x0b\x32\x46.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11.Message2:\x02\x38\x01"\xdb\x02\n!GetAssistantDeviceSettingsRequest\x12`\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest.DeviceInfo\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xc2\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12i\n\nagent_info\x18\x02 \x01(\x0b\x32U.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t"\xe6\x01\n"GetAssistantDeviceSettingsResponse\x12\\\n\x08message1\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetAssistantDeviceSettingsResponse.Message1\x1a\x62\n\x08Message1\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\x0c\n\x04num6\x18\x06 \x01(\r\x12\x10\n\x08string10\x18\n \x01(\t"\xa3\x05\n$UpdateAssistantDeviceSettingsRequest\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x63\n\x0b\x64\x65vice_info\x18\x02 \x01(\x0b\x32N.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.DeviceInfo\x12\x63\n\x0bupdate_data\x18\x03 \x01(\x0b\x32N.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.UpdateData\x1a\xc5\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12l\n\nagent_info\x18\x02 \x01(\x0b\x32X.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\xd7\x01\n\nUpdateData\x12i\n\x08message1\x18\x01 \x01(\x0b\x32W.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.UpdateData.Message1\x1a^\n\x08Message1\x12\x1f\n\x17youtube_restricted_mode\x18\x04 \x01(\r\x12!\n\x19youtube_tv_content_filter\x18\x05 \x01(\r\x12\x0e\n\x06locale\x18\n \x01(\t"8\n%UpdateAssistantDeviceSettingsResponse\x12\x0f\n\x07string1\x18\x01 \x01(\t2\xa8\x01\n\x12HomeControlService\x12\x91\x01\n\x14GetAssistantRoutines\x12:.google.internal.home.foyer.v1.GetAssistantRoutinesRequest\x1a;.google.internal.home.foyer.v1.GetAssistantRoutinesResponse0\x01\x32\x8c\x01\n\x11StructuresService\x12w\n\x0cGetHomeGraph\x12\x32.google.internal.home.foyer.v1.GetHomeGraphRequest\x1a\x33.google.internal.home.foyer.v1.GetHomeGraphResponse2\xe9\x02\n\x12HomeDevicesService\x12\xa3\x01\n\x1aGetAssistantDeviceSettings\x12@.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest\x1a\x41.google.internal.home.foyer.v1.GetAssistantDeviceSettingsResponse0\x01\x12\xac\x01\n\x1dUpdateAssistantDeviceSettings\x12\x43.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest\x1a\x44.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsResponse0\x01\x62\x06proto3'
+    b'\n\x19ghome_foyer_api/api.proto\x12\x1dgoogle.internal.home.foyer.v1\x1a\x1cgoogle/protobuf/struct.proto"\x1d\n\x1bGetAssistantRoutinesRequest"\xf4\x06\n\x1cGetAssistantRoutinesResponse\x12M\n\x02p1\x18\x01 \x03(\x0b\x32\x41.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1\x12M\n\x02p2\x18\x02 \x01(\x0b\x32\x41.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part2\x1a\x8a\x05\n\x05Part1\x12\x14\n\x0croutine_name\x18\x01 \x01(\t\x12\\\n\x08workflow\x18\x03 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow\x12\x0f\n\x07string4\x18\x04 \x01(\t\x12\x0f\n\x07string5\x18\x05 \x01(\t\x1a\xea\x03\n\x08WorkFlow\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x61\n\x05wf_s1\x18\x02 \x01(\x0b\x32R.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1\x1a\xec\x02\n\x07WF_Sub1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12q\n\x08wf_s1_s1\x18\x02 \x01(\x0b\x32_.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1\x1a\xdc\x01\n\x0cWF_Sub1_Sub1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12x\n\x07routine\x18\x02 \x01(\x0b\x32g.google.internal.home.foyer.v1.GetAssistantRoutinesResponse.Part1.WorkFlow.WF_Sub1.WF_Sub1_Sub1.Routine\x1a\x41\n\x07Routine\x12\x12\n\nroutine_id\x18\x01 \x01(\t\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x14\n\x0croutine_name\x18\x03 \x01(\t\x1a)\n\x05Part2\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t"4\n\x13GetHomeGraphRequest\x12\x0f\n\x07string1\x18\x03 \x01(\t\x12\x0c\n\x04num2\x18\x04 \x01(\t"\xa6G\n\x14GetHomeGraphResponse\x12\x12\n\ntimestamp1\x18\x01 \x01(\x04\x12\x46\n\x04home\x18\x02 \x01(\x0b\x32\x38.google.internal.home.foyer.v1.GetHomeGraphResponse.Home\x12I\n\x06groups\x18\x03 \x03(\x0b\x32\x39.google.internal.home.foyer.v1.GetHomeGraphResponse.Group\x12P\n\nroom_types\x18\x04 \x03(\x0b\x32<.google.internal.home.foyer.v1.GetHomeGraphResponse.RoomType\x12\x0f\n\x07string5\x18\x05 \x01(\t\x12\r\n\x05\x62ool6\x18\x06 \x01(\x08\x12T\n\x0c\x64\x65vice_types\x18\x07 \x03(\x0b\x32>.google.internal.home.foyer.v1.GetHomeGraphResponse.DeviceType\x12V\n\rproject_types\x18\t \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.ProjectType\x12P\n\tmessage11\x18\x0b \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11\x12R\n\x0blinked_apps\x18\x0c \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.LinkedApp\x1a\x8a\x35\n\x04Home\x12\x0f\n\x07home_id\x18\x01 \x01(\t\x12\x11\n\thome_name\x18\x02 \x01(\t\x12S\n\x08location\x18\x03 \x01(\x0b\x32\x41.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location\x12Y\n\x0clinked_users\x18\x04 \x03(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.LinkedUser\x12L\n\x05rooms\x18\x06 \x03(\x0b\x32=.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room\x12P\n\x07\x64\x65vices\x18\x07 \x03(\x0b\x32?.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device\x12U\n\tmessage11\x18\x0b \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message11\x12U\n\tmessage12\x18\x0c \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message12\x12U\n\tmessage13\x18\r \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13\x12U\n\tmessage14\x18\x0e \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message14\x12U\n\tmessage15\x18\x0f \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15\x12U\n\tmessage18\x18\x12 \x01(\x0b\x32\x42.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message18\x12N\n\x06traits\x18\x15 \x03(\x0b\x32>.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Trait\x1a\xaf\x06\n\x08Location\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x62\n\x0b\x63oordinates\x18\x02 \x01(\x0b\x32M.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Coordinates\x12\x12\n\ntimestamp5\x18\x05 \x01(\x04\x12\x10\n\x08timezone\x18\x06 \x01(\t\x12\\\n\x08message7\x18\x07 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message7\x12\\\n\x08message9\x18\t \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9\x1a\x32\n\x0b\x43oordinates\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x1a\x61\n\x08Message7\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string5\x18\x05 \x01(\t\x12\x10\n\x08string12\x18\x0c \x01(\t\x12\x10\n\x08string26\x18\x1a \x01(\t\x1a\xb4\x02\n\x08Message9\x12\x65\n\x08message1\x18\x01 \x01(\x0b\x32S.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9.Message1\x12\x65\n\x08message2\x18\x02 \x01(\x0b\x32S.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Location.Message9.Message2\x1a,\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a,\n\x08Message2\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x1a\x31\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x12\x0c\n\x04num4\x18\x04 \x01(\r\x1a\xe8\x02\n\x04Room\x12\x0f\n\x07room_id\x18\x01 \x01(\t\x12\x11\n\troom_name\x18\x03 \x01(\t\x12X\n\x08\x63\x61tegory\x18\x04 \x01(\x0b\x32\x46.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room.Category\x12Y\n\x07\x64\x65vices\x18\x05 \x03(\x0b\x32H.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Room.RoomDevice\x1a\x18\n\x08\x43\x61tegory\x12\x0c\n\x04name\x18\x01 \x01(\t\x1am\n\nRoomDevice\x12_\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo\x1a\xea\x16\n\x06\x44\x65vice\x12_\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo\x12\x13\n\x0b\x64\x65vice_name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x0e\n\x06traits\x18\x07 \x03(\t\x12\x0e\n\x06suffix\x18\n \x01(\t\x12\\\n\tmessage12\x18\x0c \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message12\x12\\\n\tmessage15\x18\x0f \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message15\x12\x10\n\x08string16\x18\x10 \x03(\t\x12Z\n\x08hardware\x18\x11 \x01(\x0b\x32H.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Hardware\x12\\\n\tmessage18\x18\x12 \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message18\x12\x13\n\x0btimestamp19\x18\x13 \x01(\x04\x12+\n\nattributes\x18\x14 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\\\n\tmessage25\x18\x19 \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message25\x12`\n\x0clinked_users\x18\x1a \x03(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.LinkedUser\x12\x18\n\x10local_auth_token\x18\x1c \x01(\t\x12U\n\x06states\x18\x1d \x03(\x0b\x32\x45.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.State\x12\\\n\tmessage30\x18\x1e \x03(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message30\x12\\\n\tmessage31\x18\x1f \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message31\x12g\n\tmessage32\x18  \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo\x12\r\n\x05num33\x18! \x01(\r\x12\\\n\tmessage34\x18" \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message34\x12\r\n\x05num36\x18$ \x01(\r\x12\r\n\x05num37\x18% \x01(\r\x12\\\n\tmessage39\x18\' \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message39\x12\\\n\tmessage41\x18) \x01(\x0b\x32I.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message41\x12\x10\n\x08string42\x18* \x01(\t\x12\r\n\x05num44\x18, \x01(\r\x12\r\n\x05num47\x18/ \x01(\r\x12\r\n\x05num55\x18\x37 \x01(\r\x12\r\n\x05num59\x18; \x01(\r\x12\x10\n\x08string60\x18< \x01(\t\x1a\xc1\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12h\n\nagent_info\x18\x02 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\xcd\x01\n\tMessage12\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\r\n\x05num29\x18\x1d \x01(\r\x12\r\n\x05num34\x18" \x01(\r\x12\r\n\x05num37\x18% \x01(\r\x12\r\n\x05num38\x18& \x01(\r\x12\r\n\x05num45\x18- \x01(\r\x12\r\n\x05num46\x18. \x01(\r\x12\r\n\x05num49\x18\x31 \x01(\r\x12\r\n\x05num51\x18\x33 \x01(\r\x12\x10\n\x08string52\x18\x34 \x01(\t\x1a\x46\n\tMessage15\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num5\x18\x05 \x01(\x04\x12\x0c\n\x04num6\x18\x06 \x01(\x04\x12\x0c\n\x04num7\x18\x07 \x01(\x04\x1a\x43\n\x08Hardware\x12\x14\n\x0cmanufacturer\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\x12\n\nsw_version\x18\x04 \x01(\t\x1aS\n\tMessage18\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x03(\t\x12\x0f\n\x07string4\x18\x04 \x03(\t\x1a)\n\tMessage25\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a#\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x1a$\n\x05State\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x1a\xf0\x01\n\tMessage30\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x63\n\x05state\x18\x02 \x03(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message30.StateEntry\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x44\n\nStateEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\'\n\tMessage31\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num3\x18\x03 \x01(\r\x1a)\n\tMessage34\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a\x9f\x01\n\tMessage39\x12\x64\n\x08message1\x18\x01 \x03(\x0b\x32R.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Device.Message39.Message1\x1a,\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\x19\n\tMessage41\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a+\n\tMessage11\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a]\n\tMessage12\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x15\n\remail_address\x18\x05 \x01(\t\x12\x0c\n\x04num7\x18\x07 \x01(\r\x12\x0f\n\x07string8\x18\x08 \x01(\t\x1a\xe4\x03\n\tMessage13\x12]\n\x08message1\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1\x12\x14\n\x0c\x64uo_call_url\x18\x02 \x01(\t\x12\x18\n\x10\x64uo_phone_number\x18\x03 \x01(\t\x1a\xc7\x02\n\x08Message1\x12k\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32V.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo\x1a\xcd\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12t\n\nagent_info\x18\x02 \x01(\x0b\x32`.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message13.Message1.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\x19\n\tMessage14\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a\x95\x05\n\tMessage15\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12]\n\x08message2\x18\x02 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message2\x12]\n\x08message3\x18\x03 \x03(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message3\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12]\n\x08message8\x18\x08 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message8\x1a\n\n\x08Message2\x1a\xa0\x01\n\x08Message3\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x66\n\x08message2\x18\x02 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message3.Message2\x1a\x1b\n\x08Message2\x12\x0f\n\x07string1\x18\x01 \x01(\t\x1a\x9d\x01\n\x08Message8\x12\x66\n\x08message1\x18\x01 \x01(\x0b\x32T.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message15.Message8.Message1\x1a)\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num2\x18\x02 \x01(\r\x1a\x95\x01\n\tMessage18\x12]\n\x08message1\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Message18.Message1\x1a)\n\x08Message1\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xb8\x01\n\x05Trait\x12\x0c\n\x04name\x18\x01 \x01(\t\x12Z\n\x06\x66ields\x18\x02 \x03(\x0b\x32J.google.internal.home.foyer.v1.GetHomeGraphResponse.Home.Trait.FieldsEntry\x1a\x45\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\xc8\x08\n\x05Group\x12Y\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32\x44.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.DeviceInfo\x12\x12\n\ngroup_name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_type\x18\x06 \x01(\t\x12\x0e\n\x06traits\x18\x07 \x01(\t\x12\x0e\n\x06suffix\x18\n \x01(\t\x12V\n\tmessage12\x18\x0c \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message12\x12V\n\tmessage15\x18\x0f \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message15\x12V\n\tmessage17\x18\x11 \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message17\x12V\n\tmessage18\x18\x12 \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message18\x12\x13\n\x0btimestamp19\x18\x13 \x01(\x04\x12V\n\tmessage34\x18" \x01(\x0b\x32\x43.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.Message34\x12\r\n\x05num44\x18, \x01(\r\x12\x10\n\x08string60\x18< \x01(\t\x1a\xa8\x01\n\nDeviceInfo\x12\x62\n\nagent_info\x18\x02 \x01(\x0b\x32N.google.internal.home.foyer.v1.GetHomeGraphResponse.Group.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1ai\n\tMessage12\x12\r\n\x05\x62ool3\x18\x03 \x01(\x08\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12\x0e\n\x06\x62ool37\x18% \x01(\x08\x12\x0e\n\x06\x62ool38\x18& \x01(\x08\x12\x0e\n\x06\x62ool45\x18- \x01(\x08\x12\x0e\n\x06\x62ool51\x18\x33 \x01(\x08\x1a\x38\n\tMessage15\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num5\x18\x05 \x01(\x04\x12\x0c\n\x04num6\x18\x06 \x01(\r\x1a \n\tMessage17\x12\x13\n\x0bgroup_model\x18\x02 \x01(\t\x1a\x1f\n\tMessage18\x12\x12\n\ngroup_name\x18\x02 \x01(\t\x1a\x1a\n\tMessage34\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x1a&\n\x08RoomType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1a(\n\nDeviceType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1ai\n\x0bProjectType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x12\x15\n\rapp_store_url\x18\x04 \x01(\t\x12\x16\n\x0eplay_store_url\x18\x05 \x01(\t\x1a\x93\x02\n\tMessage11\x12\x0c\n\x04name\x18\x01 \x01(\t\x12X\n\x08message2\x18\x02 \x01(\x0b\x32\x46.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11.Message2\x1a\x9d\x01\n\x08Message2\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x61\n\x08message3\x18\x03 \x01(\x0b\x32O.google.internal.home.foyer.v1.GetHomeGraphResponse.Message11.Message2.Message3\x1a \n\x08Message3\x12\x14\n\x0c\x64\x65vice_types\x18\x01 \x03(\t\x1av\n\tLinkedApp\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0c\n\x04num3\x18\x03 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\x0c\n\x04num6\x18\x06 \x01(\r\x12\x0f\n\x07string7\x18\x07 \x01(\t"\xd5<\n\tHomeGraph\x12\x14\n\x0clast_updated\x18\x01 \x01(\x03\x12<\n\x05homes\x18\x02 \x03(\x0b\x32-.google.internal.home.foyer.v1.HomeGraph.Home\x12K\n\x12unassigned_devices\x18\x03 \x03(\x0b\x32/.google.internal.home.foyer.v1.HomeGraph.Device\x12G\n\x0bspace_types\x18\x04 \x03(\x0b\x32\x32.google.internal.home.foyer.v1.HomeGraph.SpaceType\x12\x13\n\x0bstable_hash\x18\x05 \x01(\t\x12\x1e\n\x16home_graph_has_changed\x18\x06 \x01(\x08\x12I\n\x0c\x64\x65vice_types\x18\x07 \x03(\x0b\x32\x33.google.internal.home.foyer.v1.HomeGraph.DeviceType\x12\x43\n\x0b\x61gents_info\x18\t \x03(\x0b\x32..google.internal.home.foyer.v1.HomeGraph.Agent\x12V\n\x10home_graph_state\x18\x0b \x03(\x0b\x32<.google.internal.home.foyer.v1.HomeGraph.HomeGraphStateEntry\x12[\n\x15linkable_applications\x18\x0c \x03(\x0b\x32<.google.internal.home.foyer.v1.HomeGraph.LinkableApplication\x1a\xa6\x01\n\x08\x44\x65viceId\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12O\n\nagent_info\x18\x02 \x01(\x0b\x32;.google.internal.home.foyer.v1.HomeGraph.DeviceId.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1aJ\n\tDeviceRef\x12=\n\x02id\x18\x01 \x01(\x0b\x32\x31.google.internal.home.foyer.v1.HomeGraph.DeviceId\x1a\x9d\x13\n\x06\x44\x65vice\x12=\n\x02id\x18\x01 \x01(\x0b\x32\x31.google.internal.home.foyer.v1.HomeGraph.DeviceId\x12\x14\n\x0c\x64isplay_name\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\x0e\n\x06traits\x18\x07 \x03(\t\x12\x0e\n\x06suffix\x18\n \x01(\t\x12[\n\x11\x63\x61st_capabilities\x18\x0c \x01(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Device.CastCapabilities\x12L\n\tmessage15\x18\x0f \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message15\x12\x15\n\rdefault_names\x18\x10 \x03(\t\x12J\n\x08hardware\x18\x11 \x01(\x0b\x32\x38.google.internal.home.foyer.v1.HomeGraph.Device.Hardware\x12\x44\n\x05names\x18\x12 \x01(\x0b\x32\x35.google.internal.home.foyer.v1.HomeGraph.Device.Names\x12\x13\n\x0btimestamp19\x18\x13 \x01(\x04\x12+\n\nattributes\x18\x14 \x01(\x0b\x32\x17.google.protobuf.Struct\x12L\n\tmessage25\x18\x19 \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message25\x12P\n\x0clinked_users\x18\x1a \x03(\x0b\x32:.google.internal.home.foyer.v1.HomeGraph.Device.LinkedUser\x12\x18\n\x10local_auth_token\x18\x1c \x01(\t\x12\x45\n\x06states\x18\x1d \x03(\x0b\x32\x35.google.internal.home.foyer.v1.HomeGraph.Device.State\x12L\n\tmessage30\x18\x1e \x03(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message30\x12L\n\tmessage31\x18\x1f \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message31\x12N\n\tmessage32\x18  \x01(\x0b\x32;.google.internal.home.foyer.v1.HomeGraph.DeviceId.AgentInfo\x12\r\n\x05num33\x18! \x01(\r\x12L\n\tmessage34\x18" \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message34\x12\r\n\x05num36\x18$ \x01(\r\x12\r\n\x05num37\x18% \x01(\r\x12K\n\tother_ids\x18\' \x01(\x0b\x32\x38.google.internal.home.foyer.v1.HomeGraph.Device.OtherIds\x12L\n\tmessage41\x18) \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Device.Message41\x12\x10\n\x08string42\x18* \x01(\t\x12\r\n\x05num44\x18, \x01(\r\x12\r\n\x05num47\x18/ \x01(\r\x12\r\n\x05num55\x18\x37 \x01(\r\x12\r\n\x05num59\x18; \x01(\r\x12\x10\n\x08string60\x18< \x01(\t\x1a\xef\x01\n\x10\x43\x61stCapabilities\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x12\r\n\x05\x62ool3\x18\x03 \x01(\x08\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12\r\n\x05\x62ool5\x18\x05 \x01(\x08\x12\x0e\n\x06\x62ool29\x18\x1d \x01(\x08\x12\x0e\n\x06\x62ool34\x18" \x01(\x08\x12\x0e\n\x06\x62ool37\x18% \x01(\x08\x12\x0e\n\x06\x62ool38\x18& \x01(\x08\x12\x0e\n\x06\x62ool45\x18- \x01(\x08\x12\x0e\n\x06\x62ool46\x18. \x01(\x08\x12\x0e\n\x06\x62ool49\x18\x31 \x01(\x08\x12\x0e\n\x06\x62ool51\x18\x33 \x01(\x08\x12\x10\n\x08string52\x18\x34 \x01(\t\x1a\x46\n\tMessage15\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num5\x18\x05 \x01(\x04\x12\x0c\n\x04num6\x18\x06 \x01(\x04\x12\x0c\n\x04num7\x18\x07 \x01(\x04\x1a\x43\n\x08Hardware\x12\x14\n\x0cmanufacturer\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\t\x12\x12\n\nsw_version\x18\x04 \x01(\t\x1aP\n\x05Names\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x15\n\rdefault_names\x18\x03 \x03(\t\x12\x11\n\tnicknames\x18\x04 \x03(\t\x1a)\n\tMessage25\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a#\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x1a$\n\x05State\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x1a\xe0\x01\n\tMessage30\x12\x0b\n\x03key\x18\x01 \x01(\t\x12S\n\x05state\x18\x02 \x03(\x0b\x32\x44.google.internal.home.foyer.v1.HomeGraph.Device.Message30.StateEntry\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x44\n\nStateEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1a\'\n\tMessage31\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num3\x18\x03 \x01(\r\x1a)\n\tMessage34\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12\r\n\x05\x62ool2\x18\x02 \x01(\x08\x1a~\n\x08OtherIds\x12M\n\x03ids\x18\x01 \x03(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Device.OtherIds.OtherId\x1a#\n\x07OtherId\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x1a\x19\n\tMessage41\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a\xd3\x01\n\x05Space\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12I\n\x08\x63\x61tegory\x18\x04 \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Space.Category\x12\x43\n\x07\x64\x65vices\x18\x05 \x03(\x0b\x32\x32.google.internal.home.foyer.v1.HomeGraph.DeviceRef\x1a\x18\n\x08\x43\x61tegory\x12\x0c\n\x04name\x18\x01 \x01(\t\x1a\xb2\x1c\n\x04Home\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12H\n\x08location\x18\x03 \x01(\x0b\x32\x36.google.internal.home.foyer.v1.HomeGraph.Home.Location\x12N\n\x0clinked_users\x18\x04 \x03(\x0b\x32\x38.google.internal.home.foyer.v1.HomeGraph.Home.LinkedUser\x12>\n\x06spaces\x18\x06 \x03(\x0b\x32..google.internal.home.foyer.v1.HomeGraph.Space\x12@\n\x07\x64\x65vices\x18\x07 \x03(\x0b\x32/.google.internal.home.foyer.v1.HomeGraph.Device\x12J\n\tmessage11\x18\x0b \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Message11\x12N\n\x0b\x65ntitlement\x18\x0c \x01(\x0b\x32\x39.google.internal.home.foyer.v1.HomeGraph.Home.Entitlement\x12W\n\x10\x64uo_registration\x18\r \x01(\x0b\x32=.google.internal.home.foyer.v1.HomeGraph.Home.DuoRegistration\x12J\n\tmessage14\x18\x0e \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Message14\x12J\n\tmessage15\x18\x0f \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Message15\x12J\n\tfavorites\x18\x10 \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Favorites\x12J\n\tmessage18\x18\x12 \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Message18\x12\x43\n\x06traits\x18\x15 \x03(\x0b\x32\x33.google.internal.home.foyer.v1.HomeGraph.Home.Trait\x12O\n\tmessage23\x18\x17 \x03(\x0b\x32<.google.internal.home.foyer.v1.HomeGraph.Home.Message23Entry\x1a\x9c\x06\n\x08Location\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12W\n\x0b\x63oordinates\x18\x02 \x01(\x0b\x32\x42.google.internal.home.foyer.v1.HomeGraph.Home.Location.Coordinates\x12\x12\n\ntimestamp5\x18\x05 \x01(\x04\x12\x10\n\x08timezone\x18\x06 \x01(\t\x12Q\n\x08message7\x18\x07 \x01(\x0b\x32?.google.internal.home.foyer.v1.HomeGraph.Home.Location.Message7\x12Q\n\x08message9\x18\t \x01(\x0b\x32?.google.internal.home.foyer.v1.HomeGraph.Home.Location.Message9\x1a\x32\n\x0b\x43oordinates\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x1a\x84\x01\n\x08Message7\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string5\x18\x05 \x01(\t\x12\x0f\n\x07string6\x18\x06 \x01(\t\x12\x10\n\x08string11\x18\x0b \x01(\t\x12\x10\n\x08string12\x18\x0c \x01(\t\x12\x10\n\x08string26\x18\x1a \x01(\t\x1a\x9e\x02\n\x08Message9\x12Z\n\x08message1\x18\x01 \x01(\x0b\x32H.google.internal.home.foyer.v1.HomeGraph.Home.Location.Message9.Message1\x12Z\n\x08message2\x18\x02 \x01(\x0b\x32H.google.internal.home.foyer.v1.HomeGraph.Home.Location.Message9.Message2\x1a,\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a,\n\x08Message2\x12\x0f\n\x07string2\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x1a\x31\n\nLinkedUser\x12\x15\n\remail_address\x18\x01 \x01(\t\x12\x0c\n\x04num4\x18\x04 \x01(\r\x1a*\n\tMessage11\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xd2\x01\n\x0b\x45ntitlement\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x15\n\remail_address\x18\x05 \x01(\t\x12\x0c\n\x04num7\x18\x07 \x01(\r\x12\x0f\n\x07string8\x18\x08 \x01(\t\x12V\n\tmessage11\x18\x0b \x01(\x0b\x32\x43.google.internal.home.foyer.v1.HomeGraph.Home.Entitlement.Message11\x1a\x19\n\tMessage11\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a\x87\x01\n\x0f\x44uoRegistration\x12\x44\n\x08message1\x18\x01 \x01(\x0b\x32\x32.google.internal.home.foyer.v1.HomeGraph.DeviceRef\x12\x14\n\x0c\x64uo_call_url\x18\x02 \x01(\t\x12\x18\n\x10\x64uo_phone_number\x18\x03 \x01(\t\x1a\x19\n\tMessage14\x12\x0c\n\x04num1\x18\x01 \x01(\r\x1a\xde\x04\n\tMessage15\x12\r\n\x05\x62ool1\x18\x01 \x01(\x08\x12R\n\x08message2\x18\x02 \x01(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Home.Message15.Message2\x12R\n\x08message3\x18\x03 \x03(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Home.Message15.Message3\x12\r\n\x05\x62ool4\x18\x04 \x01(\x08\x12R\n\x08message8\x18\x08 \x01(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Home.Message15.Message8\x1a\n\n\x08Message2\x1a\x95\x01\n\x08Message3\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12[\n\x08message2\x18\x02 \x01(\x0b\x32I.google.internal.home.foyer.v1.HomeGraph.Home.Message15.Message3.Message2\x1a\x1b\n\x08Message2\x12\x0f\n\x07string1\x18\x01 \x01(\t\x1a\x92\x01\n\x08Message8\x12[\n\x08message1\x18\x01 \x01(\x0b\x32I.google.internal.home.foyer.v1.HomeGraph.Home.Message15.Message8.Message1\x1a)\n\x08Message1\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04num2\x18\x02 \x01(\r\x1a\xaf\x02\n\tFavorites\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04num3\x18\x03 \x01(\r\x12K\n\x05items\x18\x04 \x03(\x0b\x32<.google.internal.home.foyer.v1.HomeGraph.Home.Favorites.Item\x1a\xb8\x01\n\x04Item\x12W\n\x08message1\x18\x01 \x01(\x0b\x32\x45.google.internal.home.foyer.v1.HomeGraph.Home.Favorites.Item.Message1\x1aW\n\x08Message1\x12=\n\x02id\x18\x01 \x01(\x0b\x32\x31.google.internal.home.foyer.v1.HomeGraph.DeviceId\x12\x0c\n\x04num3\x18\x03 \x01(\r\x1a\x8a\x01\n\tMessage18\x12R\n\x08message1\x18\x01 \x01(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.Home.Message18.Message1\x1a)\n\x08Message1\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xad\x01\n\x05Trait\x12\x0c\n\x04name\x18\x01 \x01(\t\x12O\n\x06\x66ields\x18\x02 \x03(\x0b\x32?.google.internal.home.foyer.v1.HomeGraph.Home.Trait.FieldsEntry\x1a\x45\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x1ai\n\x0eMessage23Entry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x46\n\x05value\x18\x02 \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.Home.Favorites:\x02\x38\x01\x1a\'\n\tSpaceType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1a(\n\nDeviceType\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x1am\n\x05\x41gent\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07string3\x18\x03 \x01(\t\x12\x15\n\rapp_store_url\x18\x04 \x01(\t\x12\x16\n\x0eplay_store_url\x18\x05 \x01(\t\x1a\x92\x01\n\x0eHomeGraphState\x12\r\n\x05\x63ount\x18\x02 \x01(\r\x12V\n\x0c\x64\x65vice_types\x18\x03 \x01(\x0b\x32@.google.internal.home.foyer.v1.HomeGraph.HomeGraphState.TypeList\x1a\x19\n\x08TypeList\x12\r\n\x05types\x18\x01 \x03(\t\x1an\n\x13HomeGraphStateEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x46\n\x05value\x18\x02 \x01(\x0b\x32\x37.google.internal.home.foyer.v1.HomeGraph.HomeGraphState:\x02\x38\x01\x1a}\n\x13LinkableApplication\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04num3\x18\x03 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\x0c\n\x04num6\x18\x06 \x01(\r\x12\x0f\n\x07string7\x18\x07 \x01(\t"\xdb\x02\n!GetAssistantDeviceSettingsRequest\x12`\n\x0b\x64\x65vice_info\x18\x01 \x01(\x0b\x32K.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest.DeviceInfo\x12\x0f\n\x07string2\x18\x02 \x01(\t\x1a\xc2\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12i\n\nagent_info\x18\x02 \x01(\x0b\x32U.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t"\xe6\x01\n"GetAssistantDeviceSettingsResponse\x12\\\n\x08message1\x18\x01 \x01(\x0b\x32J.google.internal.home.foyer.v1.GetAssistantDeviceSettingsResponse.Message1\x1a\x62\n\x08Message1\x12\x0c\n\x04num1\x18\x01 \x01(\r\x12\x0c\n\x04num2\x18\x02 \x01(\r\x12\x0c\n\x04num4\x18\x04 \x01(\r\x12\x0c\n\x04num5\x18\x05 \x01(\r\x12\x0c\n\x04num6\x18\x06 \x01(\r\x12\x10\n\x08string10\x18\n \x01(\t"\xa3\x05\n$UpdateAssistantDeviceSettingsRequest\x12\x0f\n\x07string1\x18\x01 \x01(\t\x12\x63\n\x0b\x64\x65vice_info\x18\x02 \x01(\x0b\x32N.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.DeviceInfo\x12\x63\n\x0bupdate_data\x18\x03 \x01(\x0b\x32N.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.UpdateData\x1a\xc5\x01\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12l\n\nagent_info\x18\x02 \x01(\x0b\x32X.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.DeviceInfo.AgentInfo\x1a\x36\n\tAgentInfo\x12\x16\n\x0e\x61pi_project_id\x18\x01 \x01(\t\x12\x11\n\tunique_id\x18\x02 \x01(\t\x1a\xd7\x01\n\nUpdateData\x12i\n\x08message1\x18\x01 \x01(\x0b\x32W.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest.UpdateData.Message1\x1a^\n\x08Message1\x12\x1f\n\x17youtube_restricted_mode\x18\x04 \x01(\r\x12!\n\x19youtube_tv_content_filter\x18\x05 \x01(\r\x12\x0e\n\x06locale\x18\n \x01(\t"8\n%UpdateAssistantDeviceSettingsResponse\x12\x0f\n\x07string1\x18\x01 \x01(\t2\xa8\x01\n\x12HomeControlService\x12\x91\x01\n\x14GetAssistantRoutines\x12:.google.internal.home.foyer.v1.GetAssistantRoutinesRequest\x1a;.google.internal.home.foyer.v1.GetAssistantRoutinesResponse0\x01\x32\x8c\x01\n\x11StructuresService\x12w\n\x0cGetHomeGraph\x12\x32.google.internal.home.foyer.v1.GetHomeGraphRequest\x1a\x33.google.internal.home.foyer.v1.GetHomeGraphResponse2\xe9\x02\n\x12HomeDevicesService\x12\xa3\x01\n\x1aGetAssistantDeviceSettings\x12@.google.internal.home.foyer.v1.GetAssistantDeviceSettingsRequest\x1a\x41.google.internal.home.foyer.v1.GetAssistantDeviceSettingsResponse0\x01\x12\xac\x01\n\x1dUpdateAssistantDeviceSettings\x12\x43.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsRequest\x1a\x44.google.internal.home.foyer.v1.UpdateAssistantDeviceSettingsResponse0\x01\x62\x06proto3'
 )
 
 _globals = globals()
@@ -41,6 +41,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_TRAIT_FIELDSENTRY"
     ]._serialized_options = b"8\001"
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30_STATEENTRY"]._loaded_options = None
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30_STATEENTRY"]._serialized_options = b"8\001"
+    _globals["_HOMEGRAPH_HOME_TRAIT_FIELDSENTRY"]._loaded_options = None
+    _globals["_HOMEGRAPH_HOME_TRAIT_FIELDSENTRY"]._serialized_options = b"8\001"
+    _globals["_HOMEGRAPH_HOME_MESSAGE23ENTRY"]._loaded_options = None
+    _globals["_HOMEGRAPH_HOME_MESSAGE23ENTRY"]._serialized_options = b"8\001"
     _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._loaded_options = None
     _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._serialized_options = b"8\001"
     _globals["_GETASSISTANTROUTINESREQUEST"]._serialized_start = 90
@@ -74,9 +80,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["_GETHOMEGRAPHREQUEST"]._serialized_start = 1008
     _globals["_GETHOMEGRAPHREQUEST"]._serialized_end = 1060
     _globals["_GETHOMEGRAPHRESPONSE"]._serialized_start = 1063
-    _globals["_GETHOMEGRAPHRESPONSE"]._serialized_end = 10203
+    _globals["_GETHOMEGRAPHRESPONSE"]._serialized_end = 10189
     _globals["_GETHOMEGRAPHRESPONSE_HOME"]._serialized_start = 1709
-    _globals["_GETHOMEGRAPHRESPONSE_HOME"]._serialized_end = 8517
+    _globals["_GETHOMEGRAPHRESPONSE_HOME"]._serialized_end = 8503
     _globals["_GETHOMEGRAPHRESPONSE_HOME_LOCATION"]._serialized_start = 2692
     _globals["_GETHOMEGRAPHRESPONSE_HOME_LOCATION"]._serialized_end = 3507
     _globals["_GETHOMEGRAPHRESPONSE_HOME_LOCATION_COORDINATES"]._serialized_start = 3047
@@ -106,7 +112,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
     _globals["_GETHOMEGRAPHRESPONSE_HOME_ROOM_ROOMDEVICE"]._serialized_start = 3812
     _globals["_GETHOMEGRAPHRESPONSE_HOME_ROOM_ROOMDEVICE"]._serialized_end = 3921
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE"]._serialized_start = 3924
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE"]._serialized_end = 6860
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE"]._serialized_end = 6846
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_DEVICEINFO"]._serialized_start = 5585
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_DEVICEINFO"]._serialized_end = 5778
     _globals[
@@ -116,151 +122,257 @@ if not _descriptor._USE_C_DESCRIPTORS:
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_DEVICEINFO_AGENTINFO"
     ]._serialized_end = 5778
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE12"]._serialized_start = 5781
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE12"]._serialized_end = 6000
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE15"]._serialized_start = 6002
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE15"]._serialized_end = 6072
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_HARDWARE"]._serialized_start = 6074
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_HARDWARE"]._serialized_end = 6141
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE18"]._serialized_start = 6143
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE18"]._serialized_end = 6226
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE25"]._serialized_start = 6228
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE25"]._serialized_end = 6269
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE12"]._serialized_end = 5986
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE15"]._serialized_start = 5988
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE15"]._serialized_end = 6058
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_HARDWARE"]._serialized_start = 6060
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_HARDWARE"]._serialized_end = 6127
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE18"]._serialized_start = 6129
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE18"]._serialized_end = 6212
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE25"]._serialized_start = 6214
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE25"]._serialized_end = 6255
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_LINKEDUSER"]._serialized_start = 3509
     _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_LINKEDUSER"]._serialized_end = 3544
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_STATE"]._serialized_start = 6308
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_STATE"]._serialized_end = 6344
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30"]._serialized_start = 6347
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30"]._serialized_end = 6587
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_STATE"]._serialized_start = 6294
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_STATE"]._serialized_end = 6330
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30"]._serialized_start = 6333
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30"]._serialized_end = 6573
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_STATEENTRY"
-    ]._serialized_start = 6519
+    ]._serialized_start = 6505
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE30_STATEENTRY"
-    ]._serialized_end = 6587
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE31"]._serialized_start = 6589
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE31"]._serialized_end = 6628
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE34"]._serialized_start = 6630
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE34"]._serialized_end = 6671
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39"]._serialized_start = 6674
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39"]._serialized_end = 6833
+    ]._serialized_end = 6573
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE31"]._serialized_start = 6575
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE31"]._serialized_end = 6614
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE34"]._serialized_start = 6616
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE34"]._serialized_end = 6657
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39"]._serialized_start = 6660
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39"]._serialized_end = 6819
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39_MESSAGE1"
     ]._serialized_start = 3417
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE39_MESSAGE1"
     ]._serialized_end = 3461
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE41"]._serialized_start = 6835
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE41"]._serialized_end = 6860
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE11"]._serialized_start = 6862
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE11"]._serialized_end = 6905
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE12"]._serialized_start = 6907
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE12"]._serialized_end = 7000
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13"]._serialized_start = 7003
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13"]._serialized_end = 7487
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1"]._serialized_start = 7160
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1"]._serialized_end = 7487
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE41"]._serialized_start = 6821
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_DEVICE_MESSAGE41"]._serialized_end = 6846
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE11"]._serialized_start = 6848
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE11"]._serialized_end = 6891
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE12"]._serialized_start = 6893
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE12"]._serialized_end = 6986
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13"]._serialized_start = 6989
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13"]._serialized_end = 7473
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1"]._serialized_start = 7146
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1"]._serialized_end = 7473
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1_DEVICEINFO"
-    ]._serialized_start = 7282
+    ]._serialized_start = 7268
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1_DEVICEINFO"
-    ]._serialized_end = 7487
+    ]._serialized_end = 7473
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1_DEVICEINFO_AGENTINFO"
     ]._serialized_start = 5724
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE13_MESSAGE1_DEVICEINFO_AGENTINFO"
     ]._serialized_end = 5778
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE14"]._serialized_start = 7489
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE14"]._serialized_end = 7514
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15"]._serialized_start = 7517
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15"]._serialized_end = 8178
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE14"]._serialized_start = 7475
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE14"]._serialized_end = 7500
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15"]._serialized_start = 7503
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15"]._serialized_end = 8164
     _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE2"]._serialized_start = 3463
     _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE2"]._serialized_end = 3473
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3"]._serialized_start = 7858
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3"]._serialized_end = 8018
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3"]._serialized_start = 7844
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3"]._serialized_end = 8004
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3_MESSAGE2"
-    ]._serialized_start = 7991
+    ]._serialized_start = 7977
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE3_MESSAGE2"
-    ]._serialized_end = 8018
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8"]._serialized_start = 8021
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8"]._serialized_end = 8178
+    ]._serialized_end = 8004
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8"]._serialized_start = 8007
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8"]._serialized_end = 8164
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8_MESSAGE1"
-    ]._serialized_start = 8137
+    ]._serialized_start = 8123
     _globals[
         "_GETHOMEGRAPHRESPONSE_HOME_MESSAGE15_MESSAGE8_MESSAGE1"
-    ]._serialized_end = 8178
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18"]._serialized_start = 8181
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18"]._serialized_end = 8330
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18_MESSAGE1"]._serialized_start = 8289
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18_MESSAGE1"]._serialized_end = 8330
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT"]._serialized_start = 8333
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT"]._serialized_end = 8517
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT_FIELDSENTRY"]._serialized_start = 8448
-    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT_FIELDSENTRY"]._serialized_end = 8517
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP"]._serialized_start = 8520
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP"]._serialized_end = 9616
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_start = 9188
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_end = 9356
+    ]._serialized_end = 8164
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18"]._serialized_start = 8167
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18"]._serialized_end = 8316
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18_MESSAGE1"]._serialized_start = 8275
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_MESSAGE18_MESSAGE1"]._serialized_end = 8316
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT"]._serialized_start = 8319
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT"]._serialized_end = 8503
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT_FIELDSENTRY"]._serialized_start = 8434
+    _globals["_GETHOMEGRAPHRESPONSE_HOME_TRAIT_FIELDSENTRY"]._serialized_end = 8503
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP"]._serialized_start = 8506
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP"]._serialized_end = 9602
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_start = 9174
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO"]._serialized_end = 9342
     _globals[
         "_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO_AGENTINFO"
     ]._serialized_start = 5724
     _globals["_GETHOMEGRAPHRESPONSE_GROUP_DEVICEINFO_AGENTINFO"]._serialized_end = 5778
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_start = 9358
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_end = 9463
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE15"]._serialized_start = 9465
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE15"]._serialized_end = 9521
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE17"]._serialized_start = 9523
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE17"]._serialized_end = 9555
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE18"]._serialized_start = 9557
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE18"]._serialized_end = 9588
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE34"]._serialized_start = 6630
-    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE34"]._serialized_end = 6656
-    _globals["_GETHOMEGRAPHRESPONSE_ROOMTYPE"]._serialized_start = 9618
-    _globals["_GETHOMEGRAPHRESPONSE_ROOMTYPE"]._serialized_end = 9656
-    _globals["_GETHOMEGRAPHRESPONSE_DEVICETYPE"]._serialized_start = 9658
-    _globals["_GETHOMEGRAPHRESPONSE_DEVICETYPE"]._serialized_end = 9698
-    _globals["_GETHOMEGRAPHRESPONSE_PROJECTTYPE"]._serialized_start = 9700
-    _globals["_GETHOMEGRAPHRESPONSE_PROJECTTYPE"]._serialized_end = 9805
-    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11"]._serialized_start = 9808
-    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11"]._serialized_end = 10083
-    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2"]._serialized_start = 9926
-    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2"]._serialized_end = 10083
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_start = 9344
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE12"]._serialized_end = 9449
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE15"]._serialized_start = 9451
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE15"]._serialized_end = 9507
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE17"]._serialized_start = 9509
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE17"]._serialized_end = 9541
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE18"]._serialized_start = 9543
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE18"]._serialized_end = 9574
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE34"]._serialized_start = 6616
+    _globals["_GETHOMEGRAPHRESPONSE_GROUP_MESSAGE34"]._serialized_end = 6642
+    _globals["_GETHOMEGRAPHRESPONSE_ROOMTYPE"]._serialized_start = 9604
+    _globals["_GETHOMEGRAPHRESPONSE_ROOMTYPE"]._serialized_end = 9642
+    _globals["_GETHOMEGRAPHRESPONSE_DEVICETYPE"]._serialized_start = 9644
+    _globals["_GETHOMEGRAPHRESPONSE_DEVICETYPE"]._serialized_end = 9684
+    _globals["_GETHOMEGRAPHRESPONSE_PROJECTTYPE"]._serialized_start = 9686
+    _globals["_GETHOMEGRAPHRESPONSE_PROJECTTYPE"]._serialized_end = 9791
+    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11"]._serialized_start = 9794
+    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11"]._serialized_end = 10069
+    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2"]._serialized_start = 9912
+    _globals["_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2"]._serialized_end = 10069
     _globals[
         "_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2_MESSAGE3"
-    ]._serialized_start = 10051
+    ]._serialized_start = 10037
     _globals[
         "_GETHOMEGRAPHRESPONSE_MESSAGE11_MESSAGE2_MESSAGE3"
-    ]._serialized_end = 10083
-    _globals["_GETHOMEGRAPHRESPONSE_LINKEDAPP"]._serialized_start = 10085
-    _globals["_GETHOMEGRAPHRESPONSE_LINKEDAPP"]._serialized_end = 10203
-    _globals["_HOMEGRAPH"]._serialized_start = 10206
-    _globals["_HOMEGRAPH"]._serialized_end = 11013
-    _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._serialized_start = 10888
-    _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._serialized_end = 11013
-    _globals["_GETASSISTANTDEVICESETTINGSREQUEST"]._serialized_start = 11016
-    _globals["_GETASSISTANTDEVICESETTINGSREQUEST"]._serialized_end = 11363
-    _globals["_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_start = 11169
-    _globals["_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_end = 11363
+    ]._serialized_end = 10069
+    _globals["_GETHOMEGRAPHRESPONSE_LINKEDAPP"]._serialized_start = 10071
+    _globals["_GETHOMEGRAPHRESPONSE_LINKEDAPP"]._serialized_end = 10189
+    _globals["_HOMEGRAPH"]._serialized_start = 10192
+    _globals["_HOMEGRAPH"]._serialized_end = 17957
+    _globals["_HOMEGRAPH_DEVICEID"]._serialized_start = 10818
+    _globals["_HOMEGRAPH_DEVICEID"]._serialized_end = 10984
+    _globals["_HOMEGRAPH_DEVICEID_AGENTINFO"]._serialized_start = 5724
+    _globals["_HOMEGRAPH_DEVICEID_AGENTINFO"]._serialized_end = 5778
+    _globals["_HOMEGRAPH_DEVICEREF"]._serialized_start = 10986
+    _globals["_HOMEGRAPH_DEVICEREF"]._serialized_end = 11060
+    _globals["_HOMEGRAPH_DEVICE"]._serialized_start = 11063
+    _globals["_HOMEGRAPH_DEVICE"]._serialized_end = 13524
+    _globals["_HOMEGRAPH_DEVICE_CASTCAPABILITIES"]._serialized_start = 12478
+    _globals["_HOMEGRAPH_DEVICE_CASTCAPABILITIES"]._serialized_end = 12717
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE15"]._serialized_start = 5988
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE15"]._serialized_end = 6058
+    _globals["_HOMEGRAPH_DEVICE_HARDWARE"]._serialized_start = 6060
+    _globals["_HOMEGRAPH_DEVICE_HARDWARE"]._serialized_end = 6127
+    _globals["_HOMEGRAPH_DEVICE_NAMES"]._serialized_start = 12860
+    _globals["_HOMEGRAPH_DEVICE_NAMES"]._serialized_end = 12940
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE25"]._serialized_start = 6214
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE25"]._serialized_end = 6255
+    _globals["_HOMEGRAPH_DEVICE_LINKEDUSER"]._serialized_start = 3509
+    _globals["_HOMEGRAPH_DEVICE_LINKEDUSER"]._serialized_end = 3544
+    _globals["_HOMEGRAPH_DEVICE_STATE"]._serialized_start = 6294
+    _globals["_HOMEGRAPH_DEVICE_STATE"]._serialized_end = 6330
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30"]._serialized_start = 13061
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30"]._serialized_end = 13285
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30_STATEENTRY"]._serialized_start = 6505
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE30_STATEENTRY"]._serialized_end = 6573
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE31"]._serialized_start = 6575
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE31"]._serialized_end = 6614
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE34"]._serialized_start = 6616
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE34"]._serialized_end = 6657
+    _globals["_HOMEGRAPH_DEVICE_OTHERIDS"]._serialized_start = 13371
+    _globals["_HOMEGRAPH_DEVICE_OTHERIDS"]._serialized_end = 13497
+    _globals["_HOMEGRAPH_DEVICE_OTHERIDS_OTHERID"]._serialized_start = 13462
+    _globals["_HOMEGRAPH_DEVICE_OTHERIDS_OTHERID"]._serialized_end = 13497
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE41"]._serialized_start = 6821
+    _globals["_HOMEGRAPH_DEVICE_MESSAGE41"]._serialized_end = 6846
+    _globals["_HOMEGRAPH_SPACE"]._serialized_start = 13527
+    _globals["_HOMEGRAPH_SPACE"]._serialized_end = 13738
+    _globals["_HOMEGRAPH_SPACE_CATEGORY"]._serialized_start = 3786
+    _globals["_HOMEGRAPH_SPACE_CATEGORY"]._serialized_end = 3810
+    _globals["_HOMEGRAPH_HOME"]._serialized_start = 13741
+    _globals["_HOMEGRAPH_HOME"]._serialized_end = 17375
+    _globals["_HOMEGRAPH_HOME_LOCATION"]._serialized_start = 14767
+    _globals["_HOMEGRAPH_HOME_LOCATION"]._serialized_end = 15563
+    _globals["_HOMEGRAPH_HOME_LOCATION_COORDINATES"]._serialized_start = 3047
+    _globals["_HOMEGRAPH_HOME_LOCATION_COORDINATES"]._serialized_end = 3097
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE7"]._serialized_start = 15142
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE7"]._serialized_end = 15274
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9"]._serialized_start = 15277
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9"]._serialized_end = 15563
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9_MESSAGE1"]._serialized_start = 3417
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9_MESSAGE1"]._serialized_end = 3461
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9_MESSAGE2"]._serialized_start = 3463
+    _globals["_HOMEGRAPH_HOME_LOCATION_MESSAGE9_MESSAGE2"]._serialized_end = 3507
+    _globals["_HOMEGRAPH_HOME_LINKEDUSER"]._serialized_start = 3509
+    _globals["_HOMEGRAPH_HOME_LINKEDUSER"]._serialized_end = 3558
+    _globals["_HOMEGRAPH_HOME_MESSAGE11"]._serialized_start = 15616
+    _globals["_HOMEGRAPH_HOME_MESSAGE11"]._serialized_end = 15658
+    _globals["_HOMEGRAPH_HOME_ENTITLEMENT"]._serialized_start = 15661
+    _globals["_HOMEGRAPH_HOME_ENTITLEMENT"]._serialized_end = 15871
+    _globals["_HOMEGRAPH_HOME_ENTITLEMENT_MESSAGE11"]._serialized_start = 15616
+    _globals["_HOMEGRAPH_HOME_ENTITLEMENT_MESSAGE11"]._serialized_end = 15641
+    _globals["_HOMEGRAPH_HOME_DUOREGISTRATION"]._serialized_start = 15874
+    _globals["_HOMEGRAPH_HOME_DUOREGISTRATION"]._serialized_end = 16009
+    _globals["_HOMEGRAPH_HOME_MESSAGE14"]._serialized_start = 7475
+    _globals["_HOMEGRAPH_HOME_MESSAGE14"]._serialized_end = 7500
+    _globals["_HOMEGRAPH_HOME_MESSAGE15"]._serialized_start = 16039
+    _globals["_HOMEGRAPH_HOME_MESSAGE15"]._serialized_end = 16645
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE2"]._serialized_start = 3463
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE2"]._serialized_end = 3473
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE3"]._serialized_start = 16347
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE3"]._serialized_end = 16496
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE3_MESSAGE2"]._serialized_start = 7977
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE3_MESSAGE2"]._serialized_end = 8004
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE8"]._serialized_start = 16499
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE8"]._serialized_end = 16645
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE8_MESSAGE1"]._serialized_start = 8123
+    _globals["_HOMEGRAPH_HOME_MESSAGE15_MESSAGE8_MESSAGE1"]._serialized_end = 8164
+    _globals["_HOMEGRAPH_HOME_FAVORITES"]._serialized_start = 16648
+    _globals["_HOMEGRAPH_HOME_FAVORITES"]._serialized_end = 16951
+    _globals["_HOMEGRAPH_HOME_FAVORITES_ITEM"]._serialized_start = 16767
+    _globals["_HOMEGRAPH_HOME_FAVORITES_ITEM"]._serialized_end = 16951
+    _globals["_HOMEGRAPH_HOME_FAVORITES_ITEM_MESSAGE1"]._serialized_start = 16864
+    _globals["_HOMEGRAPH_HOME_FAVORITES_ITEM_MESSAGE1"]._serialized_end = 16951
+    _globals["_HOMEGRAPH_HOME_MESSAGE18"]._serialized_start = 16954
+    _globals["_HOMEGRAPH_HOME_MESSAGE18"]._serialized_end = 17092
+    _globals["_HOMEGRAPH_HOME_MESSAGE18_MESSAGE1"]._serialized_start = 8275
+    _globals["_HOMEGRAPH_HOME_MESSAGE18_MESSAGE1"]._serialized_end = 8316
+    _globals["_HOMEGRAPH_HOME_TRAIT"]._serialized_start = 17095
+    _globals["_HOMEGRAPH_HOME_TRAIT"]._serialized_end = 17268
+    _globals["_HOMEGRAPH_HOME_TRAIT_FIELDSENTRY"]._serialized_start = 8434
+    _globals["_HOMEGRAPH_HOME_TRAIT_FIELDSENTRY"]._serialized_end = 8503
+    _globals["_HOMEGRAPH_HOME_MESSAGE23ENTRY"]._serialized_start = 17270
+    _globals["_HOMEGRAPH_HOME_MESSAGE23ENTRY"]._serialized_end = 17375
+    _globals["_HOMEGRAPH_SPACETYPE"]._serialized_start = 17377
+    _globals["_HOMEGRAPH_SPACETYPE"]._serialized_end = 17416
+    _globals["_HOMEGRAPH_DEVICETYPE"]._serialized_start = 9644
+    _globals["_HOMEGRAPH_DEVICETYPE"]._serialized_end = 9684
+    _globals["_HOMEGRAPH_AGENT"]._serialized_start = 17460
+    _globals["_HOMEGRAPH_AGENT"]._serialized_end = 17569
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATE"]._serialized_start = 17572
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATE"]._serialized_end = 17718
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATE_TYPELIST"]._serialized_start = 17693
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATE_TYPELIST"]._serialized_end = 17718
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._serialized_start = 17720
+    _globals["_HOMEGRAPH_HOMEGRAPHSTATEENTRY"]._serialized_end = 17830
+    _globals["_HOMEGRAPH_LINKABLEAPPLICATION"]._serialized_start = 17832
+    _globals["_HOMEGRAPH_LINKABLEAPPLICATION"]._serialized_end = 17957
+    _globals["_GETASSISTANTDEVICESETTINGSREQUEST"]._serialized_start = 17960
+    _globals["_GETASSISTANTDEVICESETTINGSREQUEST"]._serialized_end = 18307
+    _globals["_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_start = 18113
+    _globals["_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_end = 18307
     _globals[
         "_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO_AGENTINFO"
     ]._serialized_start = 5724
     _globals[
         "_GETASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO_AGENTINFO"
     ]._serialized_end = 5778
-    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE"]._serialized_start = 11366
-    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE"]._serialized_end = 11596
-    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE_MESSAGE1"]._serialized_start = 11498
-    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE_MESSAGE1"]._serialized_end = 11596
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_start = 11599
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_end = 12274
+    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE"]._serialized_start = 18310
+    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE"]._serialized_end = 18540
+    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE_MESSAGE1"]._serialized_start = 18442
+    _globals["_GETASSISTANTDEVICESETTINGSRESPONSE_MESSAGE1"]._serialized_end = 18540
+    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_start = 18543
+    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST"]._serialized_end = 19218
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"
-    ]._serialized_start = 11859
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_end = 12056
+    ]._serialized_start = 18803
+    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO"]._serialized_end = 19000
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_DEVICEINFO_AGENTINFO"
     ]._serialized_start = 5724
@@ -269,20 +381,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
     ]._serialized_end = 5778
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"
-    ]._serialized_start = 12059
-    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"]._serialized_end = 12274
+    ]._serialized_start = 19003
+    _globals["_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA"]._serialized_end = 19218
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA_MESSAGE1"
-    ]._serialized_start = 12180
+    ]._serialized_start = 19124
     _globals[
         "_UPDATEASSISTANTDEVICESETTINGSREQUEST_UPDATEDATA_MESSAGE1"
-    ]._serialized_end = 12274
-    _globals["_UPDATEASSISTANTDEVICESETTINGSRESPONSE"]._serialized_start = 12276
-    _globals["_UPDATEASSISTANTDEVICESETTINGSRESPONSE"]._serialized_end = 12332
-    _globals["_HOMECONTROLSERVICE"]._serialized_start = 12335
-    _globals["_HOMECONTROLSERVICE"]._serialized_end = 12503
-    _globals["_STRUCTURESSERVICE"]._serialized_start = 12506
-    _globals["_STRUCTURESSERVICE"]._serialized_end = 12646
-    _globals["_HOMEDEVICESSERVICE"]._serialized_start = 12649
-    _globals["_HOMEDEVICESSERVICE"]._serialized_end = 13010
+    ]._serialized_end = 19218
+    _globals["_UPDATEASSISTANTDEVICESETTINGSRESPONSE"]._serialized_start = 19220
+    _globals["_UPDATEASSISTANTDEVICESETTINGSRESPONSE"]._serialized_end = 19276
+    _globals["_HOMECONTROLSERVICE"]._serialized_start = 19279
+    _globals["_HOMECONTROLSERVICE"]._serialized_end = 19447
+    _globals["_STRUCTURESSERVICE"]._serialized_start = 19450
+    _globals["_STRUCTURESSERVICE"]._serialized_end = 19590
+    _globals["_HOMEDEVICESSERVICE"]._serialized_start = 19593
+    _globals["_HOMEDEVICESSERVICE"]._serialized_end = 19954
 # @@protoc_insertion_point(module_scope)

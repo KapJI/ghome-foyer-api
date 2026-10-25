@@ -22,7 +22,7 @@ from ghome_foyer_api.home_graph import get_home_graph
 
 home_graph = get_home_graph(channel, timeout=10)
 for home in home_graph.homes:
-    print(home.home_name, len(home.devices))
+    print(home.display_name, len(home.devices))
 ```
 
 To read one response as both messages, get it unparsed with `get_home_graph_bytes`, then parse it with `HomeGraph.FromString` and `GetHomeGraphResponse.FromString`. Both functions take an optional `GetHomeGraphRequest` and raise `grpc.RpcError` if the call fails.
@@ -44,3 +44,5 @@ uv run scripts/inspect_homegraph.py summary ~/homegraph.bin
 
 The proto file is taken from [here](https://github.com/rithvikvibhu/GHLocalApi/issues/39).
 Thanks [@rithvikvibhu](https://github.com/rithvikvibhu) for extracting it.
+
+The reverse-engineered [`foyer.proto`](https://github.com/n0rt0nthec4t/homebridge-nest-accfactory/blob/main/src/protobuf/googlehome/foyer.proto) in homebridge-nest-accfactory also lists homes as a repeated field and names device field 39, which `HomeGraph` reads as `other_ids`.
