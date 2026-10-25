@@ -21,12 +21,16 @@ import os
 from pathlib import Path
 import re
 import struct
+import sys
 
 from google.protobuf.descriptor import Descriptor, FieldDescriptor
 
-from ghome_foyer_api.api_pb2 import GetHomeGraphRequest, GetHomeGraphResponse
+# Use this checkout's api.proto, even where an installed release shadows it,
+# as with `uv run --with glocaltokens`
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from ghome_foyer_api.api_pb2 import HomeGraph  # noqa: E402
+from ghome_foyer_api.home_graph import get_home_graph_bytes  # noqa: E402
 
-GET_HOME_GRAPH = "/google.internal.home.foyer.v1.StructuresService/GetHomeGraph"
 MAX_FIELD_NUMBER = 2**29 - 1
 VARINT, FIXED64, LENGTH_DELIMITED, FIXED32 = 0, 1, 2, 5
 
@@ -249,9 +253,12 @@ def problems(field_stats: FieldStats) -> list[str]:
 
 def summarise(raw: bytes) -> str:
     """Return a redacted field map of a raw GetHomeGraph response."""
-    # Parts of the home's address, such as the town, also turn up in other fields
-    home_address = GetHomeGraphResponse.FromString(raw).home.location.address
-    parts = {part.strip() for part in home_address.split(",")}
+    # Parts of each home's address, such as the town, also turn up in other fields
+    parts = {
+        part.strip()
+        for home in HomeGraph.FromString(raw).homes
+        for part in home.location.address.split(",")
+    }
     parts |= {word for part in parts for word in part.split()}
     parts = {part for part in parts if len(part) >= 3}
     address = (
@@ -266,7 +273,7 @@ def summarise(raw: bytes) -> str:
     collect(
         parse_message(raw),
         "response",
-        GetHomeGraphResponse.DESCRIPTOR,
+        HomeGraph.DESCRIPTOR,
         stats,
         secret=False,
         address=address,
@@ -323,12 +330,8 @@ def fetch(output: Path) -> None:
         grpc.access_token_call_credentials(client.get_access_token()),
     )
     with grpc.secure_channel(GOOGLE_HOME_FOYER_API, credentials) as channel:
-        # Without a deserializer the call returns the raw bytes, which keep
-        # the fields api.proto does not map
-        call = channel.unary_unary(
-            GET_HOME_GRAPH, request_serializer=None, response_deserializer=None
-        )
-        raw = call(GetHomeGraphRequest().SerializeToString(), timeout=REQUEST_TIMEOUT)
+        # The raw bytes keep the fields api.proto does not map
+        raw = get_home_graph_bytes(channel, timeout=REQUEST_TIMEOUT)
     fd = os.open(output, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
     os.fchmod(fd, 0o600)
     with os.fdopen(fd, "wb") as file:
@@ -353,8 +356,8 @@ def selftest() -> None:
 
     local_auth_token = "Ab3" * 36
     access_token = "ya29.a0AfH6SMBx1234567890abcdefXYZ"
-    response = GetHomeGraphResponse()
-    home = response.home
+    response = HomeGraph()
+    home = response.homes.add()
     home.home_name = "Test home"
     home.location.address = "1 Secret Street, Hiddenville"
     home.location.coordinates.latitude = 51.123456
@@ -366,6 +369,9 @@ def selftest() -> None:
     device.device_name = "Kitchen speaker"
     device.local_auth_token = local_auth_token
     device.device_type = "action.devices.types.SPEAKER"
+    response.homes.add(
+        home_name="Second home"
+    ).location.address = "2 Quiet Lane, Farshire"
     raw = (
         response.SerializeToString()
         + key(98, VARINT)
@@ -377,6 +383,7 @@ def selftest() -> None:
         (99, f"call https://example.com/x?key={access_token} or +44 20 7946 0958"),
         (97, f"Bearer {access_token}"),
         (96, "Weather for Hiddenville"),
+        (94, "Trip to Farshire"),
     ):
         raw += key(number, LENGTH_DELIMITED) + bytes([len(text)]) + text.encode()
     out = summarise(raw)
@@ -385,6 +392,8 @@ def selftest() -> None:
         access_token[:12],
         "Secret Street",
         "Hiddenville",
+        "Quiet Lane",
+        "Farshire",
         "987654",
         "51.12",
         "0.12",

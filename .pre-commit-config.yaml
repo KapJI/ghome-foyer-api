@@ -38,7 +38,7 @@ repos:
         stages: [pre-commit, manual]
       - id: mypy
         name: mypy
-        entry: uv run mypy ghome_foyer_api
+        entry: uv run mypy ghome_foyer_api tests
         language: system
         types: [python]
         pass_filenames: false
