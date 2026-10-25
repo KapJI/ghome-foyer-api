@@ -509,6 +509,7 @@ class GetHomeGraphResponse(message.Message):
 
                 NUM1_FIELD_NUMBER: builtins.int
                 NUM2_FIELD_NUMBER: builtins.int
+                NUM3_FIELD_NUMBER: builtins.int
                 NUM4_FIELD_NUMBER: builtins.int
                 NUM5_FIELD_NUMBER: builtins.int
                 NUM29_FIELD_NUMBER: builtins.int
@@ -522,6 +523,7 @@ class GetHomeGraphResponse(message.Message):
                 STRING52_FIELD_NUMBER: builtins.int
                 num1: builtins.int
                 num2: builtins.int
+                num3: builtins.int
                 num4: builtins.int
                 num5: builtins.int
                 num29: builtins.int
@@ -539,6 +541,7 @@ class GetHomeGraphResponse(message.Message):
                     *,
                     num1: builtins.int = ...,
                     num2: builtins.int = ...,
+                    num3: builtins.int = ...,
                     num4: builtins.int = ...,
                     num5: builtins.int = ...,
                     num29: builtins.int = ...,
@@ -553,7 +556,7 @@ class GetHomeGraphResponse(message.Message):
                 ) -> None: ...
                 _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
                 def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
-                _ClearFieldArgType: _TypeAlias = typing.Literal["num1", b"num1", "num2", b"num2", "num29", b"num29", "num34", b"num34", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num49", b"num49", "num5", b"num5", "num51", b"num51", "string52", b"string52"]  # noqa: Y015
+                _ClearFieldArgType: _TypeAlias = typing.Literal["num1", b"num1", "num2", b"num2", "num29", b"num29", "num3", b"num3", "num34", b"num34", "num37", b"num37", "num38", b"num38", "num4", b"num4", "num45", b"num45", "num46", b"num46", "num49", b"num49", "num5", b"num5", "num51", b"num51", "string52", b"string52"]  # noqa: Y015
                 def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
                 def WhichOneof(self, oneof_group: _Never) -> None: ...
 
@@ -1774,7 +1777,11 @@ class GetHomeGraphResponse(message.Message):
     string5: builtins.str
     bool6: builtins.bool
     @builtins.property
-    def home(self) -> GetHomeGraphResponse.Home: ...
+    def home(self) -> GetHomeGraphResponse.Home:
+        """An account with several homes gets one entry per home, which this
+        singular field merges into one. Read HomeGraph.homes instead.
+        """
+
     @builtins.property
     def groups(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Group]: ...
     @builtins.property
@@ -1804,6 +1811,88 @@ class GetHomeGraphResponse(message.Message):
     _HasFieldArgType: _TypeAlias = typing.Literal["home", b"home"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
     _ClearFieldArgType: _TypeAlias = typing.Literal["bool6", b"bool6", "device_types", b"device_types", "groups", b"groups", "home", b"home", "linked_apps", b"linked_apps", "message11", b"message11", "project_types", b"project_types", "room_types", b"room_types", "string5", b"string5", "timestamp1", b"timestamp1"]  # noqa: Y015
+    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+    def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+@typing.final
+class HomeGraph(message.Message):
+    """GetHomeGraphResponse with one entry per home. Both read the same response;
+    get this one with ghome_foyer_api.home_graph.get_home_graph. Names follow
+    the Google Home app where its field types and values match.
+    """
+
+    DESCRIPTOR: descriptor.Descriptor
+
+    @typing.final
+    class HomeGraphStateEntry(message.Message):
+        DESCRIPTOR: descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @builtins.property
+        def value(self) -> GetHomeGraphResponse.Message11.Message2: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: GetHomeGraphResponse.Message11.Message2 | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = typing.Literal["value", b"value"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = typing.Literal["key", b"key", "value", b"value"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    LAST_UPDATED_FIELD_NUMBER: builtins.int
+    HOMES_FIELD_NUMBER: builtins.int
+    UNASSIGNED_DEVICES_FIELD_NUMBER: builtins.int
+    ROOM_TYPES_FIELD_NUMBER: builtins.int
+    STABLE_HASH_FIELD_NUMBER: builtins.int
+    HOME_GRAPH_HAS_CHANGED_FIELD_NUMBER: builtins.int
+    DEVICE_TYPES_FIELD_NUMBER: builtins.int
+    PROJECT_TYPES_FIELD_NUMBER: builtins.int
+    HOME_GRAPH_STATE_FIELD_NUMBER: builtins.int
+    LINKED_APPS_FIELD_NUMBER: builtins.int
+    last_updated: builtins.int
+    """Milliseconds since the Unix epoch"""
+    stable_hash: builtins.str
+    home_graph_has_changed: builtins.bool
+    @builtins.property
+    def homes(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home]: ...
+    @builtins.property
+    def unassigned_devices(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.Home.Device]:
+        """Devices outside every home, such as speaker groups"""
+
+    @builtins.property
+    def room_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.RoomType]: ...
+    @builtins.property
+    def device_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.DeviceType]: ...
+    @builtins.property
+    def project_types(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.ProjectType]: ...
+    @builtins.property
+    def home_graph_state(self) -> containers.MessageMap[builtins.str, GetHomeGraphResponse.Message11.Message2]:
+        """Such as TOTAL_ASSIGNED_DEVICES"""
+
+    @builtins.property
+    def linked_apps(self) -> containers.RepeatedCompositeFieldContainer[GetHomeGraphResponse.LinkedApp]: ...
+    def __init__(
+        self,
+        *,
+        last_updated: builtins.int = ...,
+        homes: abc.Iterable[GetHomeGraphResponse.Home] | None = ...,
+        unassigned_devices: abc.Iterable[GetHomeGraphResponse.Home.Device] | None = ...,
+        room_types: abc.Iterable[GetHomeGraphResponse.RoomType] | None = ...,
+        stable_hash: builtins.str = ...,
+        home_graph_has_changed: builtins.bool = ...,
+        device_types: abc.Iterable[GetHomeGraphResponse.DeviceType] | None = ...,
+        project_types: abc.Iterable[GetHomeGraphResponse.ProjectType] | None = ...,
+        home_graph_state: abc.Mapping[builtins.str, GetHomeGraphResponse.Message11.Message2] | None = ...,
+        linked_apps: abc.Iterable[GetHomeGraphResponse.LinkedApp] | None = ...,
+    ) -> None: ...
+    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
+    def HasField(self, field_name: _HasFieldArgType) -> builtins.bool: ...
+    _ClearFieldArgType: _TypeAlias = typing.Literal["device_types", b"device_types", "home_graph_has_changed", b"home_graph_has_changed", "home_graph_state", b"home_graph_state", "homes", b"homes", "last_updated", b"last_updated", "linked_apps", b"linked_apps", "project_types", b"project_types", "room_types", b"room_types", "stable_hash", b"stable_hash", "unassigned_devices", b"unassigned_devices"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     def WhichOneof(self, oneof_group: _Never) -> None: ...
 

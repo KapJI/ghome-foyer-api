@@ -161,6 +161,7 @@ message GetHomeGraphResponse {
       message Message12 {
         uint32 num1 = 1;
         uint32 num2 = 2;
+        uint32 num3 = 3;
         uint32 num4 = 4;
         uint32 num5 = 5;
         uint32 num29 = 29;
@@ -366,6 +367,8 @@ message GetHomeGraphResponse {
     }
     repeated Trait traits = 21;
   }
+  // An account with several homes gets one entry per home, which this
+  // singular field merges into one. Read HomeGraph.homes instead.
   Home home = 2;
 
   message Group {
@@ -473,6 +476,25 @@ message GetHomeGraphResponse {
     string string7 = 7;
   }
   repeated LinkedApp linked_apps = 12;
+}
+
+// GetHomeGraphResponse with one entry per home. Both read the same response;
+// get this one with ghome_foyer_api.home_graph.get_home_graph. Names follow
+// the Google Home app where its field types and values match.
+message HomeGraph {
+  // Milliseconds since the Unix epoch
+  int64 last_updated = 1;
+  repeated GetHomeGraphResponse.Home homes = 2;
+  // Devices outside every home, such as speaker groups
+  repeated GetHomeGraphResponse.Home.Device unassigned_devices = 3;
+  repeated GetHomeGraphResponse.RoomType room_types = 4;
+  string stable_hash = 5;
+  bool home_graph_has_changed = 6;
+  repeated GetHomeGraphResponse.DeviceType device_types = 7;
+  repeated GetHomeGraphResponse.ProjectType project_types = 9;
+  // Such as TOTAL_ASSIGNED_DEVICES
+  map<string, GetHomeGraphResponse.Message11.Message2> home_graph_state = 11;
+  repeated GetHomeGraphResponse.LinkedApp linked_apps = 12;
 }
 
 

@@ -55,5 +55,8 @@ jobs:
           uv run python -c "import ghome_foyer_api.api_pb2_grpc"
           uv run --isolated --no-project --resolution lowest-direct --with . python -c "import ghome_foyer_api.api_pb2_grpc"
 
+      - name: Run tests
+        run: uv run python -m unittest discover -s tests
+
       - name: Check that the home graph summary hides secrets
         run: uv run scripts/inspect_homegraph.py selftest
