@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Raw API responses from scripts/inspect_homegraph.py hold auth tokens
+*.bin
