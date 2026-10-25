@@ -161,7 +161,6 @@ message GetHomeGraphResponse {
       message Message12 {
         uint32 num1 = 1;
         uint32 num2 = 2;
-        uint32 num3 = 3;
         uint32 num4 = 4;
         uint32 num5 = 5;
         uint32 num29 = 29;
@@ -478,23 +477,394 @@ message GetHomeGraphResponse {
   repeated LinkedApp linked_apps = 12;
 }
 
-// GetHomeGraphResponse with one entry per home. Both read the same response;
-// get this one with ghome_foyer_api.home_graph.get_home_graph. Names follow
-// the Google Home app where its field types and values match.
+// GetHomeGraphResponse with one entry per home and its own types, so names
+// can follow Google's where the field types and values match. Both read the
+// same response; get this one with ghome_foyer_api.home_graph.get_home_graph.
 message HomeGraph {
+  message DeviceId {
+    string device_id = 1;
+
+    message AgentInfo {
+      // Lists in agents_info
+      string api_project_id = 1;
+      string unique_id = 2;
+    }
+    AgentInfo agent_info = 2;
+  }
+
+  // Refers to a device
+  message DeviceRef {
+    DeviceId id = 1;
+  }
+
+  message Device {
+    DeviceId id = 1;
+    string display_name = 4;
+    // Such as "action.devices.types.SPEAKER"
+    string type = 6;
+    repeated string traits = 7;
+    // Set on Cast devices, as one to three lowercase letters. Possibly
+    // Google's device_ssid_suffix
+    string suffix = 10;
+
+    // Set on Cast devices
+    message CastCapabilities {
+      bool bool1 = 1;
+      bool bool2 = 2;
+      bool bool3 = 3;
+      bool bool4 = 4;
+      bool bool5 = 5;
+      bool bool29 = 29;
+      bool bool34 = 34;
+      bool bool37 = 37;
+      bool bool38 = 38;
+      bool bool45 = 45;
+      bool bool46 = 46;
+      bool bool49 = 49;
+      bool bool51 = 51;
+      // Such as "webrtc"
+      string string52 = 52;
+    }
+    CastCapabilities cast_capabilities = 12;
+
+    // Set on Cast devices
+    message Message15 {
+      // A number too long for uint64
+      string string1 = 1;
+      // Milliseconds since the Unix epoch
+      uint64 num5 = 5;
+      uint64 num6 = 6;
+      uint64 num7 = 7;
+    }
+    Message15 message15 = 15;
+    // Such as "Nest Cam"
+    repeated string default_names = 16;
+
+    message Hardware {
+      // Such as "IKEA" or "Signify Netherlands B.V."
+      string manufacturer = 1;
+      string model = 2;
+      string sw_version = 4;
+    }
+    // Possibly Google's device_info, which holds a manufacturer, model and
+    // software version as Smart Home's deviceInfo does
+    Hardware hardware = 17;
+
+    message Names {
+      // Mostly set on Cast devices
+      string string1 = 1;
+      // Usually the same as display_name
+      string name = 2;
+      // Same as Device.default_names
+      repeated string default_names = 3;
+      repeated string nicknames = 4;
+    }
+    Names names = 18;
+    // Milliseconds since the Unix epoch. Possibly Google's time_linked_ms
+    uint64 timestamp19 = 19;
+    // Smart Home attributes, such as colorTemperatureRange or availableModes
+    google.protobuf.Struct attributes = 20;
+
+    message Message25 {
+      bool bool1 = 1;
+      bool bool2 = 2;
+    }
+    Message25 message25 = 25;
+
+    message LinkedUser {
+      string email_address = 1;
+    }
+    repeated LinkedUser linked_users = 26;
+    string local_auth_token = 28;
+
+    message State {
+      string name = 1;
+      bytes value = 2;
+    }
+    repeated State states = 29;
+
+    // One per group of traits, such as deviceStatus or transportControl
+    message Message30 {
+      string key = 1;
+      // Such as online: true
+      map<string, google.protobuf.Value> state = 2;
+      // Such as availableApplications
+      google.protobuf.Struct attributes = 3;
+    }
+    repeated Message30 message30 = 30;
+
+    message Message31 {
+      uint32 num1 = 1;
+      uint32 num3 = 3;
+    }
+    Message31 message31 = 31;
+    // Such as a Nest device's ID in another project
+    DeviceId.AgentInfo message32 = 32;
+    uint32 num33 = 33;
+
+    message Message34 {
+      bool bool1 = 1;
+      bool bool2 = 2;
+    }
+    Message34 message34 = 34;
+    uint32 num36 = 36;
+    uint32 num37 = 37;
+
+    // The device's IDs in other systems
+    message OtherIds {
+      message OtherId {
+        // Such as "CAMERA"
+        string type = 1;
+        string id = 2;
+      }
+      repeated OtherId ids = 1;
+    }
+    OtherIds other_ids = 39;
+
+    message Message41 {
+      uint32 num1 = 1;
+    }
+    Message41 message41 = 41;
+    string string42 = 42;
+    // 1 on Cast devices, 0 on others. Possibly Google's cast_device_link_state
+    uint32 num44 = 44;
+    uint32 num47 = 47;
+    uint32 num55 = 55;
+    uint32 num59 = 59;
+    string string60 = 60;
+  }
+
+  // A room
+  message Space {
+    string id = 1;
+    string display_name = 3;
+
+    message Category {
+      string name = 1;
+    }
+    Category category = 4;
+    // Devices in this space
+    repeated DeviceRef devices = 5;
+  }
+
+  message Home {
+    string id = 1;
+    string display_name = 2;
+
+    message Location {
+      string address = 1;
+
+      message Coordinates {
+        double latitude = 1;
+        double longitude = 2;
+      }
+      Coordinates coordinates = 2;
+      // Milliseconds since the Unix epoch. Possibly when the address was last
+      // set
+      uint64 timestamp5 = 5;
+      string timezone = 6;
+
+      // Parts of the address
+      message Message7 {
+        string string1 = 1;
+        string string2 = 2;
+        string string5 = 5;
+        string string6 = 6;
+        string string11 = 11;
+        string string12 = 12;
+        string string26 = 26;
+      }
+      Message7 message7 = 7;
+
+      message Message9 {
+        message Message1 {
+          string string1 = 1;
+          string string2 = 2;
+        }
+        Message1 message1 = 1;
+
+        message Message2 {
+          string string2 = 2;
+          string string3 = 3;
+        }
+        Message2 message2 = 2;
+      }
+      Message9 message9 = 9;
+    }
+    Location location = 3;
+
+    message LinkedUser {
+      string email_address = 1;
+      uint32 num4 = 4;
+    }
+    repeated LinkedUser linked_users = 4;
+    repeated Space spaces = 6;
+    repeated Device devices = 7;
+
+    message Message11 {
+      uint32 num1 = 1;
+      // A project ID, such as "nest-home-assistant-prod"
+      string string2 = 2;
+    }
+    Message11 message11 = 11;
+
+    // A subscription, such as Nest Aware
+    message Entitlement {
+      uint32 num2 = 2;
+      uint32 num4 = 4;
+      string email_address = 5;
+      uint32 num7 = 7;
+      // Such as "Nest Aware"
+      string string8 = 8;
+
+      message Message11 {
+        uint32 num1 = 1;
+      }
+      Message11 message11 = 11;
+    }
+    Entitlement entitlement = 12;
+
+    message DuoRegistration {
+      DeviceRef message1 = 1;
+      string duo_call_url = 2;
+      string duo_phone_number = 3;
+    }
+    DuoRegistration duo_registration = 13;
+
+    message Message14 {
+      uint32 num1 = 1;
+    }
+    Message14 message14 = 14;
+
+    message Message15 {
+      bool bool1 = 1;
+
+      // Fields 4 to 9 are set, but empty
+      message Message2 {}
+      Message2 message2 = 2;
+
+      message Message3 {
+        string string1 = 1;
+
+        message Message2 {
+          string string1 = 1;
+        }
+        Message2 message2 = 2;
+      }
+      repeated Message3 message3 = 3;
+      bool bool4 = 4;
+
+      message Message8 {
+        message Message1 {
+          // Such as "structure.update.supervision_settings"
+          string string1 = 1;
+          uint32 num2 = 2;
+        }
+        Message1 message1 = 1;
+      }
+      Message8 message8 = 8;
+    }
+    // Possibly Google's current_user_role_and_permissions, as message8 holds
+    // permissions such as structure.update.supervision_settings
+    Message15 message15 = 15;
+
+    message Favorites {
+      // Such as "FavoritesCategory"
+      string name = 1;
+      uint32 num3 = 3;
+
+      message Item {
+        message Message1 {
+          // Set when the favorite is a device
+          DeviceId id = 1;
+          uint32 num3 = 3;
+        }
+        Message1 message1 = 1;
+      }
+      repeated Item items = 4;
+    }
+    Favorites favorites = 16;
+
+    message Message18 {
+      message Message1 {
+        uint32 num1 = 1;
+        // Such as "generic"
+        string string2 = 2;
+      }
+      Message1 message1 = 1;
+    }
+    Message18 message18 = 18;
+
+    message Trait {
+      // Such as "home.platform.traits.camera.CameraStoriesTrait"
+      string name = 1;
+      map<string, google.protobuf.Value> fields = 2;
+    }
+    repeated Trait traits = 21;
+    // Favorites by name, such as "DEFAULT"
+    map<string, Favorites> message23 = 23;
+  }
+
   // Milliseconds since the Unix epoch
   int64 last_updated = 1;
-  repeated GetHomeGraphResponse.Home homes = 2;
+  repeated Home homes = 2;
   // Devices outside every home, such as speaker groups
-  repeated GetHomeGraphResponse.Home.Device unassigned_devices = 3;
-  repeated GetHomeGraphResponse.RoomType room_types = 4;
+  repeated Device unassigned_devices = 3;
+
+  message SpaceType {
+    // Such as "BEDROOM"
+    string code = 1;
+    string name = 2;
+  }
+  repeated SpaceType space_types = 4;
   string stable_hash = 5;
   bool home_graph_has_changed = 6;
-  repeated GetHomeGraphResponse.DeviceType device_types = 7;
-  repeated GetHomeGraphResponse.ProjectType project_types = 9;
+
+  message DeviceType {
+    // Such as "action.devices.types.LIGHT"
+    string code = 1;
+    string name = 2;
+  }
+  repeated DeviceType device_types = 7;
+
+  // A Smart Home agent
+  message Agent {
+    string api_project_id = 1;
+    string name = 2;
+    // A URL on www.gstatic.com
+    string string3 = 3;
+    string app_store_url = 4;
+    string play_store_url = 5;
+  }
+  repeated Agent agents_info = 9;
+
+  message HomeGraphState {
+    // Set on the TOTAL_ keys
+    uint32 count = 2;
+
+    message TypeList {
+      // Such as "action.devices.types.LIGHT"
+      repeated string types = 1;
+    }
+    // Set on the _DEVICE_TYPES keys
+    TypeList device_types = 3;
+  }
   // Such as TOTAL_ASSIGNED_DEVICES
-  map<string, GetHomeGraphResponse.Message11.Message2> home_graph_state = 11;
-  repeated GetHomeGraphResponse.LinkedApp linked_apps = 12;
+  map<string, HomeGraphState> home_graph_state = 11;
+
+  message LinkableApplication {
+    // A Knowledge Graph ID, such as "/m/04yhd6c"
+    string string1 = 1;
+    // Such as "Spotify"
+    string name = 2;
+    uint32 num3 = 3;
+    uint32 num4 = 4;
+    uint32 num5 = 5;
+    uint32 num6 = 6;
+    // A URL, such as one on www.gstatic.com
+    string string7 = 7;
+  }
+  repeated LinkableApplication linkable_applications = 12;
 }
 
 

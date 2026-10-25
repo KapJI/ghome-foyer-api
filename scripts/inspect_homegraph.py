@@ -358,7 +358,7 @@ def selftest() -> None:
     access_token = "ya29.a0AfH6SMBx1234567890abcdefXYZ"
     response = HomeGraph()
     home = response.homes.add()
-    home.home_name = "Test home"
+    home.display_name = "Test home"
     home.location.address = "1 Secret Street, Hiddenville"
     home.location.coordinates.latitude = 51.123456
     home.location.timezone = "Europe/Hiddenville"
@@ -366,11 +366,11 @@ def selftest() -> None:
     home.location.MergeFromString(key(9, VARINT) + varint(987654))
     home.linked_users.add().email_address = "someone@example.com"
     device = home.devices.add()
-    device.device_name = "Kitchen speaker"
+    device.display_name = "Kitchen speaker"
     device.local_auth_token = local_auth_token
-    device.device_type = "action.devices.types.SPEAKER"
+    device.type = "action.devices.types.SPEAKER"
     response.homes.add(
-        home_name="Second home"
+        display_name="Second home"
     ).location.address = "2 Quiet Lane, Farshire"
     raw = (
         response.SerializeToString()
